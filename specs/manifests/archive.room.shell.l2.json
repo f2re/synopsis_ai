@@ -1,0 +1,11 @@
+{
+  "id": "archive.room.shell.l2",
+  "source": "assets/source/environment/archive/candidates/archive_room_shell_l2_v2.png",
+  "kind": "environment",
+  "logicalSize": {"width": 480, "height": 270},
+  "pivot": {"x": 0, "y": 0},
+  "layer": "L2",
+  "paletteTokens": ["world.interior.wall", "world.interior.floor", "world.window.day"],
+  "generated": [],
+  "provenance": {"origin": "project-authored generated candidate ART-BATCH-001", "author": "pixel-asset-designer workflow", "license": "project-internal-generated"}
+}

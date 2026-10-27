@@ -1,0 +1,73 @@
+{
+  "name": "synopsis_character_frame_workflow",
+  "version": "1.0",
+  "nodes": {
+    "1": {
+      "inputs": {
+        "ckpt_name": "z_image_turbo.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple"
+    },
+    "2": {
+      "inputs": {
+        "lora_name": "synopsis_26063_style_v1.safetensors",
+        "strength_model": 0.8,
+        "strength_clip": 0.8,
+        "model": ["1", 0],
+        "clip": ["1", 1]
+      },
+      "class_type": "LoraLoader"
+    },
+    "3": {
+      "inputs": {
+        "text": "<26063_pixel_style> meteorologist character single frame, idle pose, North-West Russia field uniform, warm sweater, crisp hard pixels, on solid magenta background #FF00FF",
+        "clip": ["2", 1]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "4": {
+      "inputs": {
+        "text": "multiple characters, jitter, blurry, smooth, anti-aliased, 3d, realistic skin texture, modern military gear",
+        "clip": ["2", 1]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "5": {
+      "inputs": {
+        "width": 256,
+        "height": 384,
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage"
+    },
+    "6": {
+      "inputs": {
+        "seed": 26063,
+        "steps": 14,
+        "cfg": 3.5,
+        "sampler_name": "dpmpp_2m",
+        "scheduler": "karras",
+        "denoise": 1.0,
+        "model": ["2", 0],
+        "positive": ["3", 0],
+        "negative": ["4", 0],
+        "latent_image": ["5", 0]
+      },
+      "class_type": "KSampler"
+    },
+    "7": {
+      "inputs": {
+        "samples": ["6", 0],
+        "vae": ["1", 2]
+      },
+      "class_type": "VAEDecode"
+    },
+    "8": {
+      "inputs": {
+        "filename_prefix": "char_frame_candidate",
+        "images": ["7", 0]
+      },
+      "class_type": "SaveImage"
+    }
+  }
+}

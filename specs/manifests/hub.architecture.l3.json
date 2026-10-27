@@ -1,0 +1,11 @@
+{
+  "id": "hub.architecture.l3",
+  "source": "assets/source/environment/hub/candidates/hub_architecture_l3_v2.png",
+  "kind": "environment",
+  "logicalSize": {"width": 480, "height": 270},
+  "pivot": {"x": 0, "y": 0},
+  "layer": "L3",
+  "paletteTokens": ["world.architecture.cream", "world.architecture.roof", "world.window.warm"],
+  "generated": [],
+  "provenance": {"origin": "project-authored generated candidate ART-BATCH-001", "author": "pixel-asset-designer workflow", "license": "project-internal-generated"}
+}

@@ -1,0 +1,3001 @@
+{
+  "version": 1,
+  "generated_by": "tools/assets/kn01_image_specs.py",
+  "palettes": {
+    "master": "assets/source/palettes/master_26063_v2.gpl",
+    "people": "assets/source/palettes/people_26063_v1.gpl"
+  },
+  "chroma_key": "#FF00FF",
+  "assets": [
+    {
+      "id": "KF-01",
+      "task": "W1-06",
+      "path": "design/pixel-art/keyframes/kf-01-title.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 64,
+      "people": false
+    },
+    {
+      "id": "KF-02",
+      "task": "W1-06",
+      "path": "design/pixel-art/keyframes/kf-02-hub-night.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 64,
+      "people": false
+    },
+    {
+      "id": "KF-03",
+      "task": "W1-06",
+      "path": "design/pixel-art/keyframes/kf-03-hub-day.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 64,
+      "people": false
+    },
+    {
+      "id": "KF-04",
+      "task": "W1-06",
+      "path": "design/pixel-art/keyframes/kf-04-codepost-task.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 64,
+      "people": false
+    },
+    {
+      "id": "KF-05",
+      "task": "W1-06",
+      "path": "design/pixel-art/keyframes/kf-05-error-breakdown.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 64,
+      "people": false
+    },
+    {
+      "id": "KF-06",
+      "task": "W1-06",
+      "path": "design/pixel-art/keyframes/kf-06-shift-summary.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 64,
+      "people": false
+    },
+    {
+      "id": "KF-07",
+      "task": "W1-06",
+      "path": "design/pixel-art/keyframes/kf-07-unlock.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 64,
+      "people": false
+    },
+    {
+      "id": "HUB-L0-SKY-NIGHT",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l0_sky_night.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "HUB-L0-SKY-DAWN",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l0_sky_dawn.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "HUB-L0-SKY-DAY",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l0_sky_day.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "HUB-L0-SKY-GOLDEN",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l0_sky_golden.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "HUB-L0-SKY-DUSK",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l0_sky_dusk.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "HUB-L0-SKY-WHITENIGHT",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l0_sky_whitenight.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "HUB-L0-CELESTIAL",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l0_celestial.png",
+      "size": [
+        48,
+        16
+      ],
+      "frame": [
+        16,
+        16
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "HUB-L1-CLOUDS-FAR",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l1_clouds_far.png",
+      "size": [
+        256,
+        32
+      ],
+      "frame": [
+        64,
+        32
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "HUB-L2-HORIZON",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l2_horizon.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 20,
+      "people": false
+    },
+    {
+      "id": "HUB-L2-CITYLIGHTS",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l2_citylights.png",
+      "size": [
+        960,
+        270
+      ],
+      "frame": [
+        480,
+        270
+      ],
+      "alpha": "transparent",
+      "max_colors": 4,
+      "people": false
+    },
+    {
+      "id": "HUB-L3-WATER",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l3_water.png",
+      "size": [
+        480,
+        96
+      ],
+      "frame": [
+        480,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "HUB-L4-FOG",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l4_fog.png",
+      "size": [
+        480,
+        96
+      ],
+      "frame": [
+        480,
+        32
+      ],
+      "alpha": "transparent",
+      "max_colors": 3,
+      "people": false
+    },
+    {
+      "id": "HUB-L6-GROUND",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l6_ground.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 32,
+      "people": false
+    },
+    {
+      "id": "HUB-L9-FG-BIRCH",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l9_fg_birch.png",
+      "size": [
+        144,
+        200
+      ],
+      "frame": [
+        72,
+        200
+      ],
+      "alpha": "transparent",
+      "max_colors": 12,
+      "people": false
+    },
+    {
+      "id": "HUB-L9-FG-PINE",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l9_fg_pine.png",
+      "size": [
+        144,
+        200
+      ],
+      "frame": [
+        72,
+        200
+      ],
+      "alpha": "transparent",
+      "max_colors": 12,
+      "people": false
+    },
+    {
+      "id": "HUB-L10-WEATHER",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/hub_l10_weather.png",
+      "size": [
+        32,
+        8
+      ],
+      "frame": [
+        8,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 4,
+      "people": false
+    },
+    {
+      "id": "BLD-SYNOPTIC-DAY",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/buildings/bld_synoptic_day.png",
+      "size": [
+        128,
+        84
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 28,
+      "people": false
+    },
+    {
+      "id": "BLD-SYNOPTIC-NIGHT",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/buildings/bld_synoptic_night.png",
+      "size": [
+        128,
+        84
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 28,
+      "people": false
+    },
+    {
+      "id": "BLD-SYNOPTIC-WINDOWS",
+      "task": "W2-11",
+      "path": "assets/source/environment/hub/v3/buildings/bld_synoptic_windows.png",
+      "size": [
+        128,
+        84
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 4,
+      "people": false
+    },
+    {
+      "id": "BLD-CARTOGRAPHY-DAY",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/buildings/bld_cartography_day.png",
+      "size": [
+        88,
+        64
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 28,
+      "people": false
+    },
+    {
+      "id": "BLD-CARTOGRAPHY-NIGHT",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/buildings/bld_cartography_night.png",
+      "size": [
+        88,
+        64
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 28,
+      "people": false
+    },
+    {
+      "id": "BLD-CARTOGRAPHY-WINDOWS",
+      "task": "W2-11",
+      "path": "assets/source/environment/hub/v3/buildings/bld_cartography_windows.png",
+      "size": [
+        88,
+        64
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 4,
+      "people": false
+    },
+    {
+      "id": "BLD-ARCHIVE-DAY",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/buildings/bld_archive_day.png",
+      "size": [
+        88,
+        64
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 28,
+      "people": false
+    },
+    {
+      "id": "BLD-ARCHIVE-NIGHT",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/buildings/bld_archive_night.png",
+      "size": [
+        88,
+        64
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 28,
+      "people": false
+    },
+    {
+      "id": "BLD-ARCHIVE-WINDOWS",
+      "task": "W2-11",
+      "path": "assets/source/environment/hub/v3/buildings/bld_archive_windows.png",
+      "size": [
+        88,
+        64
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 4,
+      "people": false
+    },
+    {
+      "id": "BLD-RADAR-DAY",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/buildings/bld_radar_day.png",
+      "size": [
+        56,
+        96
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 28,
+      "people": false
+    },
+    {
+      "id": "BLD-RADAR-NIGHT",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/buildings/bld_radar_night.png",
+      "size": [
+        56,
+        96
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 28,
+      "people": false
+    },
+    {
+      "id": "BLD-RADAR-WINDOWS",
+      "task": "W2-11",
+      "path": "assets/source/environment/hub/v3/buildings/bld_radar_windows.png",
+      "size": [
+        56,
+        96
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 4,
+      "people": false
+    },
+    {
+      "id": "BLD-AEROLOGY-DAY",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/buildings/bld_aerology_day.png",
+      "size": [
+        72,
+        80
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 28,
+      "people": false
+    },
+    {
+      "id": "BLD-AEROLOGY-NIGHT",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/buildings/bld_aerology_night.png",
+      "size": [
+        72,
+        80
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 28,
+      "people": false
+    },
+    {
+      "id": "BLD-AEROLOGY-WINDOWS",
+      "task": "W2-11",
+      "path": "assets/source/environment/hub/v3/buildings/bld_aerology_windows.png",
+      "size": [
+        72,
+        80
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 4,
+      "people": false
+    },
+    {
+      "id": "BLD-TOURNAMENT-DAY",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/buildings/bld_tournament_day.png",
+      "size": [
+        112,
+        64
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 28,
+      "people": false
+    },
+    {
+      "id": "BLD-TOURNAMENT-NIGHT",
+      "task": "W2-10",
+      "path": "assets/source/environment/hub/v3/buildings/bld_tournament_night.png",
+      "size": [
+        112,
+        64
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 28,
+      "people": false
+    },
+    {
+      "id": "BLD-TOURNAMENT-WINDOWS",
+      "task": "W2-11",
+      "path": "assets/source/environment/hub/v3/buildings/bld_tournament_windows.png",
+      "size": [
+        112,
+        64
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 4,
+      "people": false
+    },
+    {
+      "id": "STATE-LOCK",
+      "task": "W2-11",
+      "path": "assets/source/ui/location-states/v3/state_lock.png",
+      "size": [
+        28,
+        8
+      ],
+      "frame": [
+        7,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "STATE-BEACON",
+      "task": "W2-11",
+      "path": "assets/source/ui/location-states/v3/state_beacon.png",
+      "size": [
+        15,
+        5
+      ],
+      "frame": [
+        5,
+        5
+      ],
+      "alpha": "transparent",
+      "max_colors": 3,
+      "people": false
+    },
+    {
+      "id": "SCR-SILHOUETTE-CARTOGRAPHY",
+      "task": "W2-11",
+      "path": "assets/source/ui/location-states/v3/silhouette_cartography.png",
+      "size": [
+        96,
+        64
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "SCR-SILHOUETTE-ARCHIVE",
+      "task": "W2-11",
+      "path": "assets/source/ui/location-states/v3/silhouette_archive.png",
+      "size": [
+        96,
+        64
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "SCR-SILHOUETTE-RADAR",
+      "task": "W2-11",
+      "path": "assets/source/ui/location-states/v3/silhouette_radar.png",
+      "size": [
+        96,
+        64
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "SCR-SILHOUETTE-AEROLOGY",
+      "task": "W2-11",
+      "path": "assets/source/ui/location-states/v3/silhouette_aerology.png",
+      "size": [
+        96,
+        64
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "SCR-SILHOUETTE-TOURNAMENT",
+      "task": "W2-11",
+      "path": "assets/source/ui/location-states/v3/silhouette_tournament.png",
+      "size": [
+        96,
+        64
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "PROP-LAMP",
+      "task": "W2-10",
+      "path": "assets/source/props/hub/prop_lamp.png",
+      "size": [
+        16,
+        24
+      ],
+      "frame": [
+        8,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "PROP-LAMP-GLOW",
+      "task": "W2-10",
+      "path": "assets/source/props/hub/prop_lamp_glow.png",
+      "size": [
+        32,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 3,
+      "people": false
+    },
+    {
+      "id": "PROP-BENCH",
+      "task": "W2-10",
+      "path": "assets/source/props/hub/prop_bench.png",
+      "size": [
+        16,
+        10
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "PROP-STEVENSON",
+      "task": "W2-10",
+      "path": "assets/source/props/hub/prop_stevenson.png",
+      "size": [
+        24,
+        16
+      ],
+      "frame": [
+        12,
+        16
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "PROP-ANEMOMETER",
+      "task": "W2-10",
+      "path": "assets/source/props/hub/prop_anemometer.png",
+      "size": [
+        32,
+        40
+      ],
+      "frame": [
+        8,
+        40
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "PROP-FLAG",
+      "task": "W2-10",
+      "path": "assets/source/props/hub/prop_flag.png",
+      "size": [
+        72,
+        8
+      ],
+      "frame": [
+        12,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 4,
+      "people": false
+    },
+    {
+      "id": "PROP-RADAR-ANTENNA",
+      "task": "W2-10",
+      "path": "assets/source/props/hub/prop_radar_antenna.png",
+      "size": [
+        192,
+        16
+      ],
+      "frame": [
+        24,
+        16
+      ],
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "PROP-BEACON-LIGHT",
+      "task": "W2-10",
+      "path": "assets/source/props/hub/prop_beacon_light.png",
+      "size": [
+        6,
+        3
+      ],
+      "frame": [
+        3,
+        3
+      ],
+      "alpha": "transparent",
+      "max_colors": 2,
+      "people": false
+    },
+    {
+      "id": "PROP-SIGNPOST",
+      "task": "W2-10",
+      "path": "assets/source/props/hub/prop_signpost.png",
+      "size": [
+        16,
+        24
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "PROP-BICYCLE",
+      "task": "W2-10",
+      "path": "assets/source/props/hub/prop_bicycle.png",
+      "size": [
+        18,
+        11
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "ROOM-CODEPOST-SHELL",
+      "task": "W2-12",
+      "path": "assets/source/environment/rooms/codepost/room_codepost_shell.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 48,
+      "people": false
+    },
+    {
+      "id": "ROOM-WINDOW-VIEW",
+      "task": "W2-12",
+      "path": "assets/source/environment/rooms/codepost/room_window_view.png",
+      "size": [
+        480,
+        72
+      ],
+      "frame": [
+        96,
+        72
+      ],
+      "alpha": "opaque",
+      "max_colors": 24,
+      "people": false
+    },
+    {
+      "id": "ROOM-WINDOW-RAIN",
+      "task": "W2-12",
+      "path": "assets/source/environment/rooms/codepost/room_window_rain.png",
+      "size": [
+        384,
+        72
+      ],
+      "frame": [
+        96,
+        72
+      ],
+      "alpha": "transparent",
+      "max_colors": 3,
+      "people": false
+    },
+    {
+      "id": "ROOM-TELETYPE",
+      "task": "W2-12",
+      "path": "assets/source/environment/rooms/codepost/room_teletype.png",
+      "size": [
+        384,
+        128
+      ],
+      "frame": [
+        96,
+        64
+      ],
+      "alpha": "transparent",
+      "max_colors": 16,
+      "people": false
+    },
+    {
+      "id": "ROOM-BAROGRAPH",
+      "task": "W2-12",
+      "path": "assets/source/environment/rooms/codepost/room_barograph.png",
+      "size": [
+        160,
+        28
+      ],
+      "frame": [
+        40,
+        28
+      ],
+      "alpha": "transparent",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "ROOM-CLOCK",
+      "task": "W2-12",
+      "path": "assets/source/environment/rooms/codepost/room_clock.png",
+      "size": [
+        64,
+        40
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "ROOM-CLOCK-HANDS",
+      "task": "W2-12",
+      "path": "assets/source/environment/rooms/codepost/room_clock_hands.png",
+      "size": [
+        128,
+        16
+      ],
+      "frame": [
+        16,
+        16
+      ],
+      "alpha": "transparent",
+      "max_colors": 2,
+      "people": false
+    },
+    {
+      "id": "ROOM-LAMP",
+      "task": "W2-12",
+      "path": "assets/source/environment/rooms/codepost/room_lamp.png",
+      "size": [
+        72,
+        32
+      ],
+      "frame": [
+        24,
+        32
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "ROOM-LAMP-GLOW",
+      "task": "W2-12",
+      "path": "assets/source/environment/rooms/codepost/room_lamp_glow.png",
+      "size": [
+        64,
+        48
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 3,
+      "people": false
+    },
+    {
+      "id": "TIT-M1",
+      "task": "W2-13",
+      "path": "assets/source/animals/tit/tit_m1.png",
+      "size": [
+        32,
+        48
+      ],
+      "frame": [
+        8,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "TIT-M2",
+      "task": "W2-13",
+      "path": "assets/source/animals/tit/tit_m2.png",
+      "size": [
+        64,
+        96
+      ],
+      "frame": [
+        16,
+        16
+      ],
+      "alpha": "transparent",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "SPARROW-M1",
+      "task": "W2-13",
+      "path": "assets/source/animals/sparrow/sparrow_m1.png",
+      "size": [
+        24,
+        24
+      ],
+      "frame": [
+        8,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "GULL-M1",
+      "task": "W2-13",
+      "path": "assets/source/animals/gull/gull_m1.png",
+      "size": [
+        64,
+        16
+      ],
+      "frame": [
+        16,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "MALLARD-M1",
+      "task": "W2-13",
+      "path": "assets/source/animals/mallard/mallard_m1.png",
+      "size": [
+        72,
+        16
+      ],
+      "frame": [
+        12,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "SQUIRREL-M1",
+      "task": "W2-13",
+      "path": "assets/source/animals/squirrel/squirrel_m1.png",
+      "size": [
+        72,
+        24
+      ],
+      "frame": [
+        12,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "SQUIRREL-M2",
+      "task": "W2-13",
+      "path": "assets/source/animals/squirrel/squirrel_m2.png",
+      "size": [
+        192,
+        72
+      ],
+      "frame": [
+        32,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "CAT-M1",
+      "task": "W2-13",
+      "path": "assets/source/animals/cat/cat_m1.png",
+      "size": [
+        72,
+        48
+      ],
+      "frame": [
+        12,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CAT-M2",
+      "task": "W2-13",
+      "path": "assets/source/animals/cat/cat_m2.png",
+      "size": [
+        192,
+        120
+      ],
+      "frame": [
+        32,
+        20
+      ],
+      "alpha": "transparent",
+      "max_colors": 12,
+      "people": false
+    },
+    {
+      "id": "PIGEON-M1",
+      "task": "W2-13",
+      "path": "assets/source/animals/pigeon/pigeon_m1.png",
+      "size": [
+        32,
+        24
+      ],
+      "frame": [
+        8,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "BULLFINCH-M1",
+      "task": "W2-13",
+      "path": "assets/source/animals/bullfinch/bullfinch_m1.png",
+      "size": [
+        32,
+        24
+      ],
+      "frame": [
+        8,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "FLOCK-FAR",
+      "task": "W2-13",
+      "path": "assets/source/animals/flock/flock_far.png",
+      "size": [
+        64,
+        8
+      ],
+      "frame": [
+        16,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 3,
+      "people": false
+    },
+    {
+      "id": "FX-RIPPLE",
+      "task": "W2-19",
+      "path": "assets/source/effects/fx_ripple.png",
+      "size": [
+        36,
+        4
+      ],
+      "frame": [
+        12,
+        4
+      ],
+      "alpha": "transparent",
+      "max_colors": 2,
+      "people": false
+    },
+    {
+      "id": "MENTOR-PORTRAIT",
+      "task": "W2-14",
+      "path": "assets/source/characters/npc/mentor_portrait.png",
+      "size": [
+        384,
+        192
+      ],
+      "frame": [
+        64,
+        64
+      ],
+      "alpha": "transparent",
+      "max_colors": 24,
+      "people": true
+    },
+    {
+      "id": "MENTOR-M1",
+      "task": "W2-14",
+      "path": "assets/source/characters/npc/mentor_m1.png",
+      "size": [
+        72,
+        48
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 12,
+      "people": true
+    },
+    {
+      "id": "TECH-M1",
+      "task": "W2-14",
+      "path": "assets/source/characters/npc/tech_semyon_m1.png",
+      "size": [
+        72,
+        72
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 12,
+      "people": true
+    },
+    {
+      "id": "LAB-M1",
+      "task": "W2-14",
+      "path": "assets/source/characters/npc/lab_assistant_m1.png",
+      "size": [
+        72,
+        48
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 12,
+      "people": true
+    },
+    {
+      "id": "AVATAR-BASE-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/avatar_base_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 10,
+      "people": true
+    },
+    {
+      "id": "AVATAR-BASE-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/avatar_base_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 14,
+      "people": true
+    },
+    {
+      "id": "SCR-WARDROBE-BG",
+      "task": "W2-15",
+      "path": "assets/source/environment/rooms/wardrobe/wardrobe_bg.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 40,
+      "people": false
+    },
+    {
+      "id": "CLOTH-top.center-jacket-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/top_center-jacket_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-top.center-jacket-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/top_center-jacket_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-top.hoodie-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/top_hoodie_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-top.hoodie-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/top_hoodie_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-top.shirt-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/top_shirt_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-top.shirt-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/top_shirt_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-top.field-jacket-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/top_field-jacket_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-top.field-jacket-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/top_field-jacket_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-top.sweater-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/top_sweater_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-top.sweater-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/top_sweater_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-bottom.dark-trousers-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/bottom_dark-trousers_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-bottom.dark-trousers-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/bottom_dark-trousers_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-bottom.field-trousers-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/bottom_field-trousers_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-bottom.field-trousers-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/bottom_field-trousers_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-bottom.jeans-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/bottom_jeans_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-bottom.jeans-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/bottom_jeans_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-footwear.sneakers-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/footwear_sneakers_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-footwear.sneakers-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/footwear_sneakers_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-footwear.boots-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/footwear_boots_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-footwear.boots-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/footwear_boots_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-footwear.shoes-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/footwear_shoes_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-footwear.shoes-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/footwear_shoes_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-headwear.cap-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/headwear_cap_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-headwear.cap-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/headwear_cap_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-headwear.beanie-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/headwear_beanie_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-headwear.beanie-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/headwear_beanie_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-headwear.scarf-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/headwear_scarf_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-headwear.scarf-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/headwear_scarf_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-headwear.goggles-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/headwear_goggles_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-headwear.goggles-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/headwear_goggles_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-held.pencil-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/held_pencil_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-held.pencil-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/held_pencil_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-held.tablet-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/held_tablet_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-held.tablet-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/held_tablet_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-held.map-folder-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/held_map-folder_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-held.map-folder-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/held_map-folder_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-backpack.field-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/backpack_field_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-backpack.field-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/backpack_field_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-backpack.city-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/backpack_city_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-backpack.city-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/backpack_city_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-badge.meteo-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/badge_meteo_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-badge.meteo-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/badge_meteo_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-badge.aerology-M1",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/badge_aerology_m1.png",
+      "size": [
+        72,
+        96
+      ],
+      "frame": [
+        12,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "CLOTH-badge.aerology-M2",
+      "task": "W2-15",
+      "path": "assets/source/characters/avatar/clothes/badge_aerology_m2.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame": [
+        32,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "UI-PANEL-DARK",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_panel_dark.png",
+      "size": [
+        48,
+        48
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "UI-PANEL-RAISED",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_panel_raised.png",
+      "size": [
+        48,
+        48
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "UI-DIALOG",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_dialog.png",
+      "size": [
+        48,
+        48
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 7,
+      "people": false
+    },
+    {
+      "id": "UI-PAPER-SHEET",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_paper_sheet.png",
+      "size": [
+        48,
+        48
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "UI-PAPER-PERF",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_paper_perf.png",
+      "size": [
+        48,
+        48
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "UI-CLIPBOARD",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_clipboard.png",
+      "size": [
+        160,
+        220
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 12,
+      "people": false
+    },
+    {
+      "id": "UI-TAPE",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_tape.png",
+      "size": [
+        32,
+        24
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "UI-TAPE-END",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_tape_end.png",
+      "size": [
+        16,
+        24
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "UI-BTN-PRIMARY",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_btn_primary.png",
+      "size": [
+        48,
+        96
+      ],
+      "frame": [
+        48,
+        16
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "UI-BTN-SECONDARY",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_btn_secondary.png",
+      "size": [
+        48,
+        96
+      ],
+      "frame": [
+        48,
+        16
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "UI-BTN-GHOST",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_btn_ghost.png",
+      "size": [
+        48,
+        96
+      ],
+      "frame": [
+        48,
+        16
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "UI-KEY",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_key.png",
+      "size": [
+        80,
+        16
+      ],
+      "frame": [
+        16,
+        16
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "UI-CHOICE-CARD",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_choice_card.png",
+      "size": [
+        240,
+        48
+      ],
+      "frame": [
+        48,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "UI-LAMP",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_lamp.png",
+      "size": [
+        21,
+        7
+      ],
+      "frame": [
+        7,
+        7
+      ],
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "UI-STAMP-RECT",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_stamp_rect.png",
+      "size": [
+        192,
+        24
+      ],
+      "frame": [
+        64,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 2,
+      "people": false
+    },
+    {
+      "id": "UI-STAMP-ROUND",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_stamp_round.png",
+      "size": [
+        96,
+        32
+      ],
+      "frame": [
+        32,
+        32
+      ],
+      "alpha": "transparent",
+      "max_colors": 2,
+      "people": false
+    },
+    {
+      "id": "UI-BUBBLE",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_bubble.png",
+      "size": [
+        64,
+        32
+      ],
+      "frame": [
+        32,
+        32
+      ],
+      "alpha": "transparent",
+      "max_colors": 4,
+      "people": false
+    },
+    {
+      "id": "UI-TAB",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_tab.png",
+      "size": [
+        48,
+        32
+      ],
+      "frame": [
+        24,
+        32
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "UI-PORTRAIT-FRAME",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_portrait_frame.png",
+      "size": [
+        72,
+        72
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "UI-PASSEPARTOUT",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_passepartout.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "opaque",
+      "max_colors": 3,
+      "people": false
+    },
+    {
+      "id": "UI-PERF-DOT",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_perf_dot.png",
+      "size": [
+        16,
+        8
+      ],
+      "frame": [
+        8,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 4,
+      "people": false
+    },
+    {
+      "id": "UI-BOOK-SPREAD",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_book_spread.png",
+      "size": [
+        400,
+        240
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 16,
+      "people": false
+    },
+    {
+      "id": "UI-BOOK-STRAP",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_book_strap.png",
+      "size": [
+        200,
+        240
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 12,
+      "people": false
+    },
+    {
+      "id": "UI-JOURNAL-SPREAD",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_journal_spread.png",
+      "size": [
+        400,
+        240
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 16,
+      "people": false
+    },
+    {
+      "id": "UI-INDEX-TAB",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_index_tab.png",
+      "size": [
+        96,
+        16
+      ],
+      "frame": [
+        32,
+        16
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "UI-USER-CARD",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_user_card.png",
+      "size": [
+        144,
+        48
+      ],
+      "frame": [
+        48,
+        48
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "UI-LEVEL-NODE",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_level_node.png",
+      "size": [
+        96,
+        24
+      ],
+      "frame": [
+        24,
+        24
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "UI-TORN-TAPE",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_torn_tape.png",
+      "size": [
+        160,
+        64
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "UI-CERTIFICATE-PAPER",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_certificate_paper.png",
+      "size": [
+        320,
+        220
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 14,
+      "people": false
+    },
+    {
+      "id": "UI-ENVELOPE",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/ui_envelope.png",
+      "size": [
+        144,
+        32
+      ],
+      "frame": [
+        48,
+        32
+      ],
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "ICON-JOURNAL",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_journal.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-DISCOVERIES",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_discoveries.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-PERSON",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_person.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-GEAR",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_gear.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-SOUND-ON",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_sound-on.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-SOUND-OFF",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_sound-off.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-MOON",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_moon.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-SUN",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_sun.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-DAWN",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_dawn.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-LOCK",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_lock.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-UNLOCK",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_unlock.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-PAUSE",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_pause.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-BOOK",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_book.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-CHECK",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_check.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-CROSS",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_cross.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-ARROW-LEFT",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_arrow-left.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-ARROW-RIGHT",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_arrow-right.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-STAR",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_star.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-CLOCK",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_clock.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-TAPE",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_tape.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-STATION",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_station.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-THERMOMETER",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_thermometer.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-BAROMETER",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_barometer.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-VANE",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_vane.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-CLOUD",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_cloud.png",
+      "size": [
+        16,
+        16
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 5,
+      "people": false
+    },
+    {
+      "id": "ICON-MODE-MENTOR",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_mode_mentor_32.png",
+      "size": [
+        32,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": true
+    },
+    {
+      "id": "ICON-MODE-SOLO",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_mode_solo_32.png",
+      "size": [
+        32,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": true
+    },
+    {
+      "id": "ICON-MODE-BLITZ",
+      "task": "W2-16",
+      "path": "assets/source/ui/v3/icons/icon_mode_blitz_32.png",
+      "size": [
+        32,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": true
+    },
+    {
+      "id": "BRAND-MARK-26063",
+      "task": "W2-17",
+      "path": "assets/source/ui/brand/brand_mark_26063.png",
+      "size": [
+        96,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "BRAND-EMBLEM-64",
+      "task": "W2-17",
+      "path": "assets/source/ui/brand/brand_emblem_64.png",
+      "size": [
+        64,
+        64
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 12,
+      "people": false
+    },
+    {
+      "id": "BRAND-EMBLEM-32",
+      "task": "W2-17",
+      "path": "assets/source/ui/brand/brand_emblem_32.png",
+      "size": [
+        32,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "TITLE-MID",
+      "task": "W2-17",
+      "path": "assets/source/ui/brand/title_mid.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 32,
+      "people": false
+    },
+    {
+      "id": "TITLE-FG",
+      "task": "W2-17",
+      "path": "assets/source/ui/brand/title_fg.png",
+      "size": [
+        480,
+        270
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 24,
+      "people": false
+    },
+    {
+      "id": "REW-PENCIL-32",
+      "task": "W2-18",
+      "path": "assets/source/items/rewards/reward_pencil_32.png",
+      "size": [
+        32,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "REW-BADGE-THERMO-32",
+      "task": "W2-18",
+      "path": "assets/source/items/rewards/reward_badge-thermo_32.png",
+      "size": [
+        32,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "REW-BADGE-BARO-32",
+      "task": "W2-18",
+      "path": "assets/source/items/rewards/reward_badge-baro_32.png",
+      "size": [
+        32,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "REW-BADGE-VANE-32",
+      "task": "W2-18",
+      "path": "assets/source/items/rewards/reward_badge-vane_32.png",
+      "size": [
+        32,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "REW-LAMP-32",
+      "task": "W2-18",
+      "path": "assets/source/items/rewards/reward_lamp_32.png",
+      "size": [
+        32,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "REW-TOKEN-32",
+      "task": "W2-18",
+      "path": "assets/source/items/rewards/reward_token_32.png",
+      "size": [
+        32,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "REW-CERTIFICATE-32",
+      "task": "W2-18",
+      "path": "assets/source/items/rewards/reward_certificate_32.png",
+      "size": [
+        32,
+        32
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 10,
+      "people": false
+    },
+    {
+      "id": "REW-LAMP-DESK-M2",
+      "task": "W2-18",
+      "path": "assets/source/items/rewards/reward_lamp_desk_m2.png",
+      "size": [
+        16,
+        24
+      ],
+      "frame": null,
+      "alpha": "transparent",
+      "max_colors": 8,
+      "people": false
+    },
+    {
+      "id": "FX-STAMP-TOOL",
+      "task": "W2-19",
+      "path": "assets/source/effects/fx_stamp_tool.png",
+      "size": [
+        48,
+        20
+      ],
+      "frame": [
+        16,
+        20
+      ],
+      "alpha": "transparent",
+      "max_colors": 6,
+      "people": false
+    },
+    {
+      "id": "FX-PENCIL-CIRCLE",
+      "task": "W2-19",
+      "path": "assets/source/effects/fx_pencil_circle.png",
+      "size": [
+        96,
+        16
+      ],
+      "frame": [
+        24,
+        16
+      ],
+      "alpha": "transparent",
+      "max_colors": 2,
+      "people": false
+    },
+    {
+      "id": "FX-VALUE-TRAIL",
+      "task": "W2-19",
+      "path": "assets/source/effects/fx_value_trail.png",
+      "size": [
+        24,
+        8
+      ],
+      "frame": [
+        8,
+        8
+      ],
+      "alpha": "transparent",
+      "max_colors": 3,
+      "people": false
+    },
+    {
+      "id": "FX-WINDOW-GLOW",
+      "task": "W2-19",
+      "path": "assets/source/effects/fx_window_glow.png",
+      "size": [
+        32,
+        16
+      ],
+      "frame": [
+        16,
+        16
+      ],
+      "alpha": "transparent",
+      "max_colors": 3,
+      "people": false
+    }
+  ]
+}

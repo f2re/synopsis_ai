@@ -1,0 +1,25 @@
+GIMP Palette
+Name: 26063_Terrain_v1
+Columns: 4
+#
+# 26063: Позывной «Синоптик» — Семейство палитры: Поверхности и Тайлы v1
+# Гранитные набережные, дорожки, гравий, почва, газон, кромка воды.
+#
+ 45  50  60	stone_0_shadow
+ 70  76  88	stone_1
+101 108 120	stone_2
+141 147 156	stone_3_granite
+185 189 194	stone_4_kerb
+ 74  71  64	earth_dark
+107  58  44	earth_clay
+154  88  56	gravel_path
+ 15  36  27	grass_shadow
+ 27  58  42	grass_deep
+ 42  86  56	grass_mid
+ 63 117  70	grass_lawn
+106 154  85	grass_sunlit
+ 11  34  54	puddle_dark
+ 20  58  82	puddle_mid
+ 62 124 147	water_reflect
+233 228 214	snow_shadow
+244 247 250	snow_crust

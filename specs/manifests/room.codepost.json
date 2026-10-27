@@ -1,0 +1,145 @@
+{
+  "$schema": "https://synopsis-game.local/schemas/asset-manifest.schema.json",
+  "id": "room.codepost",
+  "title": "Интерьер рабочего поста «Кодовый пост» (станция 26063, сетка 480x270, масштаб M2)",
+  "version": "3.0.0",
+  "source": "assets/source/environment/archive/candidates/archive_interior_scene_v2.png",
+  "kind": "environment",
+  "logicalSize": {
+    "width": 480,
+    "height": 270
+  },
+  "pivot": {
+    "x": 0,
+    "y": 0
+  },
+  "layer": "L5",
+  "scaleFamily": "M2",
+  "composition": {
+    "window": {
+      "bounds": { "x": 16, "y": 32, "width": 88, "height": 112 },
+      "view": "L0-L2 courtyard, sky, day-phase sky & precipitation",
+      "sill": { "x": 16, "y": 144, "width": 88, "height": 6 },
+      "birdPerch": { "x": 72, "y": 140 }
+    },
+    "workDesk": {
+      "bounds": { "x": 120, "y": 128, "width": 220, "height": 110 },
+      "teletype": {
+        "bounds": { "x": 136, "y": 136, "width": 64, "height": 48 },
+        "catPerch": { "x": 144, "y": 126, "width": 48, "height": 18 },
+        "tapeEjection": { "x": 184, "y": 142, "width": 36, "height": 8 }
+      },
+      "deskLamp": {
+        "bounds": { "x": 124, "y": 112, "width": 24, "height": 40 },
+        "lightCone": { "origin": { "x": 136, "y": 122 }, "radius": 72, "angle": 60 }
+      },
+      "blankFormZone": {
+        "bounds": { "x": 210, "y": 150, "width": 120, "height": 80 },
+        "description": "Рабочая зона раскладки бланка КН-01, ленты и карандаша"
+      }
+    },
+    "cabinet": {
+      "bounds": { "x": 360, "y": 30, "width": 104, "height": 210 },
+      "handbookShelf": { "x": 368, "y": 80, "width": 88, "height": 36 },
+      "archiveBoxes": { "x": 368, "y": 126, "width": 88, "height": 96, "label": "26063" }
+    },
+    "wallInstruments": {
+      "dualClock": {
+        "bounds": { "x": 230, "y": 24, "width": 56, "height": 32 },
+        "utcDial": { "center": { "x": 244, "y": 40 }, "radius": 11 },
+        "localDial": { "center": { "x": 272, "y": 40 }, "radius": 11 }
+      },
+      "barograph": {
+        "bounds": { "x": 300, "y": 68, "width": 44, "height": 32 },
+        "drumCenter": { "x": 314, "y": 84 },
+        "drumRadius": 10
+      },
+      "pinboardMap": {
+        "bounds": { "x": 120, "y": 24, "width": 96, "height": 64 }
+      }
+    }
+  },
+  "interactiveZones": [
+    {
+      "id": "zone_blank",
+      "target": "blankFormZone",
+      "cursor": "pointer",
+      "tooltip": "Бланк телеграммы КН-01 (фокус ввода)"
+    },
+    {
+      "id": "zone_teletype",
+      "target": "teletype",
+      "cursor": "pointer",
+      "tooltip": "Аппарат телетайпа (печать и разрыв ленты)"
+    },
+    {
+      "id": "zone_handbook",
+      "target": "cabinet.handbookShelf",
+      "cursor": "help",
+      "tooltip": "Справочник синоптика (наставление)"
+    },
+    {
+      "id": "zone_barograph",
+      "target": "wallInstruments.barograph",
+      "cursor": "pointer",
+      "tooltip": "Барограф М-22 (тенденция давления)"
+    },
+    {
+      "id": "zone_cat",
+      "target": "teletype.catPerch",
+      "cursor": "pointer",
+      "tooltip": "Кот Барограф"
+    }
+  ],
+  "animatedProps": [
+    {
+      "id": "prop_teletype_print",
+      "name": "Каретка телетайпа и протяжка ленты",
+      "fps": 12,
+      "frames": 4,
+      "trigger": "onCharPrint",
+      "reducedMotion": "instant"
+    },
+    {
+      "id": "prop_barograph_drum",
+      "name": "Поворот барабана барографа",
+      "intervalSeconds": 30,
+      "shiftPixels": 1,
+      "reducedMotion": "silent"
+    },
+    {
+      "id": "prop_clock_seconds",
+      "name": "Секундная стрелка двухциферблатных часов",
+      "cadenceHz": 1,
+      "discretePositions": 8,
+      "reducedMotion": "step_every_minute"
+    },
+    {
+      "id": "prop_lamp_flicker",
+      "name": "Включение настольной лампы",
+      "frames": 3,
+      "durationsMs": [40, 60, 80],
+      "reducedMotion": "instant_on"
+    },
+    {
+      "id": "prop_window_weather",
+      "name": "Атмосферное состояние за окном",
+      "syncSource": "hub.layers.v3",
+      "phases": ["night", "dawn", "day", "golden_hour", "twilight", "white_nights"]
+    }
+  ],
+  "paletteTokens": [
+    "world.wood.oak",
+    "world.wood.walnut",
+    "world.metal.brass",
+    "world.metal.steel",
+    "world.paper.blank",
+    "world.window.warm",
+    "world.lamp.glow"
+  ],
+  "provenance": {
+    "origin": "Собственная авторская разработка для 26063: Позывной «Синоптик»",
+    "license": "CC0-1.0",
+    "author": "pixel-asset-designer"
+  }
+}

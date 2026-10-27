@@ -1,0 +1,52 @@
+{
+  "schema": "asset-manifest/v1",
+  "scene": "hub",
+  "status": "production",
+  "environment": "night",
+  "assets": [
+    {
+      "id": "hub.master.night",
+      "kind": "scene-base",
+      "source": "assets/source/environment/hub/master/hub_master_night.png",
+      "sourceSha256": "ce627eb9c4f1f8ef0a69e1e92d6c44f7d13c766a7bd12d6a73198eb617d24fed",
+      "runtimePath": "/hub/hub_master_night.png",
+      "runtimeWidth": 960,
+      "runtimeHeight": 540,
+      "runtimeFormat": "png",
+      "runtimeSha256": "df20e68e2435f4d5961f9ab127651ea3e58cc1b659a6a5d9ff9af2d1c3986fe2",
+      "origin": [0, 0],
+      "scalePolicy": "cover",
+      "reducedMotionFallback": "same-static-base"
+    },
+    {
+      "id": "hub.building.radar.night",
+      "kind": "building-sprite",
+      "source": "assets/source/environment/hub/candidates/night/hub_radar_night_candidate.png",
+      "runtimeZone": "hub.location.radar"
+    },
+    {
+      "id": "hub.building.aerology.night",
+      "kind": "building-sprite",
+      "source": "assets/source/environment/hub/candidates/night/hub_aerology_night_candidate.png",
+      "runtimeZone": "hub.location.aerology"
+    },
+    {
+      "id": "hub.building.synoptic-center.night",
+      "kind": "building-sprite",
+      "source": "assets/source/environment/hub/candidates/night/hub_synoptic_center_night_candidate.png",
+      "runtimeZone": "hub.location.synoptic-center"
+    },
+    {
+      "id": "hub.building.archive.night",
+      "kind": "building-sprite",
+      "source": "assets/source/environment/hub/candidates/night/hub_archive_night_candidate.png",
+      "runtimeZone": "hub.location.archive"
+    },
+    {
+      "id": "hub.building.tournament-hall.night",
+      "kind": "building-sprite",
+      "source": "assets/source/environment/hub/candidates/night/hub_tournament_hall_night_candidate.png",
+      "runtimeZone": "hub.location.tournament-hall"
+    }
+  ]
+}

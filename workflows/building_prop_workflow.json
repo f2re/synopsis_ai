@@ -1,0 +1,73 @@
+{
+  "name": "synopsis_building_prop_workflow",
+  "version": "1.0",
+  "nodes": {
+    "1": {
+      "inputs": {
+        "ckpt_name": "z_image_turbo.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple"
+    },
+    "2": {
+      "inputs": {
+        "lora_name": "synopsis_26063_style_v1.safetensors",
+        "strength_model": 0.85,
+        "strength_clip": 0.85,
+        "model": ["1", 0],
+        "clip": ["1", 1]
+      },
+      "class_type": "LoraLoader"
+    },
+    "3": {
+      "inputs": {
+        "text": "<26063_pixel_style> meteorological building, ochre facade, granite foundation, isolated on solid magenta background #FF00FF",
+        "clip": ["2", 1]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "4": {
+      "inputs": {
+        "text": "blurry, smooth gradients, 3d, photo, letters, numbers, mountains, trees inside building",
+        "clip": ["2", 1]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "5": {
+      "inputs": {
+        "width": 1024,
+        "height": 576,
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage"
+    },
+    "6": {
+      "inputs": {
+        "seed": 26063,
+        "steps": 12,
+        "cfg": 3.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0,
+        "model": ["2", 0],
+        "positive": ["3", 0],
+        "negative": ["4", 0],
+        "latent_image": ["5", 0]
+      },
+      "class_type": "KSampler"
+    },
+    "7": {
+      "inputs": {
+        "samples": ["6", 0],
+        "vae": ["1", 2]
+      },
+      "class_type": "VAEDecode"
+    },
+    "8": {
+      "inputs": {
+        "filename_prefix": "bld_prop_candidate",
+        "images": ["7", 0]
+      },
+      "class_type": "SaveImage"
+    }
+  }
+}

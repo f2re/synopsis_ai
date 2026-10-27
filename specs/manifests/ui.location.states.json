@@ -1,0 +1,11 @@
+{
+  "id": "ui.location.states",
+  "source": "assets/source/ui/location-states/candidates/ui_location_states_v2.png",
+  "kind": "ui",
+  "logicalSize": {"width": 256, "height": 24},
+  "pivot": {"x": 0, "y": 0},
+  "layer": "ui",
+  "paletteTokens": ["ui.primary", "ui.secondary", "ui.locked", "ui.active"],
+  "generated": [],
+  "provenance": {"origin": "project-authored generated candidate ART-BATCH-001", "author": "pixel-asset-designer workflow", "license": "project-internal-generated"}
+}

@@ -1,0 +1,15 @@
+[Unit]
+Description=ComfyUI GPU Generation Engine
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/user/synopsis-ai/comfyui
+Environment="CUDA_VISIBLE_DEVICES=0"
+Environment="PYTHONUNBUFFERED=1"
+ExecStart=/home/user/synopsis-ai/comfy-venv/bin/python main.py --listen 127.0.0.1 --port 8188 --cuda-device 0 --models-directory /home/user/synopsis-ai/models --output-directory /home/user/synopsis-ai/output
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=default.target

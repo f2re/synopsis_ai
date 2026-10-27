@@ -1,0 +1,104 @@
+{
+  "$schema": "https://synopsis-game.local/schemas/asset-manifest.schema.json",
+  "id": "npc.level1",
+  "title": "Персонажи кампуса (NPC): наставник Ладожская, техник Семён, лаборантка",
+  "version": "3.0.0",
+  "source": "assets/source/characters/base/candidates/avatar_base_sheet_v2.png",
+  "kind": "sprite",
+  "logicalSize": {
+    "width": 384,
+    "height": 128
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 1.0
+  },
+  "layer": "L8",
+  "palette": "assets/source/palettes/master_26063_v2.gpl",
+  "characters": [
+    {
+      "id": "npc_mentor_ladozhskaya",
+      "fullName": "Вера Павловна Ладожская",
+      "role": "Ведущий синоптик станции 26063, наставник",
+      "portrait": {
+        "scaleFamily": "M3",
+        "size": { "width": 64, "height": 64 },
+        "expressions": {
+          "neutral": { "frame": 0, "description": "Внимательный, доброжелательный взгляд наставника" },
+          "smile": { "frame": 1, "description": "Сдержанная поощряющая улыбка" },
+          "thoughtful": { "frame": 2, "description": "Задумчивый взгляд при разборе тонких правил" },
+          "surprised": { "frame": 3, "description": "Удивление редкой синоптической ситуации" },
+          "approval": { "frames": 4, "fps": 6, "loop": false, "description": "Одобряющий кивок головой" },
+          "glasses_up": { "frames": 3, "fps": 4, "loop": false, "description": "Очки сдвигаются на лоб при методическом разборе" }
+        }
+      },
+      "figure": {
+        "scaleFamily": "M1",
+        "size": { "width": 24, "height": 44 },
+        "location": "Хаб у входа в Оперативный зал",
+        "animations": {
+          "idle": { "frames": 4, "fps": 4, "loop": true },
+          "walk": { "frames": 6, "fps": 8, "loop": true }
+        }
+      }
+    },
+    {
+      "id": "npc_tech_semen",
+      "fullName": "Семён",
+      "role": "Техник-метеоролог метеоплощадки",
+      "figure": {
+        "scaleFamily": "M1",
+        "size": { "width": 24, "height": 44 },
+        "location": "Метеоплощадка, психрометрическая будка БП",
+        "animations": {
+          "idle": { "frames": 4, "fps": 4, "loop": true },
+          "walk": { "frames": 6, "fps": 8, "loop": true },
+          "open_screen": { "frames": 6, "fps": 6, "loop": false, "description": "Открытие дверцы жалюзийной будки БП" },
+          "write_log": { "frames": 6, "fps": 6, "loop": false, "description": "Запись отсчётов термометров в книжку КМ-1" }
+        },
+        "lines": [
+          "Срок через двадцать минут, пора к будке.",
+          "Анемометр М-63М сегодня ровно держит, порывы до двенадцати метров.",
+          "В баке осадкомера сегодня пусто, только сухой снег на дне.",
+          "Главное в нашем деле — точность отсчёта по смоченному термометру.",
+          "Барометр-анероид сверен с ртутным, поправка плюс ноль целых три.",
+          "На Финском туман садится, видимость падает."
+        ]
+      }
+    },
+    {
+      "id": "npc_lab_tatyana",
+      "fullName": "Татьяна",
+      "role": "Лаборантка гидрометеорологического архива",
+      "figure": {
+        "scaleFamily": "M1",
+        "size": { "width": 22, "height": 42 },
+        "location": "Дорожка между Архивом и Кодовым постом",
+        "animations": {
+          "idle": { "frames": 4, "fps": 4, "loop": true },
+          "walk": { "frames": 6, "fps": 8, "loop": true },
+          "drop_paper": { "frames": 4, "fps": 6, "loop": false, "description": "Редкий казус: вылетает перфокарта/лист архива и ловится" }
+        },
+        "lines": [
+          "Несу телеграммы за девяносто первый год на сверку.",
+          "В архиве все бланки по стандарту разложены, порядок железный!"
+        ]
+      }
+    }
+  ],
+  "paletteTokens": [
+    "character.skin.light",
+    "character.skin.shadow",
+    "character.hair.grey",
+    "character.hair.brown",
+    "character.uniform.navy",
+    "character.uniform.wool",
+    "character.jacket.canvas",
+    "character.coat.labwhite"
+  ],
+  "provenance": {
+    "origin": "Собственная авторская разработка для 26063: Позывной «Синоптик»",
+    "license": "CC0-1.0",
+    "author": "pixel-asset-designer"
+  }
+}

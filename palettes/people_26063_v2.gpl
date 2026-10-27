@@ -1,0 +1,58 @@
+GIMP Palette
+Name: 26063_People_v2
+Columns: 4
+#
+# 26063: Позывной «Синоптик» — Семейство палитры: Персонажи и Портреты v2
+# Управляемые цветовые рампы: кожа (8), волосы (6), трикотаж/форма (6), воротник (4),
+# контуры (4), стекло/глаза (4), теплый свет (3), холодная тень (3), акценты (3).
+#
+# --- Кожа: естественный объем, возрастные тени и блики (8 оттенков) ---
+250 224 200	skin_specular
+242 201 168	skin_light
+226 178 142	skin_mid
+212 154 120	skin_base
+188 124  88	skin_warm_shadow
+158  96  66	skin_shadow
+124  72  48	skin_deep_shadow
+ 92  52  36	skin_occlusion
+# --- Волосы: седина, приглушенный блонд, глубина прядей (6 оттенков) ---
+220 224 232	hair_silver_specular
+178 182 192	hair_silver_mid
+136 140 152	hair_ash_shadow
+194 162 112	hair_blond_accent
+108  76  54	hair_brown_base
+ 58  42  34	hair_dark_root
+# --- Ткань основная: шерстяной кардиган / синяя морская форма (6 оттенков) ---
+ 68  92 136	wool_navy_highlight
+ 44  66 106	wool_navy_mid
+ 28  46  82	wool_navy_base
+ 18  30  58	wool_navy_shadow
+122  48  52	cardigan_burgundy_base
+ 78  28  34	cardigan_burgundy_shadow
+# --- Ткань вторичная: воротник, манжеты, халат (4 оттенка) ---
+246 248 252	collar_pure
+228 222 210	collar_cream
+182 174 160	collar_shadow
+132 126 116	collar_deep
+# --- Контуры и черты лица (4 оттенка) ---
+ 22  26  36	ink_deep
+ 34  38  50	ink_primary
+ 56  62  76	ink_soft
+ 86  64  58	ink_warm_line
+# --- Металл, стекло очков, глаза (4 оттенка) ---
+255 255 255	glass_glint
+180 188 198	glass_rim_light
+116 124 136	glass_rim_mid
+ 60  76  90	pupil_iris
+# --- Теплый свет: лампа поста, золотистый акцент (3 оттенка) ---
+255 236 178	lamp_glow_hot
+245 198 112	lamp_glow_mid
+198 140  72	lamp_glow_falloff
+# --- Холодная тень: прибалтийский рассеянный свет (3 оттенка) ---
+108 136 172	cool_ambient_light
+ 64  84 118	cool_ambient_mid
+ 36  48  74	cool_ambient_deep
+# --- Акценты синоптика (3 оттенка) ---
+204  56  50	synoptic_pencil_red
+ 38  84 162	synoptic_pencil_blue
+222 174  64	brass_badge_pin

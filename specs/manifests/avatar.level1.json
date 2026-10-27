@@ -1,0 +1,93 @@
+{
+  "$schema": "https://synopsis-game.local/schemas/asset-manifest.schema.json",
+  "id": "avatar.level1",
+  "title": "Модульный аватар стажёра-синоптика в семействах M1 и M2 с поддержкой гардероба",
+  "version": "3.0.0",
+  "source": "assets/source/characters/base/candidates/avatar_base_sheet_v2.png",
+  "kind": "sprite",
+  "logicalSize": {
+    "width": 384,
+    "height": 192
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 1.0
+  },
+  "layer": "L8",
+  "palette": "assets/source/palettes/master_26063_v2.gpl",
+  "scales": {
+    "M1": {
+      "frameSize": { "width": 32, "height": 48 },
+      "pivot": { "x": 16, "y": 48 },
+      "purpose": "Перемещение по улице и двору хаба"
+    },
+    "M2": {
+      "frameSize": { "width": 48, "height": 64 },
+      "pivot": { "x": 24, "y": 64 },
+      "purpose": "Работа в интерьере Кодового поста за столом телетайпа"
+    }
+  },
+  "layerStack": [
+    { "order": 0, "id": "body", "name": "Базовое тело (кожа, пропорции)" },
+    { "order": 1, "id": "face", "name": "Мимика и глаза" },
+    { "order": 2, "id": "bottom", "name": "Брюки / юбка" },
+    { "order": 3, "id": "shoes", "name": "Обувь" },
+    { "order": 4, "id": "top", "name": "Верхняя одежда (куртка / рубашка / свитер)" },
+    { "order": 5, "id": "hair", "name": "Причёска" },
+    { "order": 6, "id": "accessory", "name": "Аксессуары (очки, синоптический значок)" },
+    { "order": 7, "id": "hat", "name": "Головной убор" }
+  ],
+  "states": {
+    "idle": {
+      "frames": 4,
+      "fps": 4,
+      "loop": true,
+      "description": "Базовое спокойное дыхание стоя (M1)"
+    },
+    "walk": {
+      "frames": 6,
+      "fps": 8,
+      "loop": true,
+      "description": "Цикл шага с фиксацией ступни на пиксельной сетке (M1)"
+    },
+    "work_table": {
+      "frames": 6,
+      "fps": 6,
+      "loop": true,
+      "description": "Посадка за столом кодового поста: взгляд на телетайп, правая рука с карандашом над бланком (M2)"
+    },
+    "think": {
+      "frames": 4,
+      "fps": 4,
+      "loop": false,
+      "description": "Сомнение: карандаш прижат к подбородку, взгляд вверх (M2)"
+    },
+    "celebrate": {
+      "frames": 6,
+      "fps": 8,
+      "loop": false,
+      "description": "Триумф: сжатый кулак «Есть!» без вставания из-за стола при серии x5 (M2)"
+    },
+    "mistake": {
+      "frames": 4,
+      "fps": 4,
+      "loop": false,
+      "description": "Осечка: покачивание головой, поиск в справочнике (M2)"
+    }
+  },
+  "wardrobeCompatibility": {
+    "manifestRef": "assets/manifests/items.wardrobe.json",
+    "supportedSlots": ["top", "bottom", "shoes", "hair", "hat", "accessory"],
+    "anchorPoints": {
+      "head": { "x": 16, "y": 12 },
+      "torso": { "x": 16, "y": 24 },
+      "hands": { "x": 16, "y": 28 },
+      "feet": { "x": 16, "y": 46 }
+    }
+  },
+  "provenance": {
+    "origin": "Собственная авторская разработка для 26063: Позывной «Синоптик»",
+    "license": "CC0-1.0",
+    "author": "pixel-asset-designer"
+  }
+}

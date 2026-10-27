@@ -1,0 +1,54 @@
+# synopsis-assets-mcp configuration
+server:
+  name: "synopsis-assets"
+  version: "1.0.0"
+  host: "0.0.0.0"
+  port: 9200
+  base_url: "http://10.7.88.12:9200"
+
+comfyui:
+  host: "127.0.0.1"
+  port: 8188
+  base_url: "http://127.0.0.1:8188"
+  cuda_device: 0
+
+pixellab:
+  api_url: "https://api.pixellab.ai/mcp"
+  enabled: true
+  api_key_env: "PIXELLAB_API_KEY"
+
+paths:
+  repo_root: "/home/user/synopsis-ai/synopsis_game"
+  spec_path: "assets/source/kn01_level1.image-spec.json"
+  master_palette: "assets/source/palettes/master_26063_v2.gpl"
+  people_palette: "assets/source/palettes/people_26063_v1.gpl"
+  candidates_dir: "/home/user/synopsis-ai/output/candidates"
+  models_dir: "/home/user/synopsis-ai/models"
+  lora_dir: "/home/user/synopsis-ai/models/loras"
+  workflows_dir: "/home/user/synopsis-ai/workflows"
+
+models:
+  primary:
+    id: "flux2_klein_4b"
+    name: "FLUX.2 Klein 4B"
+    type: "diffusion"
+    license: "Apache-2.0"
+    role: "primary_generator_editor"
+  fast_draft:
+    id: "z_image_turbo"
+    name: "Z-Image Turbo"
+    steps: 8
+    license: "Apache-2.0"
+    role: "fast_candidates"
+  lora_base:
+    id: "z_image_base"
+    name: "Z-Image Base 6B"
+    license: "Apache-2.0"
+    role: "style_fine_tuning"
+  fallback_controlnet:
+    id: "sdxl"
+    name: "SDXL + ControlNet"
+    role: "geometry_locked_pairs"
+  style_lora:
+    name: "synopsis_26063_style_v1.safetensors"
+    trigger: "<26063_pixel_style>"

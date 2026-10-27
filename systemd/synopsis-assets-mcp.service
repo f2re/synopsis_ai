@@ -1,0 +1,14 @@
+[Unit]
+Description=Synopsis Assets MCP & REST Server
+After=network.target comfyui.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/user/synopsis-ai/synopsis_game/services/asset-generator
+Environment="PYTHONUNBUFFERED=1"
+ExecStart=/home/user/synopsis-ai/mcp-venv/bin/python server.py
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=default.target

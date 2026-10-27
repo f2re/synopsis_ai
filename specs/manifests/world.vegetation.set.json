@@ -1,0 +1,11 @@
+{
+  "id": "world.vegetation.set",
+  "source": "assets/source/environment/vegetation/candidates/vegetation_sheet_v2.png",
+  "kind": "environment",
+  "logicalSize": {"width": 256, "height": 64},
+  "pivot": {"x": 32, "y": 63},
+  "layer": "L4",
+  "paletteTokens": ["world.vegetation.green", "world.flower.accent"],
+  "generated": [],
+  "provenance": {"origin": "project-authored generated candidate ART-BATCH-001", "author": "pixel-asset-designer workflow", "license": "project-internal-generated"}
+}

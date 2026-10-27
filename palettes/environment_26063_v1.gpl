@@ -1,0 +1,35 @@
+GIMP Palette
+Name: 26063_Environment_v1
+Columns: 4
+#
+# 26063: Позывной «Синоптик» — Семейство палитры: Окружение v1
+# Небо день/ночь/сумерки, вода Финского залива, хвоя, берёзы, снег.
+#
+  7  13  30	sky_night_0
+ 14  26  53	sky_night_1
+ 24  40  77	sky_night_2
+ 38  59 102	sky_night_3
+ 58  83 131	sky_night_4
+ 75  58 110	twilight_0
+122  76 128	twilight_1
+178  96 127	twilight_2
+224 138 122	twilight_3
+244 185 138	twilight_4
+ 94 143 196	sky_day_0
+141 183 222	sky_day_1
+196 221 240	sky_day_2
+ 11  34  54	water_0
+ 20  58  82	water_1
+ 34  86 111	water_2
+ 62 124 147	water_3
+141 191 207	water_4
+ 15  36  27	foliage_0
+ 27  58  42	foliage_1
+ 42  86  56	foliage_2
+ 63 117  70	foliage_3
+106 154  85	foliage_4
+163 196 107	foliage_5
+ 74  71  64	birch_bark
+185 178 160	birch_light
+233 228 214	snow_shadow
+244 247 250	snow_pure

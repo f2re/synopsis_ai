@@ -1,0 +1,27 @@
+GIMP Palette
+Name: 26063_UI_v1
+Columns: 4
+#
+# 26063: Позывной «Синоптик» — Семейство палитры: Интерфейс v1
+# Тёмно-бирюзовые панели, бумага, текст, акценты кнопок, статусы.
+#
+ 12  42  51	ui_teal_bg
+ 20  63  76	ui_teal_border_dark
+ 27  86  96	ui_teal_panel
+ 54 124 139	ui_teal_border_light
+111 158 149	ui_teal_highlight
+191 175 138	paper_shadow
+226 214 182	paper_base
+243 236 216	paper_highlight
+ 30  36  48	ink_primary
+ 42  48  63	ink_secondary
+ 75  82  99	ink_tertiary
+184  66  58	pencil_error
+ 47 110  90	stamp_approved
+184 134  38	action_accent_dark
+242 199  92	action_accent_base
+255 221 131	action_accent_light
+ 95 175 120	state_success
+216 154  82	state_warning
+214  94  94	state_error
+127 184 216	state_info

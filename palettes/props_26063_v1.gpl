@@ -1,0 +1,27 @@
+GIMP Palette
+Name: 26063_Props_v1
+Columns: 4
+#
+# 26063: Позывной «Синоптик» — Семейство палитры: Приборы и Пропсы v1
+# Металл, латунь, дерево, бумага, стекло, шкалы, чернила, штампы, индикаторы.
+#
+ 30  36  48	ink_body
+ 45  50  60	metal_dark
+ 70  76  88	metal_mid
+101 108 120	metal_steel
+141 147 156	metal_bright
+185 189 194	scale_plate
+184 134  38	brass_dark
+242 199  92	brass_mid
+255 221 131	brass_highlight
+ 74  71  64	wood_bark
+154  88  56	wood_varnish
+191 175 138	paper_shadow
+226 214 182	paper_base
+243 236 216	paper_white
+184  66  58	pencil_red
+ 47 110  90	stamp_green
+ 95 175 120	indicator_active
+216 154  82	indicator_warning
+214  94  94	indicator_alarm
+127 184 216	glass_highlight

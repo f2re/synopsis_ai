@@ -1,0 +1,84 @@
+{
+  "$schema": "https://synopsis-game.local/schemas/asset-manifest.schema.json",
+  "id": "brand.mark.v3",
+  "title": "Фирменный знак «26063», эмблема станции и экран загрузки",
+  "version": "3.0.0",
+  "source": "assets/source/ui/icons/candidates/brand_mark_sheet_v2.png",
+  "kind": "ui",
+  "logicalSize": {
+    "width": 256,
+    "height": 256
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "layer": "ui",
+  "canonicalTitle": "26063: Позывной «Синоптик»",
+  "stationIndex": "26063",
+  "lettering": {
+    "large": {
+      "dimensions": { "width": 128, "height": 32 },
+      "purpose": "Титульный экран S01",
+      "font": "PixCyrillic-Bold",
+      "colors": {
+        "face": "#F4B98A",
+        "shadow": "#A05518",
+        "outline": "#18284D"
+      }
+    },
+    "medium": {
+      "dimensions": { "width": 64, "height": 16 },
+      "purpose": "Фасадные вывески и архивные папки в хабе",
+      "colors": {
+        "face": "#D47A2A",
+        "shadow": "#5E8FC4"
+      }
+    }
+  },
+  "emblem": {
+    "size64": {
+      "dimensions": { "width": 64, "height": 64 },
+      "composition": "Символ синоптической станции (кружок N=8), стрелка ветра ddff, изобара 1015 гПа, латунный обод с гравировкой «26063 САНКТ-ПЕТЕРБУРГ»",
+      "nativeGrid": true,
+      "downscaled": false
+    },
+    "size32": {
+      "dimensions": { "width": 32, "height": 32 },
+      "composition": "Лаконичный круг метеостанции со стрелкой ветра и цифрами «26063»",
+      "nativeGrid": true,
+      "downscaled": false
+    }
+  },
+  "loadingScreenS00": {
+    "background": "#070D1E",
+    "emblemPosition": { "x": 240, "y": 105 },
+    "progressBar": {
+      "x": 160,
+      "y": 170,
+      "width": 160,
+      "height": 8,
+      "fill": "#D47A2A",
+      "track": "#18284D",
+      "border": "#3A5383"
+    },
+    "statusText": {
+      "font": "PixCyrillic",
+      "size": 8,
+      "color": "#F3F7FA",
+      "defaultText": "Настройка канала связи со станцией 26063..."
+    }
+  },
+  "paletteTokens": [
+    "ui.brand.amber",
+    "ui.brand.amber_light",
+    "ui.brand.gold",
+    "ui.brand.navy_deep",
+    "world.metal.brass"
+  ],
+  "provenance": {
+    "origin": "Собственная авторская разработка для 26063: Позывной «Синоптик»",
+    "license": "CC0-1.0",
+    "author": "ui-pixel-designer"
+  }
+}

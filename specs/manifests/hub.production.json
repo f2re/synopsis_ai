@@ -1,0 +1,36 @@
+{
+  "schema": "asset-manifest/v1",
+  "scene": "hub",
+  "status": "production",
+  "assets": [
+    {
+      "id": "hub.master.approved",
+      "kind": "scene-base",
+      "source": "image-gen-1(20261025-183207).png",
+      "sourceSha256": "3efc212bdcd7eaaacac119d20cbd89f83ab62d3d9761aafd5abdacae5660a340",
+      "runtimeModule": "packages/world-engine/src/assets/hub/masterAsset.ts",
+      "runtimeWidth": 960,
+      "runtimeHeight": 540,
+      "runtimeFormat": "webp",
+      "runtimeSha256": "a1ac9abc8a4bc0e428040ef96f0f7c0a9117b0c3967b72c3b881782d0c8dfd08",
+      "runtimeBytes": 62434,
+      "origin": [0, 0],
+      "scalePolicy": "cover",
+      "reducedMotionFallback": "same-static-base"
+    },
+    {
+      "id": "hub.interaction.semantic-zones",
+      "kind": "runtime-overlay",
+      "source": "assets/scenes/hub/hub_master.scene.json",
+      "runtimeModule": "packages/world-engine/src/scenes/hub/HubScene.ts",
+      "visualDefault": "transparent",
+      "pointerFeedback": "gold-outline"
+    },
+    {
+      "id": "hub.account.menu",
+      "kind": "runtime-ui",
+      "runtimeModule": "apps/web/src/App.tsx",
+      "trigger": ["hub.profile", "hub.settings"]
+    }
+  ]
+}

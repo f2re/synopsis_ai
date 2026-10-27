@@ -1,0 +1,100 @@
+{
+  "$schema": "https://synopsis-game.local/schemas/asset-manifest.schema.json",
+  "id": "rewards.level1",
+  "title": "Награды уровня КН-01 (карандаш, значки, лампа дежурного, жетон, свидетельство)",
+  "version": "3.0.0",
+  "source": "assets/source/items/wardrobe/top_center_jacket.png",
+  "kind": "item-collection",
+  "logicalSize": {
+    "width": 256,
+    "height": 256
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "layer": "ui",
+  "palette": "assets/source/palettes/master_26063_v2.gpl",
+  "rewards": [
+    {
+      "id": "reward_intern_pencil",
+      "name": "Карандаш стажёра",
+      "unlockCondition": "Первая успешно завершённая смена С1",
+      "placement": ["инвентарь", "в руке персонажа за столом в посту"],
+      "icon": { "size": { "width": 32, "height": 32 }, "asset": "icon_pencil_32.png" },
+      "propM2": { "size": { "width": 12, "height": 3 }, "color": "#2563EB" },
+      "lore": "Синий гранёный карандаш гидрометеорологической службы со штампом «СИНОПТИК-ТМ»"
+    },
+    {
+      "id": "badge_thermometer",
+      "name": "Значок «Термометр»",
+      "unlockCondition": "Смена С2 успешно сдана",
+      "placement": ["профиль наблюдателя", "лацкан кителя"],
+      "icon": { "size": { "width": 32, "height": 32 }, "asset": "badge_thermometer_32.png" },
+      "lore": "Эмалированный латунный значок с серебристым капилляром психрометра"
+    },
+    {
+      "id": "badge_barometer",
+      "name": "Значок «Барометр»",
+      "unlockCondition": "Смена С3 успешно сдана",
+      "placement": ["профиль наблюдателя", "лацкан кителя"],
+      "icon": { "size": { "width": 32, "height": 32 }, "asset": "badge_barometer_32.png" },
+      "lore": "Миниатюрная шкала барометра-анероида в латунной оправе"
+    },
+    {
+      "id": "badge_weathervane",
+      "name": "Значок «Флюгер»",
+      "unlockCondition": "Смена С4 успешно сдана",
+      "placement": ["профиль наблюдателя", "лацкан кителя"],
+      "icon": { "size": { "width": 32, "height": 32 }, "asset": "badge_weathervane_32.png" },
+      "lore": "Силуэт флюгера Вильда с противовесом и розой ветров"
+    },
+    {
+      "id": "reward_duty_lamp",
+      "name": "Лампа дежурного",
+      "unlockCondition": "Серия из 10 безошибочных ответов (х10 streak)",
+      "placement": ["рабочий стол Кодового поста", "инвентарь уюта"],
+      "icon": { "size": { "width": 32, "height": 32 }, "asset": "icon_lamp_32.png" },
+      "propM2": { "size": { "width": 24, "height": 40 }, "asset": "prop_lamp_banker_m2.png" },
+      "lore": "Настольная лампа на массивном латунном основании с тёмно-зелёным абажуром"
+    },
+    {
+      "id": "reward_codepost_token",
+      "name": "Жетон «Кодовый пост 26063»",
+      "unlockCondition": "Сдача экзамена и получение допуска к дежурству",
+      "placement": ["профиль", "витрина достижений"],
+      "icon": { "size": { "width": 32, "height": 32 }, "asset": "token_codepost_32.png" },
+      "lore": "Памятный рельефный латунный жетон станции 26063 с лавровой ветвью и синоптическим кругом"
+    },
+    {
+      "id": "reward_certificate",
+      "name": "Свидетельство наблюдателя станции 26063",
+      "unlockCondition": "Успешная сдача экзаменационного допуска",
+      "placement": ["настенная рамка в кодовом посту", "профиль"],
+      "icon": { "size": { "width": 32, "height": 32 }, "asset": "icon_cert_32.png" },
+      "propM2": { "size": { "width": 48, "height": 36 }, "asset": "prop_cert_frame_m2.png" },
+      "legalDisclaimer": "Свидетельство учебной симуляции «26063: Позывной «Синоптик»». Не является документом государственного образца и не имитирует реальные государственные ведомства.",
+      "lore": "Настенный диплом в деревянной рамке под стеклом с круглой синей печатью «КН-01 ОСВОЕН»"
+    },
+    {
+      "id": "reward_companion_tit",
+      "name": "Спутник «Большая синица»",
+      "unlockCondition": "Находка птицы на метеоплощадке хаба",
+      "placement": ["анимированный спутник рядом с персонажем"],
+      "icon": { "size": { "width": 32, "height": 32 }, "asset": "icon_tit_32.png" },
+      "lore": "Пернатый завсегдатай метеоплощадки, доверчиво порхающий у плеча"
+    }
+  ],
+  "paletteTokens": [
+    "world.metal.brass",
+    "world.metal.gold",
+    "world.metal.silver",
+    "world.lamp.shade_green",
+    "ui.brand.amber"
+  ],
+  "provenance": {
+    "origin": "Собственная авторская разработка для 26063: Позывной «Синоптик»",
+    "license": "CC0-1.0",
+    "author": "pixel-asset-designer"
+  }
+}

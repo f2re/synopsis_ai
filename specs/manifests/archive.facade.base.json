@@ -1,0 +1,12 @@
+{
+  "id": "archive.facade.base",
+  "source": "assets/source/environment/archive/candidates/archive_facade_v2.png",
+  "kind": "environment",
+  "logicalSize": {"width": 128, "height": 88},
+  "pivot": {"x": 64, "y": 80},
+  "layer": "L3",
+  "paletteTokens": ["world.architecture.cream", "world.wood.warm", "world.window.warm", "world.vegetation.green"],
+  "interactionBounds": {"x": 15, "y": 16, "width": 106, "height": 64},
+  "generated": [],
+  "provenance": {"origin": "project-authored generated candidate ART-BATCH-001", "author": "pixel-asset-designer workflow", "license": "project-internal-generated"}
+}

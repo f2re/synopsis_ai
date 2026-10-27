@@ -1,0 +1,150 @@
+{
+  "version": 3,
+  "policy": {
+    "principle": "art-purpose-first",
+    "globalMajorityDownsample": false,
+    "universalWorkflowForbidden": true,
+    "technicalPassIsArtPass": false,
+    "reviewScale": "native-logical-size",
+    "rawMayContainAntialiasing": true,
+    "colorCountIsDiagnosticNotQualityScore": true
+  },
+  "profiles": {
+    "dialogue_portrait": {
+      "workflow": "portrait_character_v3",
+      "sourceLogicalSize": {"width": 256, "height": 320},
+      "minimumLogicalSize": {"width": 192, "height": 240},
+      "generationScale": 2,
+      "candidateCount": 6,
+      "palette": {"role": "people", "targetColors": [48, 96], "softMaxColors": 128, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "fine", "singlePixelFacialDetailAllowed": true, "antiAliasInRawAllowed": true, "antiAliasInFinal": "controlled", "majorityDownsample": false},
+      "composition": {"crop": "bust", "headHeightRatio": [0.28, 0.42], "faceWidthPixelsMinimum": 88, "backgroundPriority": "low", "expressionPriority": "high"},
+      "artPriorities": ["human_presence", "expression", "age", "character_identity", "professional_identity", "warm_cool_light_balance"],
+      "requiredReview": ["adult_proportions", "age_readability", "facial_expression", "eyes_readable", "mouth_readable", "hair_identity", "professional_identity", "not_chibi", "not_toy_like"]
+    },
+    "profile_portrait": {
+      "workflow": "profile_portrait_v2",
+      "sourceLogicalSize": {"width": 160, "height": 160},
+      "minimumLogicalSize": {"width": 144, "height": 144},
+      "generationScale": 2,
+      "candidateCount": 4,
+      "palette": {"role": "people", "targetColors": [36, 72], "softMaxColors": 96, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "fine", "singlePixelFacialDetailAllowed": true, "antiAliasInRawAllowed": true, "antiAliasInFinal": "controlled", "majorityDownsample": false},
+      "composition": {"crop": "head_shoulders", "backgroundPriority": "low", "expressionPriority": "high"},
+      "artPriorities": ["identity", "expression", "age", "readability"]
+    },
+    "world_character": {
+      "workflow": "world_character_sprite_v3",
+      "sourceLogicalSize": {"width": 32, "height": 48},
+      "generationScale": 8,
+      "candidateCount": 4,
+      "palette": {"role": "people", "targetColors": [24, 48], "softMaxColors": 64, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "medium", "singlePixelFacialDetailAllowed": true, "antiAliasInRawAllowed": true, "antiAliasInFinal": "forbidden", "majorityDownsample": false},
+      "composition": {"crop": "full_body", "backgroundPriority": "none", "expressionPriority": "medium"},
+      "artPriorities": ["silhouette", "character_identity", "clothing_materials", "pose", "gesture", "color_separation"],
+      "requiredReview": ["silhouette_readable", "character_not_generic", "clothing_identity", "pose_readable", "consistent_anchor"]
+    },
+    "companion_sprite": {
+      "workflow": "companion_sprite_v2",
+      "sourceLogicalSize": {"width": 48, "height": 48},
+      "generationScale": 8,
+      "candidateCount": 4,
+      "palette": {"role": "people", "targetColors": [24, 48], "softMaxColors": 64, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "medium", "antiAliasInRawAllowed": true, "antiAliasInFinal": "forbidden", "majorityDownsample": false},
+      "artPriorities": ["species_identity", "pose", "fur_or_feather_ramps", "expression", "silhouette"]
+    },
+    "architecture_landmark": {
+      "workflow": "architecture_building_v3",
+      "minimumLogicalSize": {"width": 96, "height": 96},
+      "generationScale": 4,
+      "candidateCount": 4,
+      "palette": {"role": "architecture", "targetColors": [48, 96], "softMaxColors": 128, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "medium", "antiAliasInRawAllowed": true, "antiAliasInFinal": "controlled", "majorityDownsample": false},
+      "artPriorities": ["unique_silhouette", "material_readability", "location_identity", "warm_windows", "weather_response", "human_scale_details"],
+      "requiredReview": ["building_class_readable", "required_features_present", "not_generic_house", "materials_readable", "location_identity"]
+    },
+    "architecture_small": {
+      "workflow": "architecture_small_v2",
+      "minimumLogicalSize": {"width": 48, "height": 48},
+      "generationScale": 6,
+      "candidateCount": 4,
+      "palette": {"role": "architecture", "targetColors": [32, 72], "softMaxColors": 96, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "medium", "antiAliasInRawAllowed": true, "antiAliasInFinal": "controlled", "majorityDownsample": false},
+      "artPriorities": ["silhouette", "materials", "weathering", "functional_identity"]
+    },
+    "interactive_object": {
+      "workflow": "interactive_object_v2",
+      "minimumLogicalSize": {"width": 32, "height": 32},
+      "generationScale": 6,
+      "candidateCount": 4,
+      "palette": {"role": "props", "targetColors": [28, 64], "softMaxColors": 80, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "medium", "antiAliasInRawAllowed": true, "antiAliasInFinal": "controlled", "majorityDownsample": false},
+      "artPriorities": ["function_readability", "material_readability", "interaction_state", "lore_specificity", "silhouette"]
+    },
+    "prop_sprite": {
+      "workflow": "prop_object_v3",
+      "minimumLogicalSize": {"width": 24, "height": 24},
+      "generationScale": 8,
+      "candidateCount": 4,
+      "palette": {"role": "props", "targetColors": [24, 56], "softMaxColors": 72, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "fine-medium", "antiAliasInRawAllowed": true, "antiAliasInFinal": "controlled", "majorityDownsample": false},
+      "artPriorities": ["instant_recognition", "material_texture", "lore_specificity", "wear", "warm_cool_reflection"]
+    },
+    "terrain_tile": {
+      "workflow": "terrain_tile_v3",
+      "sourceLogicalSize": {"width": 32, "height": 32},
+      "generationScale": 8,
+      "candidateCount": 4,
+      "palette": {"role": "terrain", "targetColors": [24, 48], "softMaxColors": 64, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "medium", "antiAliasInRawAllowed": true, "antiAliasInFinal": "forbidden", "majorityDownsample": false},
+      "artPriorities": ["surface_material", "wetness_or_snow_state", "variation_without_noise", "seam_quality"],
+      "requiredReview": ["seam_contract", "material_readable", "no_checkerboard_repetition"]
+    },
+    "vegetation_sprite": {
+      "workflow": "vegetation_sprite_v3",
+      "minimumLogicalSize": {"width": 24, "height": 32},
+      "generationScale": 8,
+      "candidateCount": 4,
+      "palette": {"role": "environment", "targetColors": [28, 64], "softMaxColors": 80, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "medium", "antiAliasInRawAllowed": true, "antiAliasInFinal": "controlled", "majorityDownsample": false},
+      "artPriorities": ["species_identity", "season_state", "wind_direction", "light_response", "organic_asymmetry"]
+    },
+    "ui_icon": {
+      "workflow": "ui_icon_v3",
+      "minimumLogicalSize": {"width": 24, "height": 24},
+      "generationScale": 6,
+      "candidateCount": 3,
+      "palette": {"role": "ui", "targetColors": [12, 32], "softMaxColors": 40, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "fine", "antiAliasInRawAllowed": true, "antiAliasInFinal": "controlled", "majorityDownsample": false},
+      "artPriorities": ["semantic_readability", "shape_clarity", "state_contrast", "consistent_line_weight"]
+    },
+    "ui_frame": {
+      "workflow": "ui_frame_v3",
+      "minimumLogicalSize": {"width": 48, "height": 32},
+      "generationScale": 4,
+      "candidateCount": 3,
+      "palette": {"role": "ui", "targetColors": [24, 56], "softMaxColors": 72, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "fine", "antiAliasInRawAllowed": true, "antiAliasInFinal": "controlled", "majorityDownsample": false},
+      "artPriorities": ["hierarchy", "legibility", "material_consistency", "restrained_glow", "content_space"]
+    },
+    "vfx_small": {
+      "workflow": "vfx_small_v2",
+      "minimumLogicalSize": {"width": 16, "height": 16},
+      "generationScale": 8,
+      "candidateCount": 3,
+      "palette": {"role": "effects", "targetColors": [16, 40], "softMaxColors": 56, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "fine-medium", "antiAliasInRawAllowed": true, "antiAliasInFinal": "controlled", "majorityDownsample": false},
+      "artPriorities": ["motion_readability", "weather_identity", "transparency_control", "low_visual_noise"]
+    },
+    "large_scene": {
+      "workflow": "scene_environment_v3",
+      "sourceLogicalSize": {"width": 480, "height": 270},
+      "generationScale": 4,
+      "candidateCount": 4,
+      "palette": {"role": "environment", "targetColors": [96, 192], "softMaxColors": 256, "strictQuantization": false},
+      "pixelLanguage": {"clusterScale": "mixed", "antiAliasInRawAllowed": true, "antiAliasInFinal": "controlled", "majorityDownsample": false},
+      "artPriorities": ["composition", "atmospheric_depth", "weather", "material_richness", "warm_cold_contrast", "human_traces", "northwest_identity"],
+      "requiredReview": ["professional_function_readable", "at_least_three_human_traces", "story_hook_present", "weather_state_readable", "no_flat_color_crushing"]
+    }
+  }
+}

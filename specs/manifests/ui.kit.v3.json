@@ -1,0 +1,154 @@
+{
+  "$schema": "https://synopsis-game.local/schemas/asset-manifest.schema.json",
+  "id": "ui.kit.v3",
+  "title": "Полный интерфейсный набор v2 (панели, бланки, кнопки, клавиатура, штампы, лампы)",
+  "version": "3.0.0",
+  "source": "assets/source/ui/frames/candidates/ui_frames_v2.png",
+  "kind": "ui",
+  "logicalSize": {
+    "width": 512,
+    "height": 512
+  },
+  "pivot": {
+    "x": 0,
+    "y": 0
+  },
+  "layer": "ui",
+  "palette": "assets/source/palettes/master_26063_v2.gpl",
+  "elements": {
+    "panels": {
+      "dark_teal": {
+        "nineSlice": { "top": 8, "bottom": 8, "left": 8, "right": 8 },
+        "fill": "#18284D",
+        "border": "#3A5383",
+        "states": ["normal", "focused"]
+      },
+      "raised_slate": {
+        "nineSlice": { "top": 6, "bottom": 8, "left": 6, "right": 6 },
+        "fill": "#263B66",
+        "highlight": "#5E8FC4",
+        "shadow": "#0F1A30",
+        "states": ["normal", "focused"]
+      },
+      "dialog_brass_corners": {
+        "nineSlice": { "top": 12, "bottom": 12, "left": 12, "right": 12 },
+        "cornerDecoration": "латунные заклепки и декоративные уголки 4x4 px",
+        "states": ["normal", "focused"]
+      }
+    },
+    "blanks": {
+      "sheet": {
+        "fill": "#F5F0E1",
+        "border": "#D8CFBA",
+        "states": ["normal", "stamped", "error_redline"]
+      },
+      "perforated_sheet": {
+        "fill": "#F5F0E1",
+        "perforationPattern": "шахматный шаг 2 px по верхней кромке",
+        "states": ["normal", "detached"]
+      },
+      "clipboard": {
+        "woodBase": "#68482A",
+        "metalClip": "#C4C8CC",
+        "clipWidth": 32,
+        "clipHeight": 12,
+        "states": ["normal"]
+      }
+    },
+    "tape": {
+      "paperRibbon": {
+        "width": 440,
+        "height": 28,
+        "perforationY": [2, 25],
+        "states": ["printing", "group_selected", "accepted", "error"]
+      }
+    },
+    "buttons": {
+      "primary_amber": {
+        "height": 32,
+        "nineSlice": { "top": 4, "bottom": 6, "left": 6, "right": 6 },
+        "fill": "#D47A2A",
+        "textColor": "#0B1528",
+        "states": {
+          "idle": { "offsetY": 0, "border": "#F4B98A" },
+          "hover": { "offsetY": -1, "fill": "#E58E3C" },
+          "pressed": { "offsetY": 1, "fill": "#A05518" },
+          "focus": { "outline": "1px #F4B98A" },
+          "disabled": { "fill": "#4B5563", "textColor": "#9CA3AF" },
+          "loading": { "spinner": "3-frame dot flight" }
+        }
+      },
+      "secondary_teal": {
+        "height": 32,
+        "nineSlice": { "top": 4, "bottom": 6, "left": 6, "right": 6 },
+        "fill": "#3A5383",
+        "textColor": "#F3F7FA",
+        "states": ["idle", "hover", "pressed", "focus", "disabled", "loading"]
+      },
+      "ghost": {
+        "height": 32,
+        "border": "1px dashed #3A5383",
+        "states": ["idle", "hover", "pressed", "focus", "disabled"]
+      }
+    },
+    "keypad": {
+      "keys": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "/", "Backspace", "Enter"],
+      "keySize": { "width": 24, "height": 22 },
+      "depressedDistance": 2,
+      "states": ["idle", "hover", "pressed", "physically_down"]
+    },
+    "choiceCards": {
+      "options": ["A", "B", "C", "D"],
+      "states": ["idle", "hover", "selected", "correct", "incorrect"]
+    },
+    "streakLamps": {
+      "count": 5,
+      "size": { "width": 7, "height": 7 },
+      "states": {
+        "unlit": { "fill": "#1F2937", "ring": "#374151" },
+        "lit": { "fill": "#F59E0B", "ring": "#FBBF24" },
+        "flash": { "fill": "#FEF3C7", "ring": "#FDE68A", "durationMs": 150 }
+      }
+    },
+    "stamps": {
+      "types": ["ПРИНЯТО", "ПРОВЕРИТЬ", "ДОПУСК"],
+      "frames": 3,
+      "animation": ["замах (подъём)", "удар (сжатие)", "оттиск"]
+    },
+    "mentorSpeechBubble": {
+      "tail": ["left", "bottom"],
+      "nineSlice": { "top": 6, "bottom": 6, "left": 6, "right": 6 },
+      "fill": "#FFFFFF",
+      "textColor": "#0F172A",
+      "appearFrames": 2
+    },
+    "handbookTabs": {
+      "states": ["active", "inactive"],
+      "height": 16,
+      "font": "PixCyrillic"
+    },
+    "badges": {
+      "sizes": [16, 32],
+      "states": ["unlocked", "locked_silhouette"]
+    }
+  },
+  "accessibility": {
+    "contrastRatios": {
+      "primaryButton": "5.4:1 (чёрный текст на янтарном фоне, WCAG AAA)",
+      "secondaryButton": "6.8:1 (белый текст на сине-стальном фоне, WCAG AAA)",
+      "panelText": "11.2:1 (светлый текст #F3F7FA на тёмно-синем #18284D)",
+      "blankText": "13.6:1 (тёмно-синий/чёрный текст на бумажном #F5F0E1)"
+    },
+    "nonColorDistinction": [
+      "Кнопки: физический сдвиг на -1/+1 px, иконка статуса и утолщение фаски",
+      "Лампы серии: заполненный круг против пустой рамки",
+      "Штампы: явный буквенный оттиск и наклон угла оттиска",
+      "Карточки выбора: галочка/крестик рядом с литерой варианта"
+    ]
+  },
+  "provenance": {
+    "origin": "Собственная авторская разработка для 26063: Позывной «Синоптик»",
+    "license": "CC0-1.0",
+    "author": "ui-pixel-designer"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "archive.furniture.l3",
+  "source": "assets/source/environment/archive/candidates/archive_furniture_l3_v2.png",
+  "kind": "environment",
+  "logicalSize": {"width": 480, "height": 270},
+  "pivot": {"x": 0, "y": 0},
+  "layer": "L3",
+  "paletteTokens": ["world.wood.dark", "world.paper.archive"],
+  "generated": [],
+  "provenance": {"origin": "project-authored generated candidate ART-BATCH-001", "author": "pixel-asset-designer workflow", "license": "project-internal-generated"}
+}

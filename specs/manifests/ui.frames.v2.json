@@ -1,0 +1,491 @@
+{
+  "$schema": "https://synopsis-game.local/schemas/asset-manifest.schema.json",
+  "id": "ui.frames.v2",
+  "schema": "asset-manifest/v2",
+  "kind": "ui",
+  "layer": "ui",
+  "title": "26063: Позывной «Синоптик» — Пакет экранных рамок, панелей и контролов v2",
+  "sourceSheet": {
+    "path": "/Users/meteo/.gemini/antigravity2/brain/5f5485c8-acdb-415b-ad71-a6ffe1808f71/.user_uploaded/media_1793036522394_004df1f7.png",
+    "size": [
+      1024,
+      768
+    ],
+    "sha256": "96a6d4ce10972bde27ac6f1f5337d23477afe6e449e3c687d324bccd979d4479"
+  },
+  "publicBase": "/ui/frames/",
+  "count": 31,
+  "provenance": {
+    "origin": "26063: Позывной «Синоптик» — UI Frames & Controls Batch v2",
+    "author": "pixel-asset-pipeline-engineer",
+    "license": "project-internal-production",
+    "policy": "Nearest-neighbor clean pixel art, strictly binary alpha (0 or 255)"
+  },
+  "items": [
+    {
+      "id": "frame.header.banner.wide",
+      "file": "panel_header_banner_wide.png",
+      "name": "Главная панель заголовка / баннер",
+      "category": "panel",
+      "publicPath": "/ui/frames/panel_header_banner_wide.png",
+      "sourcePath": "assets/source/ui/frames/panel_header_banner_wide.png",
+      "logicalSize": {
+        "width": 815,
+        "height": 103
+      },
+      "bytes": 73839,
+      "sha256": "bae14a9d37a213053c9addbd1e4b300cb3441f3f0832b4e619334c8dd9151b36",
+      "description": "Широкий верхний баннер с декоративными скошенными углами и двойным кантом"
+    },
+    {
+      "id": "frame.square.dialog",
+      "file": "panel_square_dialog.png",
+      "name": "Квадратная модальная панель",
+      "category": "panel",
+      "publicPath": "/ui/frames/panel_square_dialog.png",
+      "sourcePath": "assets/source/ui/frames/panel_square_dialog.png",
+      "logicalSize": {
+        "width": 121,
+        "height": 113
+      },
+      "bytes": 15856,
+      "sha256": "74bdc480e76be6b2fcd535bd4b005cdc323ca253fe5d14fb98413b6caece6ab1",
+      "description": "Крупный квадратный контейнер диалога/аватара со скошенными углами"
+    },
+    {
+      "id": "frame.input.console",
+      "file": "frame_input_console.png",
+      "name": "Поле консольного ввода",
+      "category": "input",
+      "publicPath": "/ui/frames/frame_input_console.png",
+      "sourcePath": "assets/source/ui/frames/frame_input_console.png",
+      "logicalSize": {
+        "width": 425,
+        "height": 60
+      },
+      "bytes": 23461,
+      "sha256": "62b72c7dbe38432fc887318527fec4c10d2fedeb896c6b40da255189fe39a961",
+      "description": "Горизонтальная рамка текстового ввода позывного или поисковой строки"
+    },
+    {
+      "id": "frame.progress.bar.teal",
+      "file": "progress_bar_teal_frame.png",
+      "name": "Шкала прогресса (бирюзовая)",
+      "category": "progress",
+      "publicPath": "/ui/frames/progress_bar_teal_frame.png",
+      "sourcePath": "assets/source/ui/frames/progress_bar_teal_frame.png",
+      "logicalSize": {
+        "width": 389,
+        "height": 29
+      },
+      "bytes": 13593,
+      "sha256": "6aeab0b4a89aa150365255447ee45f541a7a608a5c3ecae4be006b870cdf6f39",
+      "description": "Горизонтальный индикатор прогресса со шкалой бирюзового свечения"
+    },
+    {
+      "id": "frame.card.badge.sm",
+      "file": "frame_card_badge_sm.png",
+      "name": "Малая карточка ордена / награды",
+      "category": "card",
+      "publicPath": "/ui/frames/frame_card_badge_sm.png",
+      "sourcePath": "assets/source/ui/frames/frame_card_badge_sm.png",
+      "logicalSize": {
+        "width": 103,
+        "height": 78
+      },
+      "bytes": 10116,
+      "sha256": "4cc1d9219b6a5ade9f0f344cef3e2a59857a9efbd5229214d0bf48e2f555e930",
+      "description": "Компактная прямоугольная плашка для отображения медали или знака"
+    },
+    {
+      "id": "frame.card.medium.default",
+      "file": "card_panel_medium_default.png",
+      "name": "Средняя карточка (базовая сталь)",
+      "category": "card",
+      "publicPath": "/ui/frames/card_panel_medium_default.png",
+      "sourcePath": "assets/source/ui/frames/card_panel_medium_default.png",
+      "logicalSize": {
+        "width": 161,
+        "height": 143
+      },
+      "bytes": 22950,
+      "sha256": "fd17e65df909990742de95a75feaf600ad88d21dee73a899c74ae7836797153d",
+      "description": "Информационная карточка со стандартным стальным кантом"
+    },
+    {
+      "id": "frame.card.medium.active",
+      "file": "card_panel_medium_active.png",
+      "name": "Средняя карточка (лазурная подсветка)",
+      "category": "card",
+      "publicPath": "/ui/frames/card_panel_medium_active.png",
+      "sourcePath": "assets/source/ui/frames/card_panel_medium_active.png",
+      "logicalSize": {
+        "width": 162,
+        "height": 143
+      },
+      "bytes": 25357,
+      "sha256": "3c547a3b1d2d03756a441cb26398e1d635754cfd729ff6e0b4fe9b04640f6951",
+      "description": "Информационная карточка в активном состоянии с лазурным неоновым кантом"
+    },
+    {
+      "id": "frame.card.medium.focused",
+      "file": "card_panel_medium_focused.png",
+      "name": "Средняя карточка (глубокий индиго)",
+      "category": "card",
+      "publicPath": "/ui/frames/card_panel_medium_focused.png",
+      "sourcePath": "assets/source/ui/frames/card_panel_medium_focused.png",
+      "logicalSize": {
+        "width": 161,
+        "height": 143
+      },
+      "bytes": 22383,
+      "sha256": "992872656e38b44794df62c9ec91832c321eb3add4850b80713ddc1839aee5af",
+      "description": "Информационная карточка в состоянии фокуса тёмного индиго"
+    },
+    {
+      "id": "frame.card.medium.success",
+      "file": "card_panel_medium_success.png",
+      "name": "Средняя карточка (зелёное подтверждение)",
+      "category": "card",
+      "publicPath": "/ui/frames/card_panel_medium_success.png",
+      "sourcePath": "assets/source/ui/frames/card_panel_medium_success.png",
+      "logicalSize": {
+        "width": 163,
+        "height": 143
+      },
+      "bytes": 23693,
+      "sha256": "c468ba44f341b5c224b4a1604a95821ffa58ab01c0172372d6c806f8131babb9",
+      "description": "Информационная карточка с зелёной рамкой верифицированного прогноза"
+    },
+    {
+      "id": "frame.card.medium.disabled",
+      "file": "card_panel_medium_disabled.png",
+      "name": "Средняя карточка (серая блокировка)",
+      "category": "card",
+      "publicPath": "/ui/frames/card_panel_medium_disabled.png",
+      "sourcePath": "assets/source/ui/frames/card_panel_medium_disabled.png",
+      "logicalSize": {
+        "width": 163,
+        "height": 143
+      },
+      "bytes": 22687,
+      "sha256": "872311ad8f2304d5cd3e8de68516462a24359f34fcef98f9675b246da3c976e9",
+      "description": "Информационная карточка в заблокированном сером состоянии"
+    },
+    {
+      "id": "frame.slot.default",
+      "file": "slot_frame_default.png",
+      "name": "Слот инвентаря (базовый)",
+      "category": "slot",
+      "publicPath": "/ui/frames/slot_frame_default.png",
+      "sourcePath": "assets/source/ui/frames/slot_frame_default.png",
+      "logicalSize": {
+        "width": 99,
+        "height": 97
+      },
+      "bytes": 11639,
+      "sha256": "6b8a7eb94078c40f567cf08581924115ec51dd91da14d29f961a53e0bc218961",
+      "description": "Квадратный слот экипировки/значков со стальной рамкой"
+    },
+    {
+      "id": "frame.slot.active",
+      "file": "slot_frame_active.png",
+      "name": "Слот инвентаря (активный лазурный)",
+      "category": "slot",
+      "publicPath": "/ui/frames/slot_frame_active.png",
+      "sourcePath": "assets/source/ui/frames/slot_frame_active.png",
+      "logicalSize": {
+        "width": 100,
+        "height": 97
+      },
+      "bytes": 12680,
+      "sha256": "73e92ef7fb135089024e18bec6795d29d92ceafd3f61a1fec8c325dc529d6f26",
+      "description": "Квадратный слот экипировки с лазурной подсветкой"
+    },
+    {
+      "id": "frame.slot.focused",
+      "file": "slot_frame_focused.png",
+      "name": "Слот инвентаря (фокус индиго)",
+      "category": "slot",
+      "publicPath": "/ui/frames/slot_frame_focused.png",
+      "sourcePath": "assets/source/ui/frames/slot_frame_focused.png",
+      "logicalSize": {
+        "width": 100,
+        "height": 97
+      },
+      "bytes": 11878,
+      "sha256": "4b40b54881d18745c71e5c2df893e1ebd6153aebd4089e17ed92f495045bee4e",
+      "description": "Квадратный слот экипировки в тёмном тоне индиго"
+    },
+    {
+      "id": "frame.slot.success",
+      "file": "slot_frame_success.png",
+      "name": "Слот инвентаря (зелёный успех)",
+      "category": "slot",
+      "publicPath": "/ui/frames/slot_frame_success.png",
+      "sourcePath": "assets/source/ui/frames/slot_frame_success.png",
+      "logicalSize": {
+        "width": 103,
+        "height": 97
+      },
+      "bytes": 12535,
+      "sha256": "714a3dc10c1fa46b3db1975a11de6df941e88f7170286a985bcd667502a8088b",
+      "description": "Квадратный слот экипировки с зелёной каймой успеха"
+    },
+    {
+      "id": "frame.slot.disabled",
+      "file": "slot_frame_disabled.png",
+      "name": "Слот инвентаря (серый заблокирован)",
+      "category": "slot",
+      "publicPath": "/ui/frames/slot_frame_disabled.png",
+      "sourcePath": "assets/source/ui/frames/slot_frame_disabled.png",
+      "logicalSize": {
+        "width": 102,
+        "height": 97
+      },
+      "bytes": 11891,
+      "sha256": "836019e0de5192c8e50d46939c450e92ae0e00a0f6c2aebf0faf488947264215",
+      "description": "Квадратный слот экипировки в заблокированном сером тоне"
+    },
+    {
+      "id": "frame.btn.square.compact.green",
+      "file": "btn_square_compact_green.png",
+      "name": "Компактная кнопка (зелёная)",
+      "category": "button",
+      "publicPath": "/ui/frames/btn_square_compact_green.png",
+      "sourcePath": "assets/source/ui/frames/btn_square_compact_green.png",
+      "logicalSize": {
+        "width": 85,
+        "height": 82
+      },
+      "bytes": 9672,
+      "sha256": "874c1fb2f10374e9e9a48f84934f4406963e4b9a5c9f4f38ed7179b10e4ed653",
+      "description": "Компактная квадратная клавиша с зелёным кантом готовности"
+    },
+    {
+      "id": "frame.btn.square.compact.amber",
+      "file": "btn_square_compact_amber.png",
+      "name": "Компактная кнопка (янтарная)",
+      "category": "button",
+      "publicPath": "/ui/frames/btn_square_compact_amber.png",
+      "sourcePath": "assets/source/ui/frames/btn_square_compact_amber.png",
+      "logicalSize": {
+        "width": 84,
+        "height": 83
+      },
+      "bytes": 10352,
+      "sha256": "d81c29425e74ed26131d153264185b34a2581594a3a3f01de532a4bc7be8f634",
+      "description": "Компактная квадратная клавиша с янтарным кантом предупреждения"
+    },
+    {
+      "id": "frame.btn.square.compact.blue",
+      "file": "btn_square_compact_blue.png",
+      "name": "Компактная кнопка (синяя)",
+      "category": "button",
+      "publicPath": "/ui/frames/btn_square_compact_blue.png",
+      "sourcePath": "assets/source/ui/frames/btn_square_compact_blue.png",
+      "logicalSize": {
+        "width": 84,
+        "height": 82
+      },
+      "bytes": 9674,
+      "sha256": "0b878b244b3fd00f8237836bde91199e469c754554a3a6fbaf1c284989500905",
+      "description": "Компактная квадратная клавиша с синим кантом выбора"
+    },
+    {
+      "id": "frame.panel.item.bar.sm",
+      "file": "panel_item_bar_subslot_sm.png",
+      "name": "Панель предмета со слотом 234px",
+      "category": "panel",
+      "publicPath": "/ui/frames/panel_item_bar_subslot_sm.png",
+      "sourcePath": "assets/source/ui/frames/panel_item_bar_subslot_sm.png",
+      "logicalSize": {
+        "width": 234,
+        "height": 92
+      },
+      "bytes": 22876,
+      "sha256": "50c07a0785047b17bc31455ab88cca8b86cddeaae12302de36f40f798c5c0fd7",
+      "description": "Горизонтальная панель предмета с правым квадратным суб-слотом (малая)"
+    },
+    {
+      "id": "frame.panel.item.bar.md",
+      "file": "panel_item_bar_subslot_md.png",
+      "name": "Панель предмета со слотом 303px",
+      "category": "panel",
+      "publicPath": "/ui/frames/panel_item_bar_subslot_md.png",
+      "sourcePath": "assets/source/ui/frames/panel_item_bar_subslot_md.png",
+      "logicalSize": {
+        "width": 303,
+        "height": 92
+      },
+      "bytes": 26950,
+      "sha256": "2ac3be908de96fbd8cd3c03e3fa3022c4bc6649ce6c09670b754d99f3083ae90",
+      "description": "Горизонтальная панель предмета с правым квадратным суб-слотом (средняя)"
+    },
+    {
+      "id": "frame.panel.item.bar.lg",
+      "file": "panel_item_bar_subslot_lg.png",
+      "name": "Панель предмета со слотом 402px",
+      "category": "panel",
+      "publicPath": "/ui/frames/panel_item_bar_subslot_lg.png",
+      "sourcePath": "assets/source/ui/frames/panel_item_bar_subslot_lg.png",
+      "logicalSize": {
+        "width": 402,
+        "height": 92
+      },
+      "bytes": 32628,
+      "sha256": "e6c6b08bb530a0f3b7e05d2c4aad2156a6b94bd1af483c27192f161c92e85456",
+      "description": "Горизонтальная панель предмета с правым квадратным суб-слотом (широкая)"
+    },
+    {
+      "id": "frame.btn.pill.primary.cyan",
+      "file": "btn_pill_primary_cyan.png",
+      "name": "Кнопка действия первичная (лазурная)",
+      "category": "button",
+      "publicPath": "/ui/frames/btn_pill_primary_cyan.png",
+      "sourcePath": "assets/source/ui/frames/btn_pill_primary_cyan.png",
+      "logicalSize": {
+        "width": 326,
+        "height": 93
+      },
+      "bytes": 28933,
+      "sha256": "4cc5f44026e153474859298bed46e4c5ee77fa3befd09f685b16e910412027ba",
+      "description": "Главная клавиша действия с лазурным неоновым кантом 326px"
+    },
+    {
+      "id": "frame.btn.pill.secondary.steel",
+      "file": "btn_pill_secondary_steel.png",
+      "name": "Кнопка действия вторичная (стальная)",
+      "category": "button",
+      "publicPath": "/ui/frames/btn_pill_secondary_steel.png",
+      "sourcePath": "assets/source/ui/frames/btn_pill_secondary_steel.png",
+      "logicalSize": {
+        "width": 244,
+        "height": 83
+      },
+      "bytes": 19990,
+      "sha256": "54c8ba9e47eadcd6ca3c7435567764c44abc45fe3121b73b9edb6c4a33785a74",
+      "description": "Вторичная клавиша действия со стальным кантом 244px"
+    },
+    {
+      "id": "frame.btn.pill.alert.badge",
+      "file": "btn_pill_alert_badge.png",
+      "name": "Кнопка с индикатором тревоги",
+      "category": "button",
+      "publicPath": "/ui/frames/btn_pill_alert_badge.png",
+      "sourcePath": "assets/source/ui/frames/btn_pill_alert_badge.png",
+      "logicalSize": {
+        "width": 212,
+        "height": 73
+      },
+      "bytes": 17952,
+      "sha256": "0b32eebd46da5c87b3bc59beafdb59c1dd670616b1feec93f904090832ed327e",
+      "description": "Клавиша действия с круглым красным индикатором оповещения/шторма"
+    },
+    {
+      "id": "frame.decor.corner.tl",
+      "file": "decor_corner_bracket_tl.png",
+      "name": "Угловой кронштейн рамки (верхний левый)",
+      "category": "decor",
+      "publicPath": "/ui/frames/decor_corner_bracket_tl.png",
+      "sourcePath": "assets/source/ui/frames/decor_corner_bracket_tl.png",
+      "logicalSize": {
+        "width": 35,
+        "height": 35
+      },
+      "bytes": 2056,
+      "sha256": "e8738bac7a1b4840e2470e29e62f4e4f85a1431eb3b96f035544d3c3cf5fd44f",
+      "description": "Декоративный угловой научный кронштейн интерфейса станции (TL)"
+    },
+    {
+      "id": "frame.decor.corner.tr",
+      "file": "decor_corner_bracket_tr.png",
+      "name": "Угловой кронштейн рамки (верхний правый)",
+      "category": "decor",
+      "publicPath": "/ui/frames/decor_corner_bracket_tr.png",
+      "sourcePath": "assets/source/ui/frames/decor_corner_bracket_tr.png",
+      "logicalSize": {
+        "width": 34,
+        "height": 35
+      },
+      "bytes": 2073,
+      "sha256": "b243870b1a26ac9d4c63379e8315ab014a245d3ec6d7afa5f9fc6c8824c26160",
+      "description": "Декоративный угловой научный кронштейн интерфейса станции (TR)"
+    },
+    {
+      "id": "frame.decor.corner.bl",
+      "file": "decor_corner_bracket_bl.png",
+      "name": "Угловой кронштейн рамки (нижний левый)",
+      "category": "decor",
+      "publicPath": "/ui/frames/decor_corner_bracket_bl.png",
+      "sourcePath": "assets/source/ui/frames/decor_corner_bracket_bl.png",
+      "logicalSize": {
+        "width": 28,
+        "height": 34
+      },
+      "bytes": 1633,
+      "sha256": "c6411d4e102d81dc561330aed48bd4c51f5d556b398eb62134c0b350ee62da3c",
+      "description": "Декоративный угловой научный кронштейн интерфейса станции (BL)"
+    },
+    {
+      "id": "frame.decor.corner.br",
+      "file": "decor_corner_bracket_br.png",
+      "name": "Угловой кронштейн рамки (нижний правый)",
+      "category": "decor",
+      "publicPath": "/ui/frames/decor_corner_bracket_br.png",
+      "sourcePath": "assets/source/ui/frames/decor_corner_bracket_br.png",
+      "logicalSize": {
+        "width": 28,
+        "height": 34
+      },
+      "bytes": 1608,
+      "sha256": "7726bb1042e6e4c5178d649fd8056d7289b8b2bdd8c69a9203461803134bba9a",
+      "description": "Декоративный угловой научный кронштейн интерфейса станции (BR, зеркальный)"
+    },
+    {
+      "id": "frame.decor.accent.diamond",
+      "file": "decor_accent_diamond.png",
+      "name": "Ромбовидный прицел / акцент",
+      "category": "decor",
+      "publicPath": "/ui/frames/decor_accent_diamond.png",
+      "sourcePath": "assets/source/ui/frames/decor_accent_diamond.png",
+      "logicalSize": {
+        "width": 30,
+        "height": 29
+      },
+      "bytes": 1808,
+      "sha256": "4bfaec6b33c9bb2f32ee7ced45024c7231f7709b5b379e1c7aac14041907baeb",
+      "description": "Ромбовидный маркер интерфейса с золотой сердцевиной"
+    },
+    {
+      "id": "frame.decor.divider.bar",
+      "file": "decor_divider_bar.png",
+      "name": "Капсульный разделитель",
+      "category": "decor",
+      "publicPath": "/ui/frames/decor_divider_bar.png",
+      "sourcePath": "assets/source/ui/frames/decor_divider_bar.png",
+      "logicalSize": {
+        "width": 51,
+        "height": 12
+      },
+      "bytes": 953,
+      "sha256": "93717f3d1b28c601ab5602ee6e737a298a19b4b8257c8d56acde361ece265023",
+      "description": "Горизонтальная стальная плашка-разделитель блоков интерфейса"
+    },
+    {
+      "id": "frame.decor.indicator.pip",
+      "file": "decor_indicator_pip.png",
+      "name": "Точечный индикатор / заклепка",
+      "category": "decor",
+      "publicPath": "/ui/frames/decor_indicator_pip.png",
+      "sourcePath": "assets/source/ui/frames/decor_indicator_pip.png",
+      "logicalSize": {
+        "width": 23,
+        "height": 24
+      },
+      "bytes": 1358,
+      "sha256": "0c860a57de4d11998cca440b95d79620e556216da34e2d4645458d4015b79b61",
+      "description": "Круглый индикаторный датчик / заклёпка с золотым ядром"
+    }
+  ]
+}

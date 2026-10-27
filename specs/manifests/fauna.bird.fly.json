@@ -1,0 +1,12 @@
+{
+  "id": "fauna.bird.fly",
+  "source": "assets/source/animals/bird/candidates/bird_sheet_v2.png",
+  "kind": "sprite",
+  "logicalSize": {"width": 72, "height": 14},
+  "pivot": {"x": 9, "y": 7},
+  "layer": "L5",
+  "paletteTokens": ["world.fauna.bird"],
+  "animations": [{"name": "fly", "loop": true, "frameDurationsMs": [140, 140, 140, 140]}],
+  "generated": [],
+  "provenance": {"origin": "project-authored generated candidate ART-BATCH-001", "author": "pixel-asset-designer workflow", "license": "project-internal-generated"}
+}

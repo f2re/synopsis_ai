@@ -1,0 +1,17 @@
+{
+  "id": "avatar.base.walk",
+  "source": "assets/source/characters/base/candidates/avatar_base_sheet_v2.png",
+  "kind": "sprite",
+  "logicalSize": {"width": 384, "height": 48},
+  "pivot": {"x": 16, "y": 44},
+  "layer": "L5",
+  "paletteTokens": ["world.character.skin", "world.character.uniform"],
+  "animations": [
+    {"name": "down", "loop": true, "frameDurationsMs": [180, 140, 140]},
+    {"name": "left", "loop": true, "frameDurationsMs": [180, 140, 140]},
+    {"name": "right", "loop": true, "frameDurationsMs": [180, 140, 140]},
+    {"name": "up", "loop": true, "frameDurationsMs": [180, 140, 140]}
+  ],
+  "generated": [],
+  "provenance": {"origin": "project-authored generated candidate ART-BATCH-001", "author": "pixel-asset-designer workflow", "license": "project-internal-generated"}
+}

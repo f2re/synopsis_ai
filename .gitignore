@@ -1,0 +1,30 @@
+# Virtual environments
+*venv/
+venv/
+.env
+
+# Large neural model weights
+models/
+*.safetensors
+*.pt
+*.bin
+*.onnx
+*.engine
+*.ckpt
+
+# Runtime directories and artifacts
+output/
+logs/
+assets/work/
+__pycache__/
+*.py[cod]
+*$py.class
+.cache/
+
+# OS / Editor artifacts
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.log

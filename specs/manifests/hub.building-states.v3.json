@@ -1,0 +1,165 @@
+{
+  "$schema": "https://synopsis-game.local/schemas/asset-manifest.schema.json",
+  "id": "hub.building-states.v3",
+  "title": "Состояния зданий кампуса 26063: закрыто, доступно, активно, открытие",
+  "version": "3.0.0",
+  "source": "assets/source/ui/location-states/candidates/ui_location_states_v2.png",
+  "kind": "ui",
+  "logicalSize": {
+    "width": 256,
+    "height": 96
+  },
+  "pivot": {
+    "x": 0,
+    "y": 0
+  },
+  "layer": "L5",
+  "buildings": [
+    {
+      "id": "codepost",
+      "name": "Кодовый пост (КН-01)",
+      "bounds": { "x": 180, "y": 110, "width": 84, "height": 68 },
+      "entrance": { "x": 218, "y": 162 },
+      "windowMasks": [
+        { "x": 192, "y": 124, "width": 14, "height": 18 },
+        { "x": 242, "y": 124, "width": 14, "height": 18 }
+      ],
+      "defaultState": "active"
+    },
+    {
+      "id": "archive",
+      "name": "Архив гидрометеорологических наблюдений",
+      "bounds": { "x": 56, "y": 120, "width": 78, "height": 62 },
+      "entrance": { "x": 92, "y": 166 },
+      "windowMasks": [
+        { "x": 68, "y": 132, "width": 12, "height": 16 },
+        { "x": 108, "y": 132, "width": 12, "height": 16 }
+      ],
+      "defaultState": "available"
+    },
+    {
+      "id": "lab",
+      "name": "Аэрологическая лаборатория",
+      "bounds": { "x": 284, "y": 96, "width": 72, "height": 82 },
+      "entrance": { "x": 316, "y": 162 },
+      "windowMasks": [
+        { "x": 296, "y": 110, "width": 12, "height": 14 },
+        { "x": 296, "y": 130, "width": 12, "height": 14 }
+      ],
+      "defaultState": "locked"
+    },
+    {
+      "id": "radar",
+      "name": "Радиолокационная вышка ДМРЛ",
+      "bounds": { "x": 380, "y": 64, "width": 54, "height": 114 },
+      "entrance": { "x": 402, "y": 162 },
+      "windowMasks": [
+        { "x": 398, "y": 80, "width": 8, "height": 8 }
+      ],
+      "defaultState": "locked"
+    },
+    {
+      "id": "cartography",
+      "name": "Картографический класс",
+      "bounds": { "x": 12, "y": 130, "width": 42, "height": 52 },
+      "entrance": { "x": 30, "y": 166 },
+      "windowMasks": [
+        { "x": 20, "y": 140, "width": 10, "height": 12 }
+      ],
+      "defaultState": "locked"
+    },
+    {
+      "id": "hall",
+      "name": "Зал синоптических дуэлей",
+      "bounds": { "x": 436, "y": 120, "width": 44, "height": 62 },
+      "entrance": { "x": 454, "y": 166 },
+      "windowMasks": [
+        { "x": 446, "y": 132, "width": 10, "height": 14 }
+      ],
+      "defaultState": "locked"
+    }
+  ],
+  "states": {
+    "locked": {
+      "name": "Заблокировано",
+      "cursor": "not-allowed",
+      "windowLight": 0.0,
+      "outline": null,
+      "badge": {
+        "type": "padlock",
+        "size": { "width": 8, "height": 10 },
+        "offset": { "x": 0, "y": -14 },
+        "symbolicFeature": "Навесной латунный замок с планкой опломбирования"
+      },
+      "shapeDistinction": "Тёмный неосвещённый силуэт, заколоченная/запертая дверь, диагональная предупреждающая лента"
+    },
+    "available": {
+      "name": "Доступно для входа",
+      "cursor": "pointer",
+      "windowLight": 0.8,
+      "outline": null,
+      "badge": {
+        "type": "lamp_glow",
+        "size": { "width": 6, "height": 6 },
+        "offset": { "x": 0, "y": -12 },
+        "symbolicFeature": "Зажжённый фонарь над дверью с мягким мерцанием"
+      },
+      "shapeDistinction": "Освещённые оконные проёмы, приоткрытая дверь с видимой глубиной порога"
+    },
+    "active": {
+      "name": "Текущее активное задание (фокус)",
+      "cursor": "pointer",
+      "windowLight": 1.0,
+      "outline": {
+        "widthPixels": 1,
+        "color": "#F4B98A",
+        "dithered": false,
+        "pulsing": true,
+        "pulsePeriodMs": 1200
+      },
+      "badge": {
+        "type": "indicator_arrow",
+        "size": { "width": 10, "height": 8 },
+        "offset": { "x": 0, "y": -22 },
+        "symbolicFeature": "Анимированный пиксельный шеврон указателя входа"
+      },
+      "shapeDistinction": "Контур толщиной в 1 пиксель по силуэту крыши и стен, стрелка-указатель над козырьком"
+    },
+    "just_unlocked": {
+      "name": "Момент разблокировки",
+      "cursor": "pointer",
+      "windowLight": 1.0,
+      "animation": {
+        "frames": 6,
+        "frameDurationsMs": [150, 150, 200, 200, 250, 300],
+        "effects": [
+          "Падение и растворение замка (2 кадра)",
+          "Вспышка фонаря над входом (2 кадра)",
+          "Разлёт 8 золотистых пиксельных искр (2 кадра)"
+        ]
+      },
+      "shapeDistinction": "Динамический взрыв частиц вокруг входа и распахивание створки"
+    }
+  },
+  "paletteTokens": [
+    "ui.locked",
+    "ui.available",
+    "ui.active",
+    "world.window.warm",
+    "world.window.dim"
+  ],
+  "accessibility": {
+    "monochromeCompliant": true,
+    "nonColorCues": [
+      "Замок 8x10 px однозначно читается в монохроме",
+      "Шеврон 10x8 px указывает на активный корпус",
+      "1-пиксельный контур создаёт структурный контраст > 5:1",
+      "Оконные маски физически переключаются между чёрным массивом и шахматным светом"
+    ]
+  },
+  "provenance": {
+    "origin": "Собственная авторская разработка для 26063: Позывной «Синоптик»",
+    "license": "CC0-1.0",
+    "author": "pixel-asset-designer"
+  }
+}

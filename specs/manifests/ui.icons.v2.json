@@ -1,0 +1,1755 @@
+{
+  "$schema": "https://synopsis-game.local/schemas/asset-manifest.schema.json",
+  "id": "ui.icons.v2",
+  "schema": "asset-manifest/v2",
+  "kind": "ui",
+  "layer": "ui",
+  "title": "26063: Позывной «Синоптик» — Пакет системных и игровых пиктограмм v2",
+  "sourceSheet": {
+    "path": "/Users/meteo/.gemini/antigravity2/brain/5f5485c8-acdb-415b-ad71-a6ffe1808f71/.user_uploaded/media_1793036645834_adcd63f0.png",
+    "size": [
+      1024,
+      1024
+    ],
+    "sha256": "a79560eadf05bfe7378f0f72ca930780e72a463a89cf46ddc9966f347b3fdf3b"
+  },
+  "publicBase": "/ui/icons/",
+  "count": 24,
+  "supportedScales": [
+    128,
+    64,
+    32,
+    "raw"
+  ],
+  "provenance": {
+    "origin": "26063: Позывной «Синоптик» — UI Icons Batch v2",
+    "author": "pixel-asset-pipeline-engineer",
+    "license": "project-internal-production",
+    "policy": "Nearest-neighbor clean pixel art, strictly binary alpha (0 or 255)"
+  },
+  "items": [
+    {
+      "id": "icon.profile.student",
+      "file": "icon_profile_student.png",
+      "name": "Слушатель курсов синоптиков",
+      "category": "profile",
+      "palette": [
+        "ui.navy",
+        "ui.blue",
+        "ui.gold",
+        "ui.skin"
+      ],
+      "description": "Портрет слушателя гидрометкласса в форменном синем кителе и галстуке",
+      "gridRow": 0,
+      "gridCol": 0,
+      "sourceBoundingBox": {
+        "x": 23,
+        "y": 123,
+        "width": 148,
+        "height": 184
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_profile_student.png",
+          "publicPath": "/ui/icons/icon_profile_student.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "ee5ca53c1fa9d4401e61743b57fd1bddbf04e43561db3bf2e9399c8bef678ca0"
+        },
+        "128": {
+          "file": "icon_profile_student_128.png",
+          "publicPath": "/ui/icons/icon_profile_student_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "ee5ca53c1fa9d4401e61743b57fd1bddbf04e43561db3bf2e9399c8bef678ca0"
+        },
+        "64": {
+          "file": "icon_profile_student_64.png",
+          "publicPath": "/ui/icons/icon_profile_student_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "d1680fd54a1862ade871e48add5971d27ef1bcda6daaa9c9b490e911873c0171"
+        },
+        "32": {
+          "file": "icon_profile_student_32.png",
+          "publicPath": "/ui/icons/icon_profile_student_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "b5a6630aef50ea2e5b477f844bd0a58e88f3a3df8a7acf6900d6179d0bcfbd92"
+        },
+        "raw": {
+          "file": "icon_profile_student_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_profile_student_raw.png",
+          "size": [
+            148,
+            184
+          ],
+          "sha256": "f5e604f0c0b32852f86d0d0decd26c676d47de7a74209081432b49fbd9c14fe7"
+        }
+      }
+    },
+    {
+      "id": "icon.profile.observer",
+      "file": "icon_profile_observer.png",
+      "name": "Дежурный наблюдатель станции",
+      "category": "profile",
+      "palette": [
+        "ui.navy",
+        "ui.steel",
+        "ui.gold",
+        "ui.skin"
+      ],
+      "description": "Портрет штатного метеонаблюдателя в фуражке с кокардой и погонами",
+      "gridRow": 0,
+      "gridCol": 1,
+      "sourceBoundingBox": {
+        "x": 207,
+        "y": 148,
+        "width": 139,
+        "height": 159
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_profile_observer.png",
+          "publicPath": "/ui/icons/icon_profile_observer.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "91c5b389d34f22ba21ead3d1a4baddf36d4b44360f6a90a24eb07b10f95df893"
+        },
+        "128": {
+          "file": "icon_profile_observer_128.png",
+          "publicPath": "/ui/icons/icon_profile_observer_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "91c5b389d34f22ba21ead3d1a4baddf36d4b44360f6a90a24eb07b10f95df893"
+        },
+        "64": {
+          "file": "icon_profile_observer_64.png",
+          "publicPath": "/ui/icons/icon_profile_observer_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "f0cb499e431675fbd1b68d74475713249239884deab316030e8d9a65ccda5ae5"
+        },
+        "32": {
+          "file": "icon_profile_observer_32.png",
+          "publicPath": "/ui/icons/icon_profile_observer_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "724c181916fc210d6f0d53955a059614c6301c3b34f761e60af161b09fb97ca9"
+        },
+        "raw": {
+          "file": "icon_profile_observer_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_profile_observer_raw.png",
+          "size": [
+            139,
+            159
+          ],
+          "sha256": "64b114ef44bec277c331932876876cc5092fd5989b5f917b3a4c860a694c7e45"
+        }
+      }
+    },
+    {
+      "id": "icon.doc.kn01.code",
+      "file": "icon_doc_kn01_code.png",
+      "name": "Синоптическая телеграмма КН-01",
+      "category": "data",
+      "palette": [
+        "ui.paper",
+        "ui.amber",
+        "ui.blue",
+        "ui.dark"
+      ],
+      "description": "Бланк шифровки КН-01 с кодовыми группами и станцией на кольцевой диаграмме",
+      "gridRow": 0,
+      "gridCol": 2,
+      "sourceBoundingBox": {
+        "x": 369,
+        "y": 145,
+        "width": 128,
+        "height": 156
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_doc_kn01_code.png",
+          "publicPath": "/ui/icons/icon_doc_kn01_code.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "9bbe1733c938f5b5d7e53acdc9bab0cd5880a5a9f22c70be04fb118b59fa88f6"
+        },
+        "128": {
+          "file": "icon_doc_kn01_code_128.png",
+          "publicPath": "/ui/icons/icon_doc_kn01_code_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "9bbe1733c938f5b5d7e53acdc9bab0cd5880a5a9f22c70be04fb118b59fa88f6"
+        },
+        "64": {
+          "file": "icon_doc_kn01_code_64.png",
+          "publicPath": "/ui/icons/icon_doc_kn01_code_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "d53ac6e9ee2cf508e30b0d697b8e398fdfef6e26653ae1f27d750298464fc1c7"
+        },
+        "32": {
+          "file": "icon_doc_kn01_code_32.png",
+          "publicPath": "/ui/icons/icon_doc_kn01_code_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "9b3e71ccd57db1eef0e56a9a52114a13944b0aff4ed694e7b54e4f198bbfedac"
+        },
+        "raw": {
+          "file": "icon_doc_kn01_code_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_doc_kn01_code_raw.png",
+          "size": [
+            128,
+            156
+          ],
+          "sha256": "b442e028a88d71a05529e08057b27eeeb280fa88f1aba1c413418fc52d20449f"
+        }
+      }
+    },
+    {
+      "id": "icon.trophy.gold",
+      "file": "icon_trophy_gold.png",
+      "name": "Золотой кубок победителя",
+      "category": "reward",
+      "palette": [
+        "ui.gold",
+        "ui.amber",
+        "ui.white",
+        "ui.dark"
+      ],
+      "description": "Наградной кубок за победу в турнире прогнозистов с сияющим бликом",
+      "gridRow": 0,
+      "gridCol": 3,
+      "sourceBoundingBox": {
+        "x": 531,
+        "y": 143,
+        "width": 154,
+        "height": 160
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_trophy_gold.png",
+          "publicPath": "/ui/icons/icon_trophy_gold.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "cdb4961e56dfdba1fd82e088a787da58d6a3025984a03f1375728b3c8beb19b4"
+        },
+        "128": {
+          "file": "icon_trophy_gold_128.png",
+          "publicPath": "/ui/icons/icon_trophy_gold_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "cdb4961e56dfdba1fd82e088a787da58d6a3025984a03f1375728b3c8beb19b4"
+        },
+        "64": {
+          "file": "icon_trophy_gold_64.png",
+          "publicPath": "/ui/icons/icon_trophy_gold_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "c9b02947d664c076187442ab14014fa3d5e98dc4e5a953ec709640bae912cb11"
+        },
+        "32": {
+          "file": "icon_trophy_gold_32.png",
+          "publicPath": "/ui/icons/icon_trophy_gold_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "59cb3c0f6655c454c8d4067f4203e7f9b55381def6bbd0577abf05d8fcf60d80"
+        },
+        "raw": {
+          "file": "icon_trophy_gold_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_trophy_gold_raw.png",
+          "size": [
+            154,
+            160
+          ],
+          "sha256": "fc593eaa8d9e5cf15659af7499522059d0876fd9aa7aa3e399c76c8fcf05f073"
+        }
+      }
+    },
+    {
+      "id": "icon.settings.system",
+      "file": "icon_settings_system.png",
+      "name": "Системные настройки",
+      "category": "system",
+      "palette": [
+        "ui.steel",
+        "ui.navy",
+        "ui.dark"
+      ],
+      "description": "Стальная шестерня параметров терминала и калибровки приборов",
+      "gridRow": 0,
+      "gridCol": 4,
+      "sourceBoundingBox": {
+        "x": 708,
+        "y": 149,
+        "width": 145,
+        "height": 149
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_settings_system.png",
+          "publicPath": "/ui/icons/icon_settings_system.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "3f2b3ce7da1cb253d24b162f624d3a33660506e71d9fb4c31d4340c73568ab27"
+        },
+        "128": {
+          "file": "icon_settings_system_128.png",
+          "publicPath": "/ui/icons/icon_settings_system_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "3f2b3ce7da1cb253d24b162f624d3a33660506e71d9fb4c31d4340c73568ab27"
+        },
+        "64": {
+          "file": "icon_settings_system_64.png",
+          "publicPath": "/ui/icons/icon_settings_system_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "ce0458809b16554f3ae5016d9a7ad412db0c0d26f000206da80145e673f994cc"
+        },
+        "32": {
+          "file": "icon_settings_system_32.png",
+          "publicPath": "/ui/icons/icon_settings_system_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "0f10c1af659725730ca75b4234f6a995fc7ebdb179726f9943b2c3217bc38896"
+        },
+        "raw": {
+          "file": "icon_settings_system_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_settings_system_raw.png",
+          "size": [
+            145,
+            149
+          ],
+          "sha256": "6c90b42f585a9ebb0345e6bc67586cd79843a5b7a06748b80ee88f487503f04c"
+        }
+      }
+    },
+    {
+      "id": "icon.sys.logout",
+      "file": "icon_sys_logout.png",
+      "name": "Выход со станции",
+      "category": "system",
+      "palette": [
+        "ui.navy",
+        "ui.white",
+        "ui.dark"
+      ],
+      "description": "Символ шлюза и выхода из рабочей смены станции 26063",
+      "gridRow": 0,
+      "gridCol": 5,
+      "sourceBoundingBox": {
+        "x": 888,
+        "y": 155,
+        "width": 118,
+        "height": 140
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_sys_logout.png",
+          "publicPath": "/ui/icons/icon_sys_logout.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "d3e193ab957388d1ad21aa000e619a5f7222b465bed99260590904dfea79fa32"
+        },
+        "128": {
+          "file": "icon_sys_logout_128.png",
+          "publicPath": "/ui/icons/icon_sys_logout_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "d3e193ab957388d1ad21aa000e619a5f7222b465bed99260590904dfea79fa32"
+        },
+        "64": {
+          "file": "icon_sys_logout_64.png",
+          "publicPath": "/ui/icons/icon_sys_logout_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "af70a2d1a595960f61d878722d9e85f4592c046efc5208c93f54bf6ba2ba7f3f"
+        },
+        "32": {
+          "file": "icon_sys_logout_32.png",
+          "publicPath": "/ui/icons/icon_sys_logout_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "93e51f8cd74ed1dd34876975ad005f4e7cb33dffc4306d81bb68fa361708ce35"
+        },
+        "raw": {
+          "file": "icon_sys_logout_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_sys_logout_raw.png",
+          "size": [
+            118,
+            140
+          ],
+          "sha256": "a3311773bae1a93fbf62aa01cb39b765697b69b5f7f7ef9184fdce1e6d41d616"
+        }
+      }
+    },
+    {
+      "id": "icon.map.cartography",
+      "file": "icon_map_cartography.png",
+      "name": "Синоптическая карта",
+      "category": "navigation",
+      "palette": [
+        "ui.cyan",
+        "ui.green",
+        "ui.gold",
+        "ui.navy"
+      ],
+      "description": "Сложенный лист приземной карты погоды с геометкой станции",
+      "gridRow": 1,
+      "gridCol": 0,
+      "sourceBoundingBox": {
+        "x": 18,
+        "y": 363,
+        "width": 142,
+        "height": 140
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_map_cartography.png",
+          "publicPath": "/ui/icons/icon_map_cartography.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "fc2df6c8e9916e3640530e7cbcfb1ce8d859a562829bedc1498048727e368586"
+        },
+        "128": {
+          "file": "icon_map_cartography_128.png",
+          "publicPath": "/ui/icons/icon_map_cartography_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "fc2df6c8e9916e3640530e7cbcfb1ce8d859a562829bedc1498048727e368586"
+        },
+        "64": {
+          "file": "icon_map_cartography_64.png",
+          "publicPath": "/ui/icons/icon_map_cartography_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "eadf21f2d687bea880feb8290f7e7ef9126d6506a755af3bd893328df8e2d4ee"
+        },
+        "32": {
+          "file": "icon_map_cartography_32.png",
+          "publicPath": "/ui/icons/icon_map_cartography_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "8e1de4a5e58e3a79924f4891a30c48030e0fcec46296cc0a22e5a2b0990894ab"
+        },
+        "raw": {
+          "file": "icon_map_cartography_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_map_cartography_raw.png",
+          "size": [
+            142,
+            140
+          ],
+          "sha256": "1e13c6c0d284589ef1dd0f20881f7699965b6cd1b31bef4a3c417ff2af21a4d0"
+        }
+      }
+    },
+    {
+      "id": "icon.weather.variable",
+      "file": "icon_weather_variable.png",
+      "name": "Переменная облачность",
+      "category": "weather",
+      "palette": [
+        "ui.gold",
+        "ui.cloud_white",
+        "ui.sky",
+        "ui.dark"
+      ],
+      "description": "Яркое солнце за кучевым облаком — переменная облачность",
+      "gridRow": 1,
+      "gridCol": 1,
+      "sourceBoundingBox": {
+        "x": 177,
+        "y": 357,
+        "width": 163,
+        "height": 143
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_weather_variable.png",
+          "publicPath": "/ui/icons/icon_weather_variable.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "d4c302f8a0bfc9a97012abf7ce696a5a6a1bb62aa0329c876d90a7613c1297ba"
+        },
+        "128": {
+          "file": "icon_weather_variable_128.png",
+          "publicPath": "/ui/icons/icon_weather_variable_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "d4c302f8a0bfc9a97012abf7ce696a5a6a1bb62aa0329c876d90a7613c1297ba"
+        },
+        "64": {
+          "file": "icon_weather_variable_64.png",
+          "publicPath": "/ui/icons/icon_weather_variable_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "d87639261bec16a17809e48cb641ae00b4c58403f5bb882f210cc56a568854b5"
+        },
+        "32": {
+          "file": "icon_weather_variable_32.png",
+          "publicPath": "/ui/icons/icon_weather_variable_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "06fdad1a6dd3d216c03fb954188ea70e3f9c00703ff2059ffc9b9b8da98235a9"
+        },
+        "raw": {
+          "file": "icon_weather_variable_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_weather_variable_raw.png",
+          "size": [
+            163,
+            143
+          ],
+          "sha256": "7d29e5ab852a3ec1c32ead031df5e602ba45ef240733f234b4450af7632d16b6"
+        }
+      }
+    },
+    {
+      "id": "icon.analytics.trend",
+      "file": "icon_analytics_trend.png",
+      "name": "Барическая тенденция",
+      "category": "analytics",
+      "palette": [
+        "ui.amber",
+        "ui.red",
+        "ui.navy",
+        "ui.steel"
+      ],
+      "description": "График изменения метеовеличин с восходящей барической стрелкой",
+      "gridRow": 1,
+      "gridCol": 2,
+      "sourceBoundingBox": {
+        "x": 366,
+        "y": 365,
+        "width": 137,
+        "height": 136
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_analytics_trend.png",
+          "publicPath": "/ui/icons/icon_analytics_trend.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "468d118a63a2f4a9e2dd8200e94380658cfdaab1de808c5f92fee5c54dd7dbcc"
+        },
+        "128": {
+          "file": "icon_analytics_trend_128.png",
+          "publicPath": "/ui/icons/icon_analytics_trend_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "468d118a63a2f4a9e2dd8200e94380658cfdaab1de808c5f92fee5c54dd7dbcc"
+        },
+        "64": {
+          "file": "icon_analytics_trend_64.png",
+          "publicPath": "/ui/icons/icon_analytics_trend_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "fbc475aa0c1938d809c9cb707676e9b12c76b7a027e1d4c6b46b8474f2110df6"
+        },
+        "32": {
+          "file": "icon_analytics_trend_32.png",
+          "publicPath": "/ui/icons/icon_analytics_trend_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "1c9aefab6c3f6bfd89f9844f5f9b5243640a7f16f14e36763db5e0530753d8c4"
+        },
+        "raw": {
+          "file": "icon_analytics_trend_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_analytics_trend_raw.png",
+          "size": [
+            137,
+            136
+          ],
+          "sha256": "f9d9e2a59c618dc019bb21765c62ee28f911030ecae56ad2418adf8906f4bb68"
+        }
+      }
+    },
+    {
+      "id": "icon.library.manuals",
+      "file": "icon_library_manuals.png",
+      "name": "Наставления гидрометеослужбы",
+      "category": "archive",
+      "palette": [
+        "ui.red",
+        "ui.emerald",
+        "ui.blue",
+        "ui.gold"
+      ],
+      "description": "Стопка учебных томов синоптической метеорологии и атласов облаков",
+      "gridRow": 1,
+      "gridCol": 3,
+      "sourceBoundingBox": {
+        "x": 528,
+        "y": 363,
+        "width": 154,
+        "height": 148
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_library_manuals.png",
+          "publicPath": "/ui/icons/icon_library_manuals.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "07fcc85a7c9a5af7e7e08625fae5fa279ec42377f0f111bb61a4300d71a57d87"
+        },
+        "128": {
+          "file": "icon_library_manuals_128.png",
+          "publicPath": "/ui/icons/icon_library_manuals_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "07fcc85a7c9a5af7e7e08625fae5fa279ec42377f0f111bb61a4300d71a57d87"
+        },
+        "64": {
+          "file": "icon_library_manuals_64.png",
+          "publicPath": "/ui/icons/icon_library_manuals_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "a0bab2044e7d40f52ecf1f905bd506b6b86bc5311db5f5cfee6e903995015765"
+        },
+        "32": {
+          "file": "icon_library_manuals_32.png",
+          "publicPath": "/ui/icons/icon_library_manuals_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "fbec312133ee76a621c06953f94f2c1bc4a1061a14d1126e3cb7539614b1512d"
+        },
+        "raw": {
+          "file": "icon_library_manuals_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_library_manuals_raw.png",
+          "size": [
+            154,
+            148
+          ],
+          "sha256": "aa45504b66899224d2eaf386aec2b5ac7e9f6ced41a2e234bba09c3d1beae50a"
+        }
+      }
+    },
+    {
+      "id": "icon.roster.team",
+      "file": "icon_roster_team.png",
+      "name": "Смена синоптиков",
+      "category": "social",
+      "palette": [
+        "ui.gold",
+        "ui.blue",
+        "ui.magenta",
+        "ui.dark"
+      ],
+      "description": "Силуэты дежурной смены специалистов центра",
+      "gridRow": 1,
+      "gridCol": 4,
+      "sourceBoundingBox": {
+        "x": 701,
+        "y": 370,
+        "width": 176,
+        "height": 131
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_roster_team.png",
+          "publicPath": "/ui/icons/icon_roster_team.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "2ade979a73f5d1a2bc93848e50da580822eae0fd1b7c2d7c56e9317ea3789dbf"
+        },
+        "128": {
+          "file": "icon_roster_team_128.png",
+          "publicPath": "/ui/icons/icon_roster_team_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "2ade979a73f5d1a2bc93848e50da580822eae0fd1b7c2d7c56e9317ea3789dbf"
+        },
+        "64": {
+          "file": "icon_roster_team_64.png",
+          "publicPath": "/ui/icons/icon_roster_team_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "fe7190966c3f987b532cbd0a0bf7e8508162d8d4ee62f6163b0f1dfcc329ec31"
+        },
+        "32": {
+          "file": "icon_roster_team_32.png",
+          "publicPath": "/ui/icons/icon_roster_team_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "e1ee6e9100e42003acbac5d30e0ef3089d33e4dd119fe04b3c8c941f01400008"
+        },
+        "raw": {
+          "file": "icon_roster_team_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_roster_team_raw.png",
+          "size": [
+            176,
+            131
+          ],
+          "sha256": "5feb4f1dfcedbc426afb9dd3ad0375ad3d3e1cd3c5ec4eb48724270f52882174"
+        }
+      }
+    },
+    {
+      "id": "icon.trophy.star",
+      "file": "icon_trophy_star.png",
+      "name": "Рейтинговый кубок со звездой",
+      "category": "reward",
+      "palette": [
+        "ui.gold",
+        "ui.amber",
+        "ui.star_glow",
+        "ui.dark"
+      ],
+      "description": "Кубок рангового сезона с гравированной звездой мастерства",
+      "gridRow": 1,
+      "gridCol": 5,
+      "sourceBoundingBox": {
+        "x": 891,
+        "y": 368,
+        "width": 120,
+        "height": 131
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_trophy_star.png",
+          "publicPath": "/ui/icons/icon_trophy_star.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "dac42191486940d7e84b62e5eb08f33b1ee7b7374426494e0a191d15499ea0f5"
+        },
+        "128": {
+          "file": "icon_trophy_star_128.png",
+          "publicPath": "/ui/icons/icon_trophy_star_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "dac42191486940d7e84b62e5eb08f33b1ee7b7374426494e0a191d15499ea0f5"
+        },
+        "64": {
+          "file": "icon_trophy_star_64.png",
+          "publicPath": "/ui/icons/icon_trophy_star_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "232731206e629a9ede815e92c8aa1a173248eabc2b54eb51c5de951e0b815a39"
+        },
+        "32": {
+          "file": "icon_trophy_star_32.png",
+          "publicPath": "/ui/icons/icon_trophy_star_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "3c3f866586301f5a06eaec9a7c36c468020686abbea4e5b403cc9187240ad436"
+        },
+        "raw": {
+          "file": "icon_trophy_star_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_trophy_star_raw.png",
+          "size": [
+            120,
+            131
+          ],
+          "sha256": "24dfe976a90d41c934a31fde0f8850b1f799cbeea5ca88986d0a25f2617b985a"
+        }
+      }
+    },
+    {
+      "id": "icon.telegram.dispatch",
+      "file": "icon_telegram_dispatch.png",
+      "name": "Телеграмма-сводка",
+      "category": "communication",
+      "palette": [
+        "ui.white",
+        "ui.amber",
+        "ui.navy",
+        "ui.dark"
+      ],
+      "description": "Вскрытый почтовый пакет со срочной штормовой сводкой",
+      "gridRow": 2,
+      "gridCol": 0,
+      "sourceBoundingBox": {
+        "x": 18,
+        "y": 561,
+        "width": 139,
+        "height": 142
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_telegram_dispatch.png",
+          "publicPath": "/ui/icons/icon_telegram_dispatch.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "de41734000b0df40474002503fe1d06860349c10761403b874d349e66fec01f9"
+        },
+        "128": {
+          "file": "icon_telegram_dispatch_128.png",
+          "publicPath": "/ui/icons/icon_telegram_dispatch_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "de41734000b0df40474002503fe1d06860349c10761403b874d349e66fec01f9"
+        },
+        "64": {
+          "file": "icon_telegram_dispatch_64.png",
+          "publicPath": "/ui/icons/icon_telegram_dispatch_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "0d5a357f6eacda40b59659f180f8efdbfe55a82420f4490c040c4c0a1ca24b4c"
+        },
+        "32": {
+          "file": "icon_telegram_dispatch_32.png",
+          "publicPath": "/ui/icons/icon_telegram_dispatch_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "773f1d0a05340d5b39d7bc498849cff7042ceced8c9feecfdb43b2aab70c8ac1"
+        },
+        "raw": {
+          "file": "icon_telegram_dispatch_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_telegram_dispatch_raw.png",
+          "size": [
+            139,
+            142
+          ],
+          "sha256": "8fa95212060612251162ed80f70dc0f44207a49577e4a9137a10e926d927dbdc"
+        }
+      }
+    },
+    {
+      "id": "icon.schedule.calendar",
+      "file": "icon_schedule_calendar.png",
+      "name": "График наблюдений",
+      "category": "schedule",
+      "palette": [
+        "ui.white",
+        "ui.red",
+        "ui.navy",
+        "ui.dark"
+      ],
+      "description": "Настенный табель стандартных сроков метеонаблюдений (00, 03, 06... ВСВ)",
+      "gridRow": 2,
+      "gridCol": 1,
+      "sourceBoundingBox": {
+        "x": 190,
+        "y": 562,
+        "width": 144,
+        "height": 141
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_schedule_calendar.png",
+          "publicPath": "/ui/icons/icon_schedule_calendar.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "7917b7743c69183841b97530c25f508a1ae7b616f8bc32af398106ccfc5fb093"
+        },
+        "128": {
+          "file": "icon_schedule_calendar_128.png",
+          "publicPath": "/ui/icons/icon_schedule_calendar_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "7917b7743c69183841b97530c25f508a1ae7b616f8bc32af398106ccfc5fb093"
+        },
+        "64": {
+          "file": "icon_schedule_calendar_64.png",
+          "publicPath": "/ui/icons/icon_schedule_calendar_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "85a469bd048240a2a9c420f453cb2372ca6acf09ca06c483065d49ce450c1a78"
+        },
+        "32": {
+          "file": "icon_schedule_calendar_32.png",
+          "publicPath": "/ui/icons/icon_schedule_calendar_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "b54b31b4347ecca6c7749ef60cdd9d5482d33d859e4c7acc6f16f59131dccf4a"
+        },
+        "raw": {
+          "file": "icon_schedule_calendar_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_schedule_calendar_raw.png",
+          "size": [
+            144,
+            141
+          ],
+          "sha256": "120abef0c99a2a61ef2df2ed06318293f927b67b2fb85f43efa729f6f5d160cc"
+        }
+      }
+    },
+    {
+      "id": "icon.alert.bell",
+      "file": "icon_alert_bell.png",
+      "name": "Штормовое оповещение",
+      "category": "alert",
+      "palette": [
+        "ui.gold",
+        "ui.amber",
+        "ui.dark"
+      ],
+      "description": "Сигнальный колокол штормовой опасности и неблагоприятных явлений",
+      "gridRow": 2,
+      "gridCol": 2,
+      "sourceBoundingBox": {
+        "x": 365,
+        "y": 560,
+        "width": 133,
+        "height": 151
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_alert_bell.png",
+          "publicPath": "/ui/icons/icon_alert_bell.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "bd3069c3277c844a71f760eab4e6a004f0d13db9583e3e41c11c38057dec7db0"
+        },
+        "128": {
+          "file": "icon_alert_bell_128.png",
+          "publicPath": "/ui/icons/icon_alert_bell_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "bd3069c3277c844a71f760eab4e6a004f0d13db9583e3e41c11c38057dec7db0"
+        },
+        "64": {
+          "file": "icon_alert_bell_64.png",
+          "publicPath": "/ui/icons/icon_alert_bell_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "451813c25d79076024a2b8ce676564cd58b3e2962a32b1bb2c96999b4cc550f8"
+        },
+        "32": {
+          "file": "icon_alert_bell_32.png",
+          "publicPath": "/ui/icons/icon_alert_bell_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "2a71900a7af9b43c0e13d389ce4457f2e292042d02e45cfbeeb1f6549c1c6dd7"
+        },
+        "raw": {
+          "file": "icon_alert_bell_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_alert_bell_raw.png",
+          "size": [
+            133,
+            151
+          ],
+          "sha256": "7b7f4b68a703b438ebac6f5316c4fcb56c1dd3b196cc8701a569a09ac709bd62"
+        }
+      }
+    },
+    {
+      "id": "icon.guide.help",
+      "file": "icon_guide_help.png",
+      "name": "Справочник и консультации",
+      "category": "help",
+      "palette": [
+        "ui.cyan",
+        "ui.sky",
+        "ui.navy",
+        "ui.dark"
+      ],
+      "description": "Объёмный символ справочника синоптика и методических указаний",
+      "gridRow": 2,
+      "gridCol": 3,
+      "sourceBoundingBox": {
+        "x": 539,
+        "y": 563,
+        "width": 100,
+        "height": 146
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_guide_help.png",
+          "publicPath": "/ui/icons/icon_guide_help.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "fcd91fbbfcee86be9925f99b1307b684533ae4ad4cfe81a704470135af36dfff"
+        },
+        "128": {
+          "file": "icon_guide_help_128.png",
+          "publicPath": "/ui/icons/icon_guide_help_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "fcd91fbbfcee86be9925f99b1307b684533ae4ad4cfe81a704470135af36dfff"
+        },
+        "64": {
+          "file": "icon_guide_help_64.png",
+          "publicPath": "/ui/icons/icon_guide_help_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "9b34d3bb8c40a06fc3f3894caed95a63021b82f10696c8531367f637bab3533f"
+        },
+        "32": {
+          "file": "icon_guide_help_32.png",
+          "publicPath": "/ui/icons/icon_guide_help_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "a0f7bafb977d5182746e49d6982cf8a3094251aa3dce05c40dc87fb08227cda8"
+        },
+        "raw": {
+          "file": "icon_guide_help_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_guide_help_raw.png",
+          "size": [
+            100,
+            146
+          ],
+          "sha256": "80e64946f0e16876e3f70e071d37f2ba0d8f454d7f3f9b92bf7ae29aee8dec1d"
+        }
+      }
+    },
+    {
+      "id": "icon.radar.dish",
+      "file": "icon_radar_dish.png",
+      "name": "Метеорологический радиолокатор",
+      "category": "equipment",
+      "palette": [
+        "ui.steel",
+        "ui.navy",
+        "ui.amber",
+        "ui.dark"
+      ],
+      "description": "Параболическая антенна доплеровского метеолокатора МРЛ с излучением",
+      "gridRow": 2,
+      "gridCol": 4,
+      "sourceBoundingBox": {
+        "x": 683,
+        "y": 540,
+        "width": 148,
+        "height": 180
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_radar_dish.png",
+          "publicPath": "/ui/icons/icon_radar_dish.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "48f2e959a4afce9bb485ac448b5a15213cb000998c46695e6abcce06f87f76b0"
+        },
+        "128": {
+          "file": "icon_radar_dish_128.png",
+          "publicPath": "/ui/icons/icon_radar_dish_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "48f2e959a4afce9bb485ac448b5a15213cb000998c46695e6abcce06f87f76b0"
+        },
+        "64": {
+          "file": "icon_radar_dish_64.png",
+          "publicPath": "/ui/icons/icon_radar_dish_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "13befb79bfbb8dc0d6c322fb1cf40333a79893b11a9db950c4f82e6ccc245d3c"
+        },
+        "32": {
+          "file": "icon_radar_dish_32.png",
+          "publicPath": "/ui/icons/icon_radar_dish_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "dcdd0ae0e90072b4c072d4a163f6765ed19ffb72723f2478514e947296d1af17"
+        },
+        "raw": {
+          "file": "icon_radar_dish_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_radar_dish_raw.png",
+          "size": [
+            148,
+            180
+          ],
+          "sha256": "fb5e040e10492fc91d5dad3c3dccb2df6672a1a89680e1603c2be8cd50bf38fa"
+        }
+      }
+    },
+    {
+      "id": "icon.archive.drawer",
+      "file": "icon_archive_drawer.png",
+      "name": "Картотека наблюдений",
+      "category": "archive",
+      "palette": [
+        "ui.amber",
+        "ui.gold",
+        "ui.navy",
+        "ui.white"
+      ],
+      "description": "Архивный выдвижной ящик с перфокартами и бюллетенями погоды",
+      "gridRow": 2,
+      "gridCol": 5,
+      "sourceBoundingBox": {
+        "x": 863,
+        "y": 563,
+        "width": 141,
+        "height": 144
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_archive_drawer.png",
+          "publicPath": "/ui/icons/icon_archive_drawer.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "63ebf19aac27d1715d9da8d05ca2b97e75994f2d49299d20af75456d61461b8b"
+        },
+        "128": {
+          "file": "icon_archive_drawer_128.png",
+          "publicPath": "/ui/icons/icon_archive_drawer_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "63ebf19aac27d1715d9da8d05ca2b97e75994f2d49299d20af75456d61461b8b"
+        },
+        "64": {
+          "file": "icon_archive_drawer_64.png",
+          "publicPath": "/ui/icons/icon_archive_drawer_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "273c2899617e5ce3cfb70d403c1d361b51b6406320bd8304d607784c98350665"
+        },
+        "32": {
+          "file": "icon_archive_drawer_32.png",
+          "publicPath": "/ui/icons/icon_archive_drawer_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "37f1b5b4b4ae4c3d65e91a1aa51780b03d28317c407358c47192901e80b0ede7"
+        },
+        "raw": {
+          "file": "icon_archive_drawer_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_archive_drawer_raw.png",
+          "size": [
+            141,
+            144
+          ],
+          "sha256": "05997c7ed989c7bd6ab0f50101ab0556a03ef15e40a87f8ae7b50ff21f564479"
+        }
+      }
+    },
+    {
+      "id": "icon.synoptic.chart.tile",
+      "file": "icon_synoptic_chart_tile.png",
+      "name": "Синоптический планшет",
+      "category": "navigation",
+      "palette": [
+        "ui.cyan",
+        "ui.teal",
+        "ui.gold",
+        "ui.cloud_white"
+      ],
+      "description": "Квадратный планшет синоптика с изобарами, фронтами и облачностью",
+      "gridRow": 3,
+      "gridCol": 0,
+      "sourceBoundingBox": {
+        "x": 16,
+        "y": 763,
+        "width": 169,
+        "height": 165
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_synoptic_chart_tile.png",
+          "publicPath": "/ui/icons/icon_synoptic_chart_tile.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "d1e72edcf11531d080d62fb34fc058b78b792ca925d933be4a84e76682857cfd"
+        },
+        "128": {
+          "file": "icon_synoptic_chart_tile_128.png",
+          "publicPath": "/ui/icons/icon_synoptic_chart_tile_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "d1e72edcf11531d080d62fb34fc058b78b792ca925d933be4a84e76682857cfd"
+        },
+        "64": {
+          "file": "icon_synoptic_chart_tile_64.png",
+          "publicPath": "/ui/icons/icon_synoptic_chart_tile_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "fe1bbbe62db308832d5ee8f481a9f23a017933733a6a61532b52e1a10b9cd7f9"
+        },
+        "32": {
+          "file": "icon_synoptic_chart_tile_32.png",
+          "publicPath": "/ui/icons/icon_synoptic_chart_tile_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "cce6073d825387e797b0d8740641b25833d2a46407e3cc8ae9e42896f4d901b6"
+        },
+        "raw": {
+          "file": "icon_synoptic_chart_tile_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_synoptic_chart_tile_raw.png",
+          "size": [
+            169,
+            165
+          ],
+          "sha256": "fd6389a234e1fcfe357da3216e57afe2386d064f3a4465f6b1b3726b68fc4f7e"
+        }
+      }
+    },
+    {
+      "id": "icon.rank.promote.up",
+      "file": "icon_rank_promote_up.png",
+      "name": "Повышение разряда",
+      "category": "progression",
+      "palette": [
+        "ui.emerald",
+        "ui.mint",
+        "ui.white",
+        "ui.dark"
+      ],
+      "description": "Клавиша повышения разряда и квалификационного уровня синоптика",
+      "gridRow": 3,
+      "gridCol": 1,
+      "sourceBoundingBox": {
+        "x": 210,
+        "y": 770,
+        "width": 140,
+        "height": 145
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_rank_promote_up.png",
+          "publicPath": "/ui/icons/icon_rank_promote_up.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "5485a878c318a6d5a5232cc07a67c108a79f032263a575bcbe10b81d0fe12468"
+        },
+        "128": {
+          "file": "icon_rank_promote_up_128.png",
+          "publicPath": "/ui/icons/icon_rank_promote_up_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "5485a878c318a6d5a5232cc07a67c108a79f032263a575bcbe10b81d0fe12468"
+        },
+        "64": {
+          "file": "icon_rank_promote_up_64.png",
+          "publicPath": "/ui/icons/icon_rank_promote_up_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "488eb885c75c1e954ff374aa574fb874fd1e9c8a448fc79086b53aa25a4c8d47"
+        },
+        "32": {
+          "file": "icon_rank_promote_up_32.png",
+          "publicPath": "/ui/icons/icon_rank_promote_up_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "e96b0dcfcfadeb01040b56ede8e0b11f3916eef4364238439bc892f5a7301ff9"
+        },
+        "raw": {
+          "file": "icon_rank_promote_up_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_rank_promote_up_raw.png",
+          "size": [
+            140,
+            145
+          ],
+          "sha256": "7a9ab94474483837ebd79aabb31ec52befc829da69d3810e8a281368a8adbcd9"
+        }
+      }
+    },
+    {
+      "id": "icon.gear.default",
+      "file": "icon_gear_default.png",
+      "name": "Шестерня механизма (сталь)",
+      "category": "system",
+      "palette": [
+        "ui.steel",
+        "ui.silver",
+        "ui.navy",
+        "ui.dark"
+      ],
+      "description": "Механический узел прибора в стандартном стальном исполнении",
+      "gridRow": 3,
+      "gridCol": 2,
+      "sourceBoundingBox": {
+        "x": 370,
+        "y": 770,
+        "width": 144,
+        "height": 145
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_gear_default.png",
+          "publicPath": "/ui/icons/icon_gear_default.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "eb9c84fa65c505c5c183e8b91f4fd1bb3f9627ca64b9d5911a88ce3b4e08d451"
+        },
+        "128": {
+          "file": "icon_gear_default_128.png",
+          "publicPath": "/ui/icons/icon_gear_default_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "eb9c84fa65c505c5c183e8b91f4fd1bb3f9627ca64b9d5911a88ce3b4e08d451"
+        },
+        "64": {
+          "file": "icon_gear_default_64.png",
+          "publicPath": "/ui/icons/icon_gear_default_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "b839b4c7747b83d26ac6d6620224f107695289b71ce469fc8de362b712d2f054"
+        },
+        "32": {
+          "file": "icon_gear_default_32.png",
+          "publicPath": "/ui/icons/icon_gear_default_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "f12a47eaec5a42cab1139e0ad6ad8bbe6e9a00c6872e11ef3254df89371bed41"
+        },
+        "raw": {
+          "file": "icon_gear_default_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_gear_default_raw.png",
+          "size": [
+            144,
+            145
+          ],
+          "sha256": "c5e0ddc75cabd97a010ac6ca7ae9e8d7ba9618228cf739bb1d59ad1a71135c6d"
+        }
+      }
+    },
+    {
+      "id": "icon.gear.active",
+      "file": "icon_gear_active.png",
+      "name": "Шестерня механизма (активная)",
+      "category": "system",
+      "palette": [
+        "ui.cyan",
+        "ui.sky",
+        "ui.navy",
+        "ui.dark"
+      ],
+      "description": "Механический узел в активном состоянии с неоновой лазурной подсветкой",
+      "gridRow": 3,
+      "gridCol": 3,
+      "sourceBoundingBox": {
+        "x": 528,
+        "y": 765,
+        "width": 154,
+        "height": 155
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_gear_active.png",
+          "publicPath": "/ui/icons/icon_gear_active.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "720b7a221e65418ca3b1cba3dfb592175efb465090b3a8724f8d404aabdc2c08"
+        },
+        "128": {
+          "file": "icon_gear_active_128.png",
+          "publicPath": "/ui/icons/icon_gear_active_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "720b7a221e65418ca3b1cba3dfb592175efb465090b3a8724f8d404aabdc2c08"
+        },
+        "64": {
+          "file": "icon_gear_active_64.png",
+          "publicPath": "/ui/icons/icon_gear_active_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "2e702eefed2afec2da92d792d41ec8dc45275666216ca7621e3134b40d90be03"
+        },
+        "32": {
+          "file": "icon_gear_active_32.png",
+          "publicPath": "/ui/icons/icon_gear_active_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "3912f610724a83ac4f33899c5b4362a05fb899bde9dd39ddefd4affcd57fcf01"
+        },
+        "raw": {
+          "file": "icon_gear_active_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_gear_active_raw.png",
+          "size": [
+            154,
+            155
+          ],
+          "sha256": "390c948732cb4d6bc0fca481410563ea9c2485fc3746413119cd24c316781fdb"
+        }
+      }
+    },
+    {
+      "id": "icon.gear.dark",
+      "file": "icon_gear_dark.png",
+      "name": "Шестерня механизма (индиго)",
+      "category": "system",
+      "palette": [
+        "ui.navy",
+        "ui.indigo",
+        "ui.dark"
+      ],
+      "description": "Механический узел в нажатом/активном состоянии цвета глубокого индиго",
+      "gridRow": 3,
+      "gridCol": 4,
+      "sourceBoundingBox": {
+        "x": 695,
+        "y": 771,
+        "width": 144,
+        "height": 144
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_gear_dark.png",
+          "publicPath": "/ui/icons/icon_gear_dark.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "aeacded0c5de77b897eaa7d2a4be5d7ec6196f05c27fbf6547d2f590b0c10ff0"
+        },
+        "128": {
+          "file": "icon_gear_dark_128.png",
+          "publicPath": "/ui/icons/icon_gear_dark_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "aeacded0c5de77b897eaa7d2a4be5d7ec6196f05c27fbf6547d2f590b0c10ff0"
+        },
+        "64": {
+          "file": "icon_gear_dark_64.png",
+          "publicPath": "/ui/icons/icon_gear_dark_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "6398ef6dc5826fac90b79953fdf7500b3ffd16b47135d60ff3ac0d27c53306b6"
+        },
+        "32": {
+          "file": "icon_gear_dark_32.png",
+          "publicPath": "/ui/icons/icon_gear_dark_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "e5f46976c4ae26ca5974aa053784500cf214c2e80a00d63dd65047e3058cb115"
+        },
+        "raw": {
+          "file": "icon_gear_dark_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_gear_dark_raw.png",
+          "size": [
+            144,
+            144
+          ],
+          "sha256": "5d0860879ef57e6c74b80c02468beb20b147befc7cb0af549e48448a46990e28"
+        }
+      }
+    },
+    {
+      "id": "icon.gear.disabled",
+      "file": "icon_gear_disabled.png",
+      "name": "Шестерня механизма (неактивная)",
+      "category": "system",
+      "palette": [
+        "ui.charcoal",
+        "ui.gray",
+        "ui.dark"
+      ],
+      "description": "Механический узел в отключенном или заблокированном состоянии",
+      "gridRow": 3,
+      "gridCol": 5,
+      "sourceBoundingBox": {
+        "x": 863,
+        "y": 770,
+        "width": 145,
+        "height": 145
+      },
+      "uniformCanvas": {
+        "width": 128,
+        "height": 128
+      },
+      "variants": {
+        "default": {
+          "file": "icon_gear_disabled.png",
+          "publicPath": "/ui/icons/icon_gear_disabled.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "10728c0cbed8d192de766bdce550014172e6e5b2a6bb4bc33809fe52dee232ca"
+        },
+        "128": {
+          "file": "icon_gear_disabled_128.png",
+          "publicPath": "/ui/icons/icon_gear_disabled_128.png",
+          "size": [
+            128,
+            128
+          ],
+          "sha256": "10728c0cbed8d192de766bdce550014172e6e5b2a6bb4bc33809fe52dee232ca"
+        },
+        "64": {
+          "file": "icon_gear_disabled_64.png",
+          "publicPath": "/ui/icons/icon_gear_disabled_64.png",
+          "size": [
+            64,
+            64
+          ],
+          "sha256": "c78464fb67aa47ff2ff7f4bbfcbbbb0b9b84d70ecf794968e46fc0c0ec42d965"
+        },
+        "32": {
+          "file": "icon_gear_disabled_32.png",
+          "publicPath": "/ui/icons/icon_gear_disabled_32.png",
+          "size": [
+            32,
+            32
+          ],
+          "sha256": "dfe00e026934f2fa7ae98a7ab10018dd452d8917e38fb9f9b0e230a03699d042"
+        },
+        "raw": {
+          "file": "icon_gear_disabled_raw.png",
+          "sourcePath": "assets/source/ui/icons/icon_gear_disabled_raw.png",
+          "size": [
+            145,
+            145
+          ],
+          "sha256": "964049eebbe2da45e9f3efe9be7cdc9113fdbbe434d1d33059aa45c7cc23b1a9"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "synopsis_day_night_workflow",
+  "version": "1.0",
+  "nodes": {
+    "1": {
+      "inputs": {
+        "ckpt_name": "z_image_turbo.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple"
+    },
+    "2": {
+      "inputs": {
+        "lora_name": "synopsis_26063_style_v1.safetensors",
+        "strength_model": 0.8,
+        "strength_clip": 0.8,
+        "model": ["1", 0],
+        "clip": ["1", 1]
+      },
+      "class_type": "LoraLoader"
+    },
+    "3": {
+      "inputs": {
+        "image": "base_day_candidate.png",
+        "upload": "image"
+      },
+      "class_type": "LoadImage"
+    },
+    "4": {
+      "inputs": {
+        "pixels": ["3", 0],
+        "vae": ["1", 2]
+      },
+      "class_type": "VAEEncode"
+    },
+    "5": {
+      "inputs": {
+        "text": "<26063_pixel_style> night lighting transformation, deep midnight blue shadows, glowing warm amber windows from inside, exact same building geometry and silhouette, solid magenta background #FF00FF",
+        "clip": ["2", 1]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "6": {
+      "inputs": {
+        "text": "different shape, changed silhouette, extra windows, missing roof, day sky, sun, blurry",
+        "clip": ["2", 1]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "7": {
+      "inputs": {
+        "seed": 26063,
+        "steps": 10,
+        "cfg": 3.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 0.55,
+        "model": ["2", 0],
+        "positive": ["5", 0],
+        "negative": ["6", 0],
+        "latent_image": ["4", 0]
+      },
+      "class_type": "KSampler"
+    },
+    "8": {
+      "inputs": {
+        "samples": ["7", 0],
+        "vae": ["1", 2]
+      },
+      "class_type": "VAEDecode"
+    },
+    "9": {
+      "inputs": {
+        "filename_prefix": "night_pair_candidate",
+        "images": ["8", 0]
+      },
+      "class_type": "SaveImage"
+    }
+  }
+}

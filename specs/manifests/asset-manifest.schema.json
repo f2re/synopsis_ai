@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synopsis-game.local/schemas/asset-manifest.schema.json",
+  "title": "Synopsis Game Pixel Asset Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "source", "kind", "logicalSize", "pivot", "layer", "provenance"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._/-]*$"},
+    "source": {"type": "string", "pattern": "^assets/source/"},
+    "kind": {"enum": ["sprite", "tileset", "effect", "ui", "environment", "palette"]},
+    "logicalSize": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1}
+      }
+    },
+    "pivot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": {
+        "x": {"type": "number"},
+        "y": {"type": "number"}
+      }
+    },
+    "layer": {"enum": ["L0", "L1", "L2", "L3", "L4", "L5", "L6", "L8", "ui"]},
+    "paletteTokens": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "animations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": {"type": "string"},
+          "loop": {"type": "boolean"},
+          "frameDurationsMs": {"type": "array", "items": {"type": "integer", "minimum": 1}}
+        }
+      }
+    },
+    "interactionBounds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": {"type": "number"},
+        "y": {"type": "number"},
+        "width": {"type": "number", "exclusiveMinimum": 0},
+        "height": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "generated": {"type": "array", "items": {"type": "string", "pattern": "^assets/generated/"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "license"],
+      "properties": {
+        "origin": {"type": "string"},
+        "author": {"type": "string"},
+        "sourceUrl": {"type": "string"},
+        "license": {"type": "string"},
+        "attribution": {"type": "string"}
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "world.cloud.set",
+  "source": "assets/source/environment/clouds/candidates/cloud_set_v2.png",
+  "kind": "environment",
+  "logicalSize": {"width": 256, "height": 32},
+  "pivot": {"x": 0, "y": 0},
+  "layer": "L1",
+  "paletteTokens": ["world.cloud.day"],
+  "generated": [],
+  "provenance": {"origin": "project-authored generated candidate ART-BATCH-001", "author": "pixel-asset-designer workflow", "license": "project-internal-generated"}
+}

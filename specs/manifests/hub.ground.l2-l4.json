@@ -1,0 +1,11 @@
+{
+  "id": "hub.ground.l2-l4",
+  "source": "assets/source/environment/hub/candidates/hub_ground_l2_l4_v2.png",
+  "kind": "environment",
+  "logicalSize": {"width": 480, "height": 270},
+  "pivot": {"x": 0, "y": 0},
+  "layer": "L4",
+  "paletteTokens": ["world.vegetation.grass", "world.path.stone"],
+  "generated": [],
+  "provenance": {"origin": "project-authored generated candidate ART-BATCH-001", "author": "pixel-asset-designer workflow", "license": "project-internal-generated"}
+}

@@ -1,0 +1,204 @@
+{
+  "id": "items.wardrobe.collection",
+  "kind": "item-collection",
+  "source": "assets/source/items/wardrobe/",
+  "publicPath": "/assets/items/",
+  "items": [
+    {
+      "id": "top.center-jacket",
+      "slot": "top",
+      "name": "Куртка центра",
+      "style": "Служебный",
+      "asset": "top_center_jacket.png",
+      "lore": "Форменная тёмно-синяя штормовка с золотым кантом и нашивкой станции 26063"
+    },
+    {
+      "id": "top.hoodie",
+      "slot": "top",
+      "name": "Худи «Циклон»",
+      "style": "Спортивный",
+      "asset": "top_hoodie.png",
+      "lore": "Плотный трикотаж с глубоким капюшоном и вышивкой барического вихря"
+    },
+    {
+      "id": "top.shirt",
+      "slot": "top",
+      "name": "Служебная рубашка",
+      "style": "Академический",
+      "asset": "top_shirt.png",
+      "lore": "Строгая песочная сорочка с форменным тёмно-синим галстуком и ручками в кармане"
+    },
+    {
+      "id": "top.field-jacket",
+      "slot": "top",
+      "name": "Полевая куртка",
+      "style": "Полевой",
+      "asset": "top_field_jacket.png",
+      "lore": "Ветрозащитная штормовка оттенка лесного мха с усиленными накладными карманами"
+    },
+    {
+      "id": "top.sweater",
+      "slot": "top",
+      "name": "Вязаный свитер",
+      "style": "Уютный",
+      "asset": "top_sweater.png",
+      "lore": "Бордовый шерстяной свитер с традиционным скандинавским снежным узором"
+    },
+    {
+      "id": "bottom.dark-trousers",
+      "slot": "bottom",
+      "name": "Тёмные брюки",
+      "style": "Служебный",
+      "asset": "bottom_dark_trousers.png",
+      "lore": "Классические шерстяные форменные слаксы со стрелками"
+    },
+    {
+      "id": "bottom.field-trousers",
+      "slot": "bottom",
+      "name": "Полевые брюки",
+      "style": "Полевой",
+      "asset": "bottom_field_trousers.png",
+      "lore": "Прочные тактические карго с усиленными наколенниками для работы на метеоплощадке"
+    },
+    {
+      "id": "bottom.jeans",
+      "slot": "bottom",
+      "name": "Джинсы",
+      "style": "Спортивный",
+      "asset": "bottom_jeans.png",
+      "lore": "Плотный балтийский индиго-деним с медной двойной прострочкой"
+    },
+    {
+      "id": "footwear.sneakers",
+      "slot": "footwear",
+      "name": "Кроссовки",
+      "style": "Спортивный",
+      "asset": "footwear_sneakers.png",
+      "lore": "Беговые кроссовки на резиновой подошве для бесшумных дежурств в аппаратной"
+    },
+    {
+      "id": "footwear.boots",
+      "slot": "footwear",
+      "name": "Полевые ботинки",
+      "style": "Полевой",
+      "asset": "footwear_boots.png",
+      "lore": "Берцы из толстой юфти с глубоким тракторным протектором для снега и глины"
+    },
+    {
+      "id": "footwear.shoes",
+      "slot": "footwear",
+      "name": "Туфли синоптика",
+      "style": "Служебный",
+      "asset": "footwear_shoes.png",
+      "lore": "Полированные оксфорды глубокого коньячного оттенка для официальных докладов"
+    },
+    {
+      "id": "headwear.cap",
+      "slot": "headwear",
+      "name": "Кепка центра",
+      "style": "Служебный",
+      "asset": "headwear_cap.png",
+      "lore": "Плотная тёмно-синяя бейсболка с золотым шевроном восходящего солнца над волнами"
+    },
+    {
+      "id": "headwear.beanie",
+      "slot": "headwear",
+      "name": "Вязаная шапка",
+      "style": "Уютный",
+      "asset": "headwear_beanie.png",
+      "lore": "Тёплая лавандово-серая бини крупной вязки с отворотом"
+    },
+    {
+      "id": "held.pencil",
+      "slot": "heldItem",
+      "name": "Карандаш Кохинор",
+      "style": "Инструмент",
+      "asset": "held_pencil.png",
+      "lore": "Легендарный двухцветный карандаш 3М: красный для тёплых фронтов, синий для холодных"
+    },
+    {
+      "id": "held.tablet",
+      "slot": "heldItem",
+      "name": "Планшет погоды",
+      "style": "Инструмент",
+      "asset": "held_tablet.png",
+      "lore": "Защищённый терминал с оперативным доплеровским радаром и декодером телеграмм КН-01"
+    },
+    {
+      "id": "held.map-folder",
+      "slot": "heldItem",
+      "name": "Папка карт",
+      "style": "Инструмент",
+      "asset": "held_map_folder.png",
+      "lore": "Кожаный планшет с латунными уголками и свежими кольцевыми картами погоды"
+    },
+    {
+      "id": "backpack.field",
+      "slot": "backpack",
+      "name": "Полевой рюкзак",
+      "style": "Полевой",
+      "asset": "backpack_field.png",
+      "lore": "Брезентовый экспедиционный ранец с тубусом для крупномасштабных карт"
+    },
+    {
+      "id": "backpack.city",
+      "slot": "backpack",
+      "name": "Городской ранец",
+      "style": "Служебный",
+      "asset": "backpack_city.png",
+      "lore": "Классический кожаный портфель-рюкзак для атласов облаков и бланков"
+    },
+    {
+      "id": "badge.meteo",
+      "slot": "badge",
+      "name": "Знак Метеоролога",
+      "style": "Регалия",
+      "asset": "badge_meteo.png",
+      "lore": "Позолоченный барометрический знак за безаварийное ведение штормовой вахты"
+    },
+    {
+      "id": "badge.aerology",
+      "slot": "badge",
+      "name": "Знак Аэролога",
+      "style": "Регалия",
+      "asset": "badge_aerology.png",
+      "lore": "Лазурная эмалевая петличка высотного радиозондирования тропосферы"
+    },
+    {
+      "id": "companion.tit",
+      "slot": "companion",
+      "name": "Синичка-лазоревка",
+      "style": "Спутник",
+      "asset": "companion_tit.png",
+      "lore": "Ручная птица станции 26063, безошибочно предсказывает падение давления"
+    },
+    {
+      "id": "companion.squirrel",
+      "slot": "companion",
+      "name": "Кампусная белка",
+      "style": "Спутник",
+      "asset": "companion_squirrel.png",
+      "lore": "Любопытная обитательница вековых сосен у корпуса метеорологического архива"
+    },
+    {
+      "id": "headwear.scarf",
+      "slot": "headwear",
+      "name": "Балтийский шарф",
+      "style": "Уютный",
+      "asset": "headwear_scarf.png",
+      "lore": "Плотный шерстяной шарф крупной вязки, надёжно защищающий горло от солёных балтийских ветров"
+    },
+    {
+      "id": "headwear.goggles",
+      "slot": "headwear",
+      "name": "Защитные очки",
+      "style": "Полевой",
+      "asset": "headwear_goggles.png",
+      "lore": "Авиационные поляризационные очки наблюдателя с защитой от снежной слепоты и штормовой пыли"
+    }
+  ],
+  "provenance": {
+    "origin": "project-authored wardrobe assets + ChatGPT prompt-crafted pixel originals",
+    "license": "project-internal-generated"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://synopsis-game.local/schemas/asset-manifest.schema.json",
+  "id": "hub.layers.v3",
+  "title": "Слои центрального хаба кампуса 26063 (сетка 480x270, v3)",
+  "version": "3.0.0",
+  "logicalSize": {
+    "width": 480,
+    "height": 270
+  },
+  "palette": "assets/source/palettes/master_26063_v2.gpl",
+  "totalColors": 56,
+  "horizonSetting": "Северо-Запад РФ (Финский залив, гранит, сосновый бор, плоский горизонт без гор)",
+  "phases": [
+    "night",
+    "dawn",
+    "day",
+    "golden_hour",
+    "twilight",
+    "white_nights"
+  ],
+  "layers": [
+    {
+      "layer": "L0",
+      "name": "Небо и небесные светила",
+      "parallaxFactor": 0.05,
+      "source": "assets/source/environment/hub/candidates/hub_background_l0_l2_v2.png",
+      "dimensions": { "width": 480, "height": 270 },
+      "phases": {
+        "night": { "skyTop": "#070D1E", "skyHorizon": "#263B66", "stars": true },
+        "dawn": { "skyTop": "#4B3A6E", "skyHorizon": "#F4B98A", "stars": false },
+        "day": { "skyTop": "#5E8FC4", "skyHorizon": "#C4DDF0", "stars": false },
+        "golden_hour": { "skyTop": "#7A4C80", "skyHorizon": "#F4B98A", "stars": false },
+        "twilight": { "skyTop": "#18284D", "skyHorizon": "#B2607F", "stars": true },
+        "white_nights": { "skyTop": "#3A5383", "skyHorizon": "#E08A7A", "stars": false }
+      }
+    },
+    {
+      "layer": "L1",
+      "name": "Дальние кучевые и слоистые облака",
+      "parallaxFactor": 0.10,
+      "source": "assets/source/environment/clouds/candidates/cloud_set_v2.png",
+      "dimensions": { "width": 256, "height": 32 },
+      "animation": { "type": "drift", "speedPixelsPerSecond": 2 }
+    },
+    {
+      "layer": "L2",
+      "name": "Дальний горизонт Северо-Запада: залив, сосновый лес, силуэт маяка",
+      "parallaxFactor": 0.20,
+      "source": "assets/source/environment/hub/candidates/hub_background_l0_l2_v2.png",
+      "dimensions": { "width": 480, "height": 270 },
+      "features": ["плоский равнинный берег", "сосны", "шпили и радиомачты без гор"]
+    },
+    {
+      "layer": "L3",
+      "name": "Водная гладь Финского залива и причала",
+      "parallaxFactor": 0.30,
+      "source": "assets/source/environment/hub/candidates/hub_ground_l2_l4_v2.png",
+      "dimensions": { "width": 480, "height": 270 },
+      "animation": { "frames": 4, "fps": 3, "description": "горизонтальные блики воды 2-6 px" }
+    },
+    {
+      "layer": "L4",
+      "name": "Ближние облака и утренний туман",
+      "parallaxFactor": 0.40,
+      "source": "assets/source/environment/clouds/candidates/cloud_set_v2.png",
+      "dimensions": { "width": 256, "height": 32 },
+      "animation": { "type": "drift", "speedPixelsPerSecond": 5 }
+    },
+    {
+      "layer": "L5",
+      "name": "Архитектурные корпуса кампуса 26063",
+      "parallaxFactor": 1.00,
+      "source": "assets/source/environment/hub/candidates/hub_architecture_l3_v2.png",
+      "dimensions": { "width": 480, "height": 270 },
+      "buildings": [
+        { "id": "codepost", "name": "Кодовый пост (КН-01)", "interactive": true },
+        { "id": "archive", "name": "Архив гидрометеорологических наблюдений", "interactive": true },
+        { "id": "lab", "name": "Аэрологическая лаборатория", "interactive": false },
+        { "id": "radar", "name": "Радиолокационная вышка ДМРЛ", "interactive": false },
+        { "id": "cartography", "name": "Картографический класс", "interactive": false },
+        { "id": "hall", "name": "Зал синоптических дуэлей", "interactive": false }
+      ],
+      "windowLighting": {
+        "night": 0.70,
+        "dawn": 0.40,
+        "day": 0.10,
+        "golden_hour": 0.30,
+        "twilight": 0.60,
+        "white_nights": 0.40
+      }
+    },
+    {
+      "layer": "L6",
+      "name": "Рельеф двора, гранитные дорожки, метеорологическая площадка",
+      "parallaxFactor": 1.00,
+      "source": "assets/source/environment/hub/candidates/hub_ground_l2_l4_v2.png",
+      "dimensions": { "width": 480, "height": 270 },
+      "props": ["психрометрическая будка БП", "мачта анемометра М-63М", "ограждение площадки"]
+    },
+    {
+      "layer": "L7",
+      "name": "Дворовые пропсы, скамейки, фонари, инвентарный знак 26063",
+      "parallaxFactor": 1.00,
+      "source": "assets/source/environment/hub/candidates/hub_decor_l4_v2.png",
+      "dimensions": { "width": 480, "height": 270 },
+      "features": ["конусы света фонарей с дизерингом", "латунная табличка 26063"]
+    },
+    {
+      "layer": "L8",
+      "name": "Анимированная фауна и персонажи кампуса",
+      "parallaxFactor": 1.00,
+      "source": "assets/source/animals/bird/candidates/bird_sheet_v2.png",
+      "dimensions": { "width": 72, "height": 14 },
+      "entities": ["синица-московка", "чайка", "белка", "кот Барограф", "дежурный техник"]
+    },
+    {
+      "layer": "L9",
+      "name": "Передний план: покачивающиеся ветви прибрежных сосен и берёз",
+      "parallaxFactor": 1.15,
+      "source": "assets/source/environment/vegetation/candidates/vegetation_sheet_v2.png",
+      "dimensions": { "width": 256, "height": 64 },
+      "animation": { "frames": 2, "fps": 2, "description": "мягкое колыхание хвои" }
+    },
+    {
+      "layer": "L10",
+      "name": "Сезонные погодные частицы (дождь / снег / морозная дымка)",
+      "parallaxFactor": 1.20,
+      "source": "assets/source/environment/clouds/candidates/cloud_set_v2.png",
+      "particles": { "snow": "1x1", "rain": "1x2", "reducedMotionSupported": true }
+    }
+  ],
+  "provenance": {
+    "origin": "Собственная авторская разработка для 26063: Позывной «Синоптик»",
+    "license": "CC0-1.0",
+    "author": "art-director / pixel-asset-designer"
+  }
+}

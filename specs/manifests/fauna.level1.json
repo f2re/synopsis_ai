@@ -1,0 +1,160 @@
+{
+  "$schema": "https://synopsis-game.local/schemas/asset-manifest.schema.json",
+  "id": "fauna.level1",
+  "title": "Фауна кампуса станции 26063 (сетка 480x270, семейства M1 и M2)",
+  "version": "3.0.0",
+  "source": "assets/source/animals/bird/candidates/bird_sheet_v2.png",
+  "kind": "sprite",
+  "logicalSize": {
+    "width": 256,
+    "height": 128
+  },
+  "pivot": {
+    "x": 0.5,
+    "y": 1.0
+  },
+  "layer": "L8",
+  "palette": "assets/source/palettes/master_26063_v2.gpl",
+  "entities": [
+    {
+      "id": "bird_tit",
+      "name": "Большая синица",
+      "habitat": ["двор", "метеоплощадка", "подоконник кодового поста"],
+      "scales": {
+        "M1": { "width": 6, "height": 5, "pivot": { "x": 3, "y": 5 } },
+        "M2": { "width": 14, "height": 12, "pivot": { "x": 7, "y": 12 } }
+      },
+      "paletteTokens": ["fauna.tit.breast", "fauna.tit.back", "fauna.tit.cap", "fauna.tit.wing"],
+      "states": {
+        "idle": { "frames": 4, "fps": 4, "loop": true },
+        "head_turn": { "frames": 2, "fps": 4, "loop": false },
+        "hop": { "frames": 4, "fps": 10, "loop": false },
+        "peck": { "frames": 3, "fps": 8, "loop": false },
+        "takeoff": { "frames": 4, "fps": 12, "loop": false },
+        "flight": { "frames": 4, "fps": 10, "loop": true }
+      },
+      "onClick": { "action": "flutter_away", "sound": "snd_tit_chirp" }
+    },
+    {
+      "id": "birds_sparrows",
+      "name": "Стайка воробьёв (3-5 особей)",
+      "habitat": ["двор", "гранитные дорожки"],
+      "scales": {
+        "M1": { "width": 5, "height": 4, "pivot": { "x": 2, "y": 4 } }
+      },
+      "paletteTokens": ["fauna.sparrow.brown", "fauna.sparrow.chest", "fauna.sparrow.beak"],
+      "states": {
+        "hop": { "frames": 3, "fps": 8, "loop": true },
+        "peck": { "frames": 3, "fps": 6, "loop": true },
+        "takeoff": { "frames": 3, "fps": 12, "loop": false }
+      },
+      "onClick": { "action": "scatter_fan", "sound": "snd_sparrows_flutter" }
+    },
+    {
+      "id": "bird_gull",
+      "name": "Серебристая чайка",
+      "habitat": ["небо над заливом", "фонарные столбы"],
+      "scales": {
+        "M1": { "width": 12, "height": 6, "pivot": { "x": 6, "y": 3 } }
+      },
+      "paletteTokens": ["fauna.gull.white", "fauna.gull.wingtip", "fauna.gull.beak"],
+      "states": {
+        "glide": { "frames": 4, "fps": 6, "loop": true },
+        "flap": { "frames": 4, "fps": 8, "loop": true }
+      },
+      "onClick": { "action": "cry_and_turn", "sound": "snd_gull_cry" }
+    },
+    {
+      "id": "bird_mallard",
+      "name": "Кряква (пара уток)",
+      "season": ["spring", "summer", "autumn"],
+      "habitat": ["вода Финского залива", "причал"],
+      "scales": {
+        "M1": { "width": 10, "height": 6, "pivot": { "x": 5, "y": 6 } }
+      },
+      "paletteTokens": ["fauna.mallard.head", "fauna.mallard.body", "fauna.mallard.bill"],
+      "states": {
+        "swim": { "frames": 4, "fps": 4, "loop": true },
+        "dive": { "frames": 6, "fps": 8, "loop": false, "waterRipplesFrames": 3 }
+      },
+      "onClick": { "action": "dive", "sound": "snd_water_splash" }
+    },
+    {
+      "id": "animal_squirrel",
+      "name": "Обыкновенная белка",
+      "habitat": ["сосны у архива", "забор метеоплощадки"],
+      "scales": {
+        "M1": { "width": 8, "height": 6, "pivot": { "x": 4, "y": 6 } },
+        "M2": { "width": 28, "height": 20, "pivot": { "x": 14, "y": 20 } }
+      },
+      "paletteTokens": ["fauna.squirrel.red", "fauna.squirrel.belly", "fauna.squirrel.tail"],
+      "states": {
+        "trunk_run": { "frames": 6, "fps": 12, "loop": true },
+        "sit": { "frames": 4, "fps": 4, "loop": true },
+        "hide_cone": { "frames": 6, "fps": 8, "loop": false }
+      },
+      "onClick": { "action": "climb_up_drop_cone", "sound": "snd_squirrel_chatter" }
+    },
+    {
+      "id": "animal_cat_barograph",
+      "name": "Кот Барограф",
+      "habitat": ["двор у крыльца (день)", "кодовый пост на телетайпе (ночь/смена)"],
+      "scales": {
+        "M1": { "width": 10, "height": 7, "pivot": { "x": 5, "y": 7 } },
+        "M2": { "width": 24, "height": 16, "pivot": { "x": 12, "y": 16 } }
+      },
+      "paletteTokens": ["fauna.cat.ginger", "fauna.cat.stripes", "fauna.cat.white", "fauna.cat.eyes"],
+      "states": {
+        "sleep": { "frames": 4, "fps": 2, "loop": true, "description": "плавное дыхание животом" },
+        "head_raise": { "frames": 3, "fps": 6, "loop": false },
+        "stretch": { "frames": 6, "fps": 8, "loop": false },
+        "wash": { "frames": 6, "fps": 6, "loop": false },
+        "walk": { "frames": 6, "fps": 8, "loop": true },
+        "tail_twitch": { "frames": 3, "fps": 4, "loop": false }
+      },
+      "onClick": { "action": "purr_and_stretch", "sound": "snd_cat_purr" },
+      "streakBonusReaction": "stretch_and_blink"
+    },
+    {
+      "id": "birds_pigeons",
+      "name": "Голуби (3 штуки)",
+      "habitat": ["крыша Картографического класса"],
+      "scales": {
+        "M1": { "width": 7, "height": 6, "pivot": { "x": 3, "y": 6 } }
+      },
+      "paletteTokens": ["fauna.pigeon.grey", "fauna.pigeon.neck"],
+      "states": {
+        "roost": { "frames": 2, "fps": 2, "loop": true },
+        "takeoff": { "frames": 4, "fps": 10, "loop": false }
+      },
+      "onClick": { "action": "takeoff" }
+    },
+    {
+      "id": "bird_bullfinch",
+      "name": "Снегирь (зимний сезонный гость)",
+      "season": ["winter"],
+      "habitat": ["ветви рябины у ограды", "метеоплощадка"],
+      "scales": {
+        "M1": { "width": 7, "height": 6, "pivot": { "x": 3, "y": 6 } }
+      },
+      "paletteTokens": ["fauna.bullfinch.red", "fauna.bullfinch.black", "fauna.bullfinch.grey"],
+      "states": {
+        "sit": { "frames": 2, "fps": 2, "loop": true },
+        "peck_berry": { "frames": 4, "fps": 6, "loop": false },
+        "takeoff": { "frames": 3, "fps": 10, "loop": false },
+        "flight": { "frames": 4, "fps": 8, "loop": true }
+      },
+      "onClick": { "action": "flutter_away" }
+    }
+  ],
+  "accessibility": {
+    "reducedMotion": {
+      "behavior": "Замена непрерывной анимации птиц и белок на статические позы; сохранение только реакций по клику"
+    }
+  },
+  "provenance": {
+    "origin": "Собственная авторская разработка для 26063: Позывной «Синоптик»",
+    "license": "CC0-1.0",
+    "author": "pixel-asset-designer"
+  }
+}

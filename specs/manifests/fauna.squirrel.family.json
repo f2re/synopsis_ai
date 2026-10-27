@@ -1,0 +1,17 @@
+{
+  "id": "fauna.squirrel.family",
+  "source": "assets/source/animals/squirrel/candidates/squirrel_family_v2.png",
+  "kind": "sprite",
+  "logicalSize": {"width": 112, "height": 80},
+  "pivot": {"x": 14, "y": 18},
+  "layer": "L5",
+  "paletteTokens": ["world.fauna.squirrel"],
+  "animations": [
+    {"name": "idle", "loop": true, "frameDurationsMs": [500, 500, 500, 500]},
+    {"name": "run", "loop": true, "frameDurationsMs": [120, 120, 120, 120]},
+    {"name": "climb", "loop": true, "frameDurationsMs": [180, 180, 180, 180]},
+    {"name": "nut", "loop": true, "frameDurationsMs": [400, 400, 400, 400]}
+  ],
+  "generated": [],
+  "provenance": {"origin": "project-authored generated candidate ART-BATCH-001", "author": "pixel-asset-designer workflow", "license": "project-internal-generated"}
+}
