@@ -106,7 +106,7 @@ def get_lore_for_asset(asset_id: str) -> dict[str, Any]:
         aliases = {
             "vera_ladozhskaya": ("mentor", "ladozh", "vera", "teacher"),
             "semyon_kruglov": ("semyon", "semen", "kruglov", "technician"),
-            "pascal_cat": ("pascal", "cat", "companion.cat", "hectopascal"),
+            "pascal_cat": ("pascal", "hectopascal", "companion.cat", "cat_pascal", "pascal_cat"),
         }.get(key, ())
         if key in aid or any(alias in aid for alias in aliases):
             return {"type": "character", "key": key, "data": data}
