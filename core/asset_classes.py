@@ -423,51 +423,94 @@ def classify_asset(asset_id: str, asset_spec: dict[str, Any] | None = None) -> s
         if spec_class in (CLASS_UI, "ui"):
             return CLASS_UI_FRAME if ("FRAME" in aid or "WINDOW" in aid or "PANEL" in aid) else CLASS_UI_ICON
 
-    # Classification by ID and visual hints
     size = spec.get("size", [0, 0])
 
-    if "DIALOGUE" in aid or (("PORTRAIT" in aid or "VERA" in aid or "MENTOR" in aid) and size[1] >= 200):
+    # 1. UI Elements (HIGHEST PRIORITY: prevent ICON-* with people:True from becoming world_character)
+    if aid.startswith("ICON-") or aid.startswith("UI-ICON") or "-ICON-" in aid or aid.endswith("-ICON"):
+        return CLASS_UI_ICON
+
+    if (
+        aid.startswith("UI-FRAME")
+        or aid.startswith("UI-PANEL")
+        or aid.startswith("UI-WINDOW")
+        or aid.startswith("FRAME-")
+        or "UI-BOX" in aid
+        or "CARD-PANEL" in aid
+    ):
+        return CLASS_UI_FRAME
+
+    if aid.startswith("UI-") or aid.startswith("BADGE-") or "BADGE" in aid:
+        if "FRAME" in aid or "WINDOW" in aid or "PANEL" in aid or size[0] >= 48:
+            return CLASS_UI_FRAME
+        return CLASS_UI_ICON
+
+    # 2. Large Scenes / Background Panoramas
+    if (
+        aid.startswith("HUB-L0")
+        or aid.startswith("HUB-L1")
+        or aid.startswith("HUB-BACKGROUND")
+        or "SCENE" in aid
+        or "BG" in aid
+        or "BACKGROUND" in aid
+        or "PANORAMA" in aid
+        or size == [480, 270]
+    ):
+        return CLASS_LARGE_SCENE
+
+    # 3. Portraits (Dialogue and Profile)
+    if "DIALOGUE" in aid or (("PORTRAIT" in aid or "VERA" in aid) and size[1] >= 200):
         return CLASS_DIALOGUE_PORTRAIT
 
-    if "PROFILE" in aid or ("PORTRAIT" in aid and "SHEET" not in aid and "WALK" not in aid) or "MENTOR-PORTRAIT" in aid:
+    if (
+        "PROFILE" in aid
+        or ("PORTRAIT" in aid and "SHEET" not in aid and "WALK" not in aid)
+        or aid == "MENTOR-PORTRAIT"
+        or "MENTOR-PORTRAIT" in aid
+    ):
         return CLASS_PROFILE_PORTRAIT
 
-    if "COMPANION" in aid or "CAT" in aid or "DOG" in aid or "BIRD" in aid or "GULL" in aid:
+    # 4. Companions and Fauna
+    if "COMPANION" in aid or "CAT" in aid or "DOG" in aid or "BIRD" in aid or "GULL" in aid or "SQUIRREL" in aid:
         return CLASS_COMPANION_SPRITE
 
-    if spec.get("people") or "AVATAR" in aid or "CHAR" in aid or "NPC" in aid:
+    # 5. World Characters and NPCs
+    if (
+        spec.get("people")
+        or "AVATAR" in aid
+        or "CHAR" in aid
+        or "NPC" in aid
+        or "MENTOR-M1" in aid
+        or "MENTOR-M2" in aid
+    ):
         if "SHEET" in aid or "WALK" in aid or (size[0] > 0 and size[0] <= 64):
             return CLASS_WORLD_CHARACTER
         if size[1] >= 200:
             return CLASS_DIALOGUE_PORTRAIT
         return CLASS_PROFILE_PORTRAIT
 
-    if "SCENE" in aid or "BG" in aid or "BACKGROUND" in aid or "PANORAMA" in aid or size == [480, 270]:
-        return CLASS_LARGE_SCENE
-
+    # 6. Architecture
     if aid.startswith("BLD-") or "BUILDING" in aid or "RADAR" in aid or "FACADE" in aid or "STATION" in aid:
         if max(size) >= 80 or not size or size == [0, 0]:
             return CLASS_ARCHITECTURE_LANDMARK
         return CLASS_ARCHITECTURE_SMALL
 
+    # 7. Interactive Objects
     if "INTERACTIVE" in aid or "CONSOLE" in aid or "ANEMOMETER" in aid or "DESK" in aid or "TERMINAL" in aid:
         return CLASS_INTERACTIVE_OBJECT
 
+    # 8. Vegetation
     if "VEGETATION" in aid or "TREE" in aid or "BUSH" in aid or "PINE" in aid or "BIRCH" in aid:
         return CLASS_VEGETATION_SPRITE
 
+    # 9. Terrain
     if aid.startswith("KF-") or aid.startswith("HUB-GROUND") or "TILE" in aid or "TERRAIN" in aid:
         return CLASS_TERRAIN_TILE
 
-    if "FRAME" in aid or "WINDOW" in aid or "PANEL" in aid:
-        return CLASS_UI_FRAME
-
-    if aid.startswith("UI-") or "ICON" in aid or "BADGE" in aid:
-        return CLASS_UI_ICON
-
+    # 10. VFX
     if "VFX" in aid or "EFFECT" in aid or "SMOKE" in aid or "RAIN" in aid or "SNOW" in aid:
         return CLASS_VFX_SMALL
 
+    # 11. Props & Items
     if aid.startswith("PROP-") or "PROP" in aid or "FURNITURE" in aid or "ITEM" in aid:
         return CLASS_PROP_SPRITE
 

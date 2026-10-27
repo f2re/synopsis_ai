@@ -159,12 +159,13 @@ async def generate_candidates(
     asset_id: str,
     count: int = 4,
     seed: int | None = None,
-    backend: str = "auto"
+    backend: str = "auto",
+    correction: str | None = None,
 ) -> dict[str, Any]:
     """[Lifecycle Step 2 - Generation] Generates raw high-detail candidate images for an asset into assets/work/<asset_id>/raw/ using class-specific workflow and prompt."""
     spec = load_spec(SPEC_PATH)
     asset = get_asset_by_id(spec, asset_id)
-    pos_prompt, neg_prompt, meta = compile_generation_prompts(asset_id, asset)
+    pos_prompt, neg_prompt, meta = compile_generation_prompts(asset_id, asset, correction=correction)
 
     storage = WorkStorage(asset_id, base_dir=WORK_DIR)
     storage.save_spec(asset)
@@ -269,7 +270,7 @@ def rank_candidates(asset_id: str) -> dict[str, Any]:
 
     rankings = []
     for c_file in raw_files:
-        report = evaluate_asset_candidate(c_file, asset, palette=palette)
+        report = evaluate_asset_candidate(c_file, asset, palette=palette, is_raw=True)
         # Compute quality score based on metrics
         occ_x = report["metrics"].get("occupancy_x", 0.5)
         occ_y = report["metrics"].get("occupancy_y", 0.5)
@@ -522,7 +523,7 @@ async def regenerate_asset(
     seed: int | None = None
 ) -> dict[str, Any]:
     """Re-generates raw candidates applying optional corrections to the positive prompt."""
-    return await generate_candidates(asset_id, count=4, seed=seed)
+    return await generate_candidates(asset_id, count=4, seed=seed, correction=correction)
 
 
 # --------------------------------------------------------------------------

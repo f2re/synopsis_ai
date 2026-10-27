@@ -81,9 +81,19 @@ def generate_z_image_candidate(
 
     generator = torch.Generator(device="cuda:0").manual_seed(seed_val)
 
-    # Compute high-res generator scale (4x) keeping exact aspect ratio, aligned to 16px multiples
-    raw_w = max(128, min(width * 4, 1024))
-    raw_h = max(128, min(height * 4, 1024))
+    # Compute high-res generator scale keeping exact aspect ratio, aligned to 16px multiples.
+    # For small items (e.g. 16x16, 32x32), generate raw at at least 256x256 so the diffusion
+    # model has sufficient latent capacity to render intricate semantic details.
+    raw_w = max(256, min(width * 4, 1024))
+    raw_h = max(256, min(height * 4, 1024))
+
+    # Preserve exact target aspect ratio
+    target_aspect = width / float(height)
+    if target_aspect > 1.0:
+        raw_h = max(128, int(raw_w / target_aspect))
+    elif target_aspect < 1.0:
+        raw_w = max(128, int(raw_h * target_aspect))
+
     gen_w = max(128, (raw_w // 16) * 16)
     gen_h = max(128, (raw_h // 16) * 16)
 
@@ -103,10 +113,10 @@ def generate_z_image_candidate(
 
         image = _pipeline(**kwargs).images[0]
 
-        # If aligned resolution slightly differed from exact 4x, scale to exact (w*4, h*4)
-        if image.size != (width * 4, height * 4):
+        # Ensure saved raw candidate matches aligned generation dimensions
+        if image.size != (gen_w, gen_h):
             from PIL import Image
-            image = image.resize((width * 4, height * 4), Image.LANCZOS)
+            image = image.resize((gen_w, gen_h), Image.LANCZOS)
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
         image.save(output_path)
