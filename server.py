@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
+import json
 import os
 import shutil
 import subprocess
+import uuid
 from pathlib import Path
 from typing import Any
 import yaml
@@ -106,6 +109,30 @@ WORK_DIR.mkdir(parents=True, exist_ok=True)
 
 comfy = ComfyClient(base_url=CONFIG["comfyui"]["base_url"])
 pixellab = PixelLabClient(api_url=CONFIG["pixellab"]["api_url"])
+GPU_GENERATION_LOCK = asyncio.Lock()
+
+
+def _candidate_rejection(storage: WorkStorage, source_path: Path) -> dict[str, Any] | None:
+    """Return a rejection record only when it matches this exact source image."""
+    source_name = source_path.name.removeprefix("selected_")
+    marker = storage.review_dir / f"{Path(source_name).stem}.rejected.json"
+    if not marker.is_file():
+        return None
+    try:
+        rejection = json.loads(marker.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {"status": "rejected", "reasons": ["Invalid rejection record"]}
+    if rejection.get("sha256") == hashlib.sha256(source_path.read_bytes()).hexdigest():
+        return rejection
+    return None
+
+
+def _refined_output(storage: WorkStorage, report: dict[str, Any]) -> Path:
+    """Resolve the current report image while refusing paths outside this asset."""
+    path = Path(report.get("candidate_path") or storage.get_refined_path(suffix="refined"))
+    if path.resolve().parent != storage.refined_dir.resolve():
+        raise HTTPException(status_code=400, detail="Review report points outside the asset refined directory")
+    return path
 
 
 def get_active_palette(asset: dict[str, Any]) -> list[tuple[int, int, int]]:
@@ -161,73 +188,79 @@ async def generate_candidates(
     seed: int | None = None,
     backend: str = "auto",
     correction: str | None = None,
+    creator_id: str | None = None,
 ) -> dict[str, Any]:
     """[Lifecycle Step 2 - Generation] Generates raw high-detail candidate images for an asset into assets/work/<asset_id>/raw/ using class-specific workflow and prompt."""
     spec = load_spec(SPEC_PATH)
     asset = get_asset_by_id(spec, asset_id)
+    if not 1 <= count <= 8:
+        raise HTTPException(status_code=400, detail="count must be between 1 and 8")
     pos_prompt, neg_prompt, meta = compile_generation_prompts(asset_id, asset, correction=correction)
+    if creator_id:
+        meta["creator_id"] = creator_id
 
     storage = WorkStorage(asset_id, base_dir=WORK_DIR)
-    storage.save_spec(asset)
-    storage.save_prompt(pos_prompt, neg_prompt, meta)
 
     target_w, target_h = asset.get("size", [256, 256])
     palette = get_active_palette(asset)
     raw_paths: list[str] = []
     chosen_backend = backend
 
-    base_seed = seed or 26063
+    base_seed = seed if seed is not None else 26063
+    seeds: list[int] = []
 
-    # 1. Authentic character synthesis for sprite sheets
-    if asset.get("people") and (asset.get("frame") or "avatar" in asset_id.lower() or "walk" in asset_id.lower()):
-        frames, (fw, fh), cols = generate_character_sprite_frames(
-            asset, seed=base_seed, frames=None, palette=palette, repo_root=REPO_ROOT
-        )
-        for c_idx in range(min(count, 4)):
-            sheet_raw = storage.get_raw_path(c_idx + 1)
-            frame_norm_paths = []
-            for f_idx, frame_img in enumerate(frames):
-                fn = storage.raw_dir / f"f_{f_idx:02d}_c{c_idx}.png"
-                frame_img.save(fn)
-                frame_norm_paths.append(fn)
-            assemble_sprite_sheet(frame_norm_paths, sheet_raw, (fw, fh), columns=cols)
-            raw_paths.append(str(sheet_raw))
-        chosen_backend = "character_synthesizer"
-
-    # 2. Neural generation via Z-Image-Turbo
-    elif is_z_image_available() and backend in ("auto", "z_image", "z_image_turbo"):
-        for c_idx in range(count):
-            c_seed = base_seed + c_idx * 17
-            raw_target = storage.get_raw_path(c_idx + 1)
-            if generate_z_image_candidate(
-                pos_prompt, raw_target, target_w, target_h, seed=c_seed, steps=8, negative_prompt=neg_prompt
-            ):
+    # Reserve filenames while holding the same lock as generation: concurrent
+    # requests must never overwrite one another's candidates or run metadata.
+    async with GPU_GENERATION_LOCK:
+        storage.save_spec(asset)
+        storage.save_prompt(pos_prompt, neg_prompt, meta)
+        start_index = storage.next_candidate_index()
+        if backend == "procedural" and asset.get("people") and asset.get("frame"):
+            for c_idx in range(count):
+                c_seed = base_seed + c_idx * 17
+                frames, (fw, fh), cols = generate_character_sprite_frames(
+                    asset, seed=c_seed, frames=None, palette=palette, repo_root=REPO_ROOT
+                )
+                sheet_raw = storage.get_raw_path(start_index + c_idx)
+                frame_paths = []
+                for f_idx, frame_img in enumerate(frames):
+                    fn = storage.raw_dir / f"f_{f_idx:02d}_c{start_index + c_idx}.png"
+                    frame_img.save(fn)
+                    frame_paths.append(fn)
+                assemble_sprite_sheet(frame_paths, sheet_raw, (fw, fh), columns=cols)
+                raw_paths.append(str(sheet_raw))
+                seeds.append(c_seed)
+            chosen_backend = "character_synthesizer"
+        elif is_z_image_available() and backend in ("auto", "z_image", "z_image_turbo"):
+            for c_idx in range(count):
+                c_seed = base_seed + c_idx * 17
+                raw_target = storage.get_raw_path(start_index + c_idx)
+                if not await asyncio.to_thread(
+                    generate_z_image_candidate, pos_prompt, raw_target, target_w, target_h,
+                    seed=c_seed, steps=9, negative_prompt=neg_prompt
+                ):
+                    break
                 raw_paths.append(str(raw_target))
-        if raw_paths:
-            chosen_backend = "z_image_turbo"
+                seeds.append(c_seed)
+            if raw_paths:
+                chosen_backend = "z_image_turbo"
 
-    # 3. Fallback mock generation if neural weights not present
-    if not raw_paths:
-        from PIL import Image, ImageDraw
-        for c_idx in range(count):
-            raw_target = storage.get_raw_path(c_idx + 1)
-            img = Image.new("RGBA", (target_w * 4, target_h * 4), (30, 36, 48, 255))
-            draw = ImageDraw.Draw(img)
-            draw.rectangle(
-                [int(target_w * 0.8), int(target_h * 0.8), int(target_w * 3.2), int(target_h * 3.2)],
-                fill=palette[min(2 + c_idx, len(palette) - 1)] + (255,)
-            )
-            img.save(raw_target)
-            raw_paths.append(str(raw_target))
-        chosen_backend = "mock_fallback"
+        status = "generated_raw" if len(raw_paths) == count else "failed"
+        storage.record_generation(asset, pos_prompt, neg_prompt, meta, [Path(p) for p in raw_paths],
+                                  seeds, chosen_backend, status)
+    if status != "generated_raw":
+        raise HTTPException(status_code=503, detail=(
+            f"Generation incomplete: {len(raw_paths)}/{count} candidates; "
+            "check Z-Image weights and GPU logs. No mock fallback was created."
+        ))
 
     return {
         "asset_id": asset_id,
         "backend": chosen_backend,
         "count_generated": len(raw_paths),
         "raw_candidates": raw_paths,
-        "status": "generated_raw",
-        "next_step": f"Use rank_candidates('{asset_id}') or select_candidate('{asset_id}', 1)"
+        "status": status,
+        "next_step": f"Use rank_candidates('{asset_id}') to choose a candidate"
     }
 
 
@@ -237,19 +270,11 @@ async def generate_asset(
     asset_id: str,
     backend: str = "auto",
     candidates: int = 4,
-    seed: int | None = None
+    seed: int | None = None,
+    creator_id: str | None = None,
 ) -> dict[str, Any]:
-    """Generates candidate images for an asset, refines them, and reports dual technical & art status."""
-    gen_res = await generate_candidates(asset_id, count=candidates, seed=seed, backend=backend)
-    refined_results = []
-    for idx in range(1, gen_res["count_generated"] + 1):
-        ref_res = await refine_candidate(asset_id, candidate_id=idx)
-        refined_results.append(ref_res)
-    return {
-        "asset_id": asset_id,
-        "backend": gen_res["backend"],
-        "candidates": refined_results
-    }
+    """Compatibility alias: generate raw candidates; select one before refinement."""
+    return await generate_candidates(asset_id, count=candidates, seed=seed, backend=backend, creator_id=creator_id)
 
 
 # --------------------------------------------------------------------------
@@ -260,7 +285,8 @@ async def generate_asset(
 def rank_candidates(asset_id: str) -> dict[str, Any]:
     """[Lifecycle Step 3 - Evaluation] Evaluates and scores generated candidates in assets/work/<asset_id>/raw/ on framing, occupancy, silhouette clarity, and composition. Returns ranked list and recommended candidate."""
     storage = WorkStorage(asset_id, base_dir=WORK_DIR)
-    raw_files = storage.list_raw_candidates()
+    raw_files = [p for p in storage.latest_raw_candidates()
+                 if not (storage.review_dir / f"{p.stem}.rejected.json").is_file()]
     if not raw_files:
         return {"error": f"No raw candidates found for {asset_id}. Run generate_candidates first."}
 
@@ -303,17 +329,25 @@ def rank_candidates(asset_id: str) -> dict[str, Any]:
 def select_candidate(asset_id: str, candidate_id: str | int) -> dict[str, Any]:
     """[Lifecycle Step 4a - Selection] Promotes the chosen candidate from raw/ to selected/ for pixel refinement."""
     storage = WorkStorage(asset_id, base_dir=WORK_DIR)
-    if isinstance(candidate_id, int):
-        cand_path = storage.get_raw_path(candidate_id)
-    else:
-        cand_path = storage.raw_dir / candidate_id
-        if not cand_path.is_file():
-            cand_path = storage.raw_dir / f"candidate-{int(candidate_id):02d}.png"
+    try:
+        cand_path = storage.resolve_candidate(candidate_id)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
 
     if not cand_path.is_file():
         raise HTTPException(status_code=404, detail=f"Candidate {cand_path} does not exist")
+    if (storage.review_dir / f"{cand_path.stem}.rejected.json").is_file():
+        raise HTTPException(status_code=400, detail="Candidate has been rejected")
 
-    selected = storage.select_candidate(cand_path)
+    try:
+        selected = storage.select_candidate(cand_path)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    storage.save_review_report({
+        "asset_id": asset_id, "production_status": "candidate",
+        "technical_status": {"value": "pending", "reasons": ["Selection changed; refine again"]},
+        "art_status": {"value": "pending", "reasons": ["Selection changed; review again"]},
+    })
     return {
         "asset_id": asset_id,
         "selected_candidate": str(selected),
@@ -340,30 +374,35 @@ async def refine_candidate(
     # Find source candidate
     src_file: Path | None = None
     if candidate_id is not None:
-        if isinstance(candidate_id, int):
-            src_file = storage.get_raw_path(candidate_id)
-        else:
-            src_file = storage.raw_dir / str(candidate_id)
+        try:
+            src_file = storage.resolve_candidate(candidate_id)
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc)) from exc
     else:
-        selected_files = sorted(storage.selected_dir.glob("*.png"))
-        if selected_files:
-            src_file = selected_files[0]
-        else:
-            raw_files = storage.list_raw_candidates()
-            if raw_files:
-                src_file = raw_files[0]
+        src_file = storage.selected_candidate()
 
     if not src_file or not src_file.is_file():
         raise HTTPException(status_code=404, detail=f"No candidate found for {asset_id}")
+    raw_stem = src_file.stem.removeprefix("selected_")
+    if (storage.review_dir / f"{raw_stem}.rejected.json").is_file():
+        raise HTTPException(status_code=400, detail="Candidate has been rejected")
 
-    refined_path = storage.get_refined_path(suffix="refined")
+    while True:
+        refinement_id = uuid.uuid4().hex
+        refined_path = storage.get_refined_path(suffix=f"refined-{raw_stem}-{refinement_id}")
+        if not refined_path.exists():
+            break
     refine_metrics = refine_pixel_candidate(src_file, asset, palette, refined_path)
     report = evaluate_asset_candidate(refined_path, asset, palette=palette)
+    report["source_candidate"] = str(src_file)
+    report["source_sha256"] = hashlib.sha256(src_file.read_bytes()).hexdigest()
+    report["creator_id"] = storage.creator_for_candidate(src_file)
     storage.save_review_report(report)
 
     return {
         "asset_id": asset_id,
         "source_candidate": str(src_file),
+        "refinement_id": refinement_id,
         "refined_output": refine_metrics["output_path"],
         "previews": refine_metrics["previews"],
         "metrics": refine_metrics,
@@ -376,15 +415,14 @@ async def refine_candidate(
 def preview_asset(asset_id: str, scales: list[int] = [1, 2, 4]) -> dict[str, Any]:
     """Returns absolute paths for 1x, 2x, and 4x previews of the refined asset."""
     storage = WorkStorage(asset_id, base_dir=WORK_DIR)
-    refined_base = storage.get_refined_path(suffix="refined")
+    report_path = storage.review_dir / "report.json"
+    qa_report = json_load(report_path) if report_path.is_file() else {}
+    refined_base = _refined_output(storage, qa_report)
     previews = {}
     for s in scales:
         p = refined_base.with_name(f"{refined_base.stem}_{s}x.png")
         if p.is_file():
             previews[f"{s}x"] = str(p)
-
-    report_path = storage.review_dir / "report.json"
-    qa_report = json_load(report_path) if report_path.is_file() else {}
 
     return {
         "asset_id": asset_id,
@@ -399,10 +437,43 @@ def preview_asset(asset_id: str, scales: list[int] = [1, 2, 4]) -> dict[str, Any
 # --------------------------------------------------------------------------
 
 @mcp.tool()
+def pixel_art_review(
+    asset_id: str,
+    status: str,
+    reviewer_id: str,
+    reasons: list[str] = [],
+) -> dict[str, Any]:
+    """Record the independent pixel-art quality verdict for the current refined image."""
+    if status not in ("pass", "fail") or not reviewer_id.strip():
+        raise HTTPException(status_code=400, detail="status and reviewer_id are required")
+    storage = WorkStorage(asset_id, base_dir=WORK_DIR)
+    report_path = storage.review_dir / "report.json"
+    report = json_load(report_path) if report_path.is_file() else {}
+    refined_path = _refined_output(storage, report)
+    source = Path(report.get("source_candidate", ""))
+    if source.is_file() and _candidate_rejection(storage, source):
+        raise HTTPException(status_code=400, detail="Rejected source candidate cannot be reviewed")
+    if (not refined_path.is_file() or not source.is_file()
+            or report.get("sha256") != hashlib.sha256(refined_path.read_bytes()).hexdigest()
+            or report.get("source_sha256") != hashlib.sha256(source.read_bytes()).hexdigest()):
+        raise HTTPException(status_code=400, detail="Selection or refined image changed; refine before review")
+    if status == "pass" and (report.get("technical_status", {}).get("value") != "pass"
+                             or not report.get("creator_id") or reviewer_id == report["creator_id"]):
+        raise HTTPException(status_code=400, detail="Technical PASS and an independent reviewer are required")
+    report["pixel_review"] = {"value": status, "reviewer_id": reviewer_id,
+                              "identity_verified": False, "sha256": report["sha256"], "reasons": reasons}
+    report["art_status"] = {"value": "pending", "reasons": ["Art Director review required"]}
+    report["production_status"] = "candidate"
+    storage.save_review_report(report)
+    return {"asset_id": asset_id, "pixel_review": report["pixel_review"], "production_status": "candidate"}
+
+
+@mcp.tool()
 def art_review(
     asset_id: str,
     status: str,
-    reasons: list[str] = []
+    reasons: list[str] = [],
+    reviewer_id: str | None = None,
 ) -> dict[str, Any]:
     """[Lifecycle Step 5 - Art Gate] Records Art Director verdict ('pass' or 'fail' with reasons). Evaluates silhouette, adult proportions, age readability, material textures, Baltic atmosphere, no chibi/babyface."""
     if status not in ("pass", "fail"):
@@ -412,10 +483,31 @@ def art_review(
     spec = load_spec(SPEC_PATH)
     asset = get_asset_by_id(spec, asset_id)
     palette = get_active_palette(asset)
-    refined_path = storage.get_refined_path(suffix="refined")
+    report_path = storage.review_dir / "report.json"
+    previous = json_load(report_path) if report_path.is_file() else {}
+    refined_path = _refined_output(storage, previous)
+    source = Path(previous.get("source_candidate", ""))
+    if source.is_file() and _candidate_rejection(storage, source):
+        raise HTTPException(status_code=400, detail="Rejected source candidate cannot be reviewed")
+    if (not refined_path.is_file() or not source.is_file()
+            or previous.get("sha256") != hashlib.sha256(refined_path.read_bytes()).hexdigest()
+            or previous.get("source_sha256") != hashlib.sha256(source.read_bytes()).hexdigest()):
+        raise HTTPException(status_code=400, detail="Selection or refined image changed; refine before review")
+    pixel_review = previous.get("pixel_review", {})
+    if status == "pass" and (
+        pixel_review.get("value") != "pass" or pixel_review.get("sha256") != previous.get("sha256")
+        or not reviewer_id or reviewer_id in (previous.get("creator_id"), pixel_review.get("reviewer_id"))
+    ):
+        raise HTTPException(status_code=400, detail="Independent pixel-art and Art Director reviews are required")
 
     override = {"status": status, "reasons": reasons}
     report = evaluate_asset_candidate(refined_path, asset, palette=palette, art_verdict_override=override)
+    report["source_candidate"] = str(source)
+    report["source_sha256"] = previous["source_sha256"]
+    report["creator_id"] = previous.get("creator_id")
+    report["pixel_review"] = pixel_review
+    report["art_reviewer_id"] = reviewer_id
+    report["art_reviewer_identity_verified"] = False
     storage.save_review_report(report)
 
     return {
@@ -423,7 +515,8 @@ def art_review(
         "art_status": report["art_status"],
         "technical_status": report["technical_status"],
         "production_status": report["production_status"],
-        "can_be_approved": report["art_status"]["value"] == "pass" and report["technical_status"]["value"] == "pass"
+        "can_be_approved": False,
+        "approval_blocker": "MCP review IDs are unverified assertions; production also requires editable source and project manifest integration."
     }
 
 
@@ -438,7 +531,9 @@ def check_asset_contract(asset_id: str) -> dict[str, Any]:
     # Prefer approved, then refined
     target = storage.approved_dir / f"{asset_id}.png"
     if not target.is_file():
-        target = storage.get_refined_path(suffix="refined")
+        report_path = storage.review_dir / "report.json"
+        report = json_load(report_path) if report_path.is_file() else {}
+        target = _refined_output(storage, report)
 
     report = evaluate_asset_candidate(target, asset, palette=palette)
     return {
@@ -473,24 +568,31 @@ def approve_asset(asset_id: str) -> dict[str, Any]:
             "technical_reasons": report.get("technical_status", {}).get("reasons", [])
         }
 
-    refined_path = storage.get_refined_path(suffix="refined")
-    approved_path = storage.approve_asset(refined_path)
+    pixel_review = report.get("pixel_review", {})
+    creator = report.get("creator_id")
+    art_reviewer = report.get("art_reviewer_id")
+    pixel_reviewer = pixel_review.get("reviewer_id")
+    if (pixel_review.get("value") != "pass" or pixel_review.get("sha256") != report.get("sha256")
+            or not all((creator, art_reviewer, pixel_reviewer))
+            or len({creator, art_reviewer, pixel_reviewer}) != 3):
+        return {"approved": False, "error": "Independent author, pixel reviewer and Art Director required."}
 
-    # Copy to canonical repo source if path specified
-    spec = load_spec(SPEC_PATH)
-    asset = get_asset_by_id(spec, asset_id)
-    canonical_rel = asset.get("path")
-    if canonical_rel:
-        canonical_dest = REPO_ROOT / canonical_rel
-        canonical_dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(approved_path, canonical_dest)
-
+    refined_path = _refined_output(storage, report)
+    source = Path(report.get("source_candidate", ""))
+    if source.is_file() and _candidate_rejection(storage, source):
+        return {"approved": False, "error": "Rejected source candidate cannot be approved."}
+    if (not refined_path.is_file() or not source.is_file()
+            or report.get("sha256") != hashlib.sha256(refined_path.read_bytes()).hexdigest()
+            or report.get("source_sha256") != hashlib.sha256(source.read_bytes()).hexdigest()):
+        return {"approved": False, "error": "Reviewed files changed; refine and review again."}
+    # A reviewed PNG remains a raster candidate. The project requires editable
+    # source, manifest and deterministic build before canonical promotion.
     return {
-        "approved": True,
+        "approved": False,
         "asset_id": asset_id,
-        "approved_path": str(approved_path),
-        "canonical_source": str(canonical_dest) if canonical_rel else None,
-        "production_status": "approved"
+        "candidate_path": str(refined_path),
+        "error": "Review gates passed, but production promotion requires editable source and project manifest integration.",
+        "production_status": "candidate"
     }
 
 
@@ -502,12 +604,28 @@ def reject_candidate(
 ) -> dict[str, Any]:
     """Rejects a candidate, recording reasons."""
     storage = WorkStorage(asset_id, base_dir=WORK_DIR)
+    try:
+        candidate = storage.resolve_candidate(candidate_id)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    if not candidate.is_file():
+        raise HTTPException(status_code=404, detail="Candidate not found")
+    rejection = {"asset_id": asset_id, "candidate_id": candidate.name,
+                 "sha256": hashlib.sha256(candidate.read_bytes()).hexdigest(),
+                 "status": "rejected", "reasons": reasons}
+    rejection_path = storage.review_dir / f"{candidate.stem}.rejected.json"
+    if rejection_path.exists():
+        raise HTTPException(status_code=400, detail="Candidate already rejected")
+    rejection_path.write_text(json.dumps(rejection, indent=2, ensure_ascii=False), encoding="utf-8")
     report_path = storage.review_dir / "report.json"
-    report = json_load(report_path) if report_path.is_file() else {}
-    report["production_status"] = "rejected"
-    report.setdefault("art_status", {})["value"] = "fail"
-    report.setdefault("art_status", {}).setdefault("reasons", []).extend(reasons)
-    storage.save_review_report(report)
+    if report_path.is_file():
+        report = json_load(report_path)
+        source_name = Path(report.get("source_candidate", "")).name.removeprefix("selected_")
+        if source_name == candidate.name:
+            report["production_status"] = "candidate"
+            report["art_status"] = {"value": "fail", "reasons": reasons}
+            report["pixel_review"] = {"value": "fail", "reasons": ["Source candidate rejected"]}
+            storage.save_review_report(report)
     return {
         "asset_id": asset_id,
         "candidate_id": candidate_id,
@@ -520,10 +638,11 @@ def reject_candidate(
 async def regenerate_asset(
     asset_id: str,
     correction: str | None = None,
-    seed: int | None = None
+    seed: int | None = None,
+    creator_id: str | None = None,
 ) -> dict[str, Any]:
     """Re-generates raw candidates applying optional corrections to the positive prompt."""
-    return await generate_candidates(asset_id, count=4, seed=seed, correction=correction)
+    return await generate_candidates(asset_id, count=4, seed=seed, correction=correction, creator_id=creator_id)
 
 
 # --------------------------------------------------------------------------
@@ -537,31 +656,40 @@ async def generate_sprite_frames(
     frames: int | None = None,
     seed: int | None = None
 ) -> dict[str, Any]:
-    """Generates authentic animation frames, normalizes them, and prepares a sprite sheet."""
+    """Builds procedural character animation frames, normalizes them, and prepares a sprite sheet."""
     spec = load_spec(SPEC_PATH)
     asset = get_asset_by_id(spec, asset_id)
     palette = get_active_palette(asset)
     storage = WorkStorage(asset_id, base_dir=WORK_DIR)
 
+    import uuid
+    run_id = uuid.uuid4().hex
     char_frames, (fw, fh), cols = generate_character_sprite_frames(
-        asset, seed=seed or 26063, frames=frames, palette=palette, repo_root=REPO_ROOT
+        asset, seed=seed if seed is not None else 26063, frames=frames, palette=palette, repo_root=REPO_ROOT
     )
 
+    run_dir = storage.raw_dir / f"sprite-run-{run_id}"
+    run_dir.mkdir(parents=True, exist_ok=False)
     frame_paths = []
     for f_idx, frame_img in enumerate(char_frames):
-        fn = storage.raw_dir / f"frame_{f_idx:02d}.png"
+        fn = run_dir / f"frame_{f_idx:02d}.png"
         frame_img.save(fn)
-        norm_fn = storage.refined_dir / f"frame_{f_idx:02d}_norm.png"
+        norm_dir = storage.refined_dir / f"sprite-run-{run_id}"
+        norm_dir.mkdir(parents=True, exist_ok=True)
+        norm_fn = norm_dir / f"frame_{f_idx:02d}_norm.png"
         refine_pixel_candidate(fn, {"size": [fw, fh], "alpha": asset.get("alpha", "transparent")}, palette, norm_fn)
         frame_paths.append(norm_fn)
 
-    sheet_out = storage.get_refined_path(suffix="sheet")
+    sheet_out = storage.get_refined_path(suffix=f"sheet-{run_id}")
     sheet_info = assemble_sprite_sheet(frame_paths, sheet_out, (fw, fh), columns=cols)
     report = evaluate_asset_candidate(sheet_out, asset, palette=palette)
     storage.save_review_report(report)
 
     return {
         "asset_id": asset_id,
+        "run_id": run_id,
+        "backend": "procedural_character_synthesizer",
+        "source_frames": [str(path) for path in frame_paths],
         "frames_generated": len(frame_paths),
         "sheet": sheet_info,
         "qa_report": report
@@ -576,32 +704,10 @@ async def generate_day_night_pair(
     seed: int | None = None
 ) -> dict[str, Any]:
     """Generates day and night building variants with locked geometry silhouette."""
-    spec = load_spec(SPEC_PATH)
-    day_asset = get_asset_by_id(spec, day_asset_id)
-    night_asset = get_asset_by_id(spec, night_asset_id)
-
-    # 1. Generate DAY candidate base
-    await generate_candidates(day_asset_id, count=1, seed=seed, backend=backend)
-    day_ref = await refine_candidate(day_asset_id, candidate_id=1)
-    day_cand_path = Path(day_ref["refined_output"])
-
-    # 2. Night candidate with locked silhouette
-    night_storage = WorkStorage(night_asset_id, base_dir=WORK_DIR)
-    night_raw = night_storage.get_raw_path(1)
-    night_palette = get_active_palette(night_asset)
-
-    enforce_geometry_lock(day_cand_path, night_raw, night_palette)
-    night_ref = await refine_candidate(night_asset_id, candidate_id=1)
-
-    silhouette_match = compare_silhouettes(day_cand_path, Path(night_ref["refined_output"]))
-
-    return {
-        "day_asset_id": day_asset_id,
-        "night_asset_id": night_asset_id,
-        "day_refined": day_ref["refined_output"],
-        "night_refined": night_ref["refined_output"],
-        "silhouette_match": silhouette_match
-    }
+    raise HTTPException(
+        status_code=501,
+        detail="Day/night generation is temporarily disabled until both outputs use immutable, provenance-linked candidate IDs.",
+    )
 
 
 # --------------------------------------------------------------------------

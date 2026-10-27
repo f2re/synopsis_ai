@@ -28,3 +28,13 @@ Thumbs.db
 .vscode/
 *.swp
 *.log
+
+# Local server working directories
+synopsis_game/
+trainers/
+backups/
+datasets/
+comfyui/
+*.py.old
+download_z_image.py
+resume_part1.py
