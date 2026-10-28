@@ -9,7 +9,7 @@
 <p>
   <img alt="Python" src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white">
   <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-0.110+-009688?style=for-the-badge&logo=fastapi&logoColor=white">
-  <img alt="MCP" src="https://img.shields.io/badge/MCP-2.3+-5B4BFF?style=for-the-badge">
+  <img alt="MCP SDK" src="https://img.shields.io/badge/MCP_SDK-2.3+-5B4BFF?style=for-the-badge">
   <img alt="ComfyUI" src="https://img.shields.io/badge/ComfyUI-enabled-111111?style=for-the-badge">
 </p>
 
@@ -54,7 +54,7 @@
 | Контур | Что делает |
 |---|---|
 | 🎨 **Арт-система** | Хранит 14 специализированных художественных профилей вместо одного универсального промпта |
-| 🧠 **Генерация** | Работает с FLUX.2 Klein, Z-Image и резервным SDXL + ControlNet |
+| 🧠 **Генерация** | Конфигурация описывает FLUX.2, Z-Image и SDXL/ControlNet; текущий рабочий generation path использует Z-Image Turbo или процедурный синтез персонажей |
 | 🧱 **Pixel pipeline** | Нормализует сетку, палитру, края, прозрачность, размеры и варианты масштаба |
 | ✅ **QA / review gates** | Разделяет автора, pixel-review и арт-директора и не выдаёт непроверенный PNG за production-исходник |
 
@@ -110,7 +110,7 @@ flowchart LR
 
 | Шаг | MCP-инструмент | Результат |
 |---:|---|---|
-| 1 | `asset_spec(asset_id)` | Канонический контракт ассета |
+| 1 | `asset_spec(asset_id)` | Канонический контракт ассета и скомпилированные промпты |
 | 2 | `generate_candidates(...)` | Набор сырых кандидатов |
 | 3 | `rank_candidates(...)` | Автоматическая оценка и рекомендация |
 | 4 | `select_candidate(...)` | Зафиксированный источник |
@@ -172,13 +172,14 @@ flowchart LR
 
 Конфигурация моделей находится в [`config/config.yaml`](config/config.yaml).
 
-| Роль | Модель | Назначение |
+| Роль | Модель | Статус в текущем runtime |
 |---|---|---|
-| 🥇 Primary | **FLUX.2 Klein 4B** | основная генерация и редактирование |
-| ⚡ Draft | **Z-Image Turbo** | быстрые кандидаты |
-| 🧬 LoRA base | **Z-Image Base 6B** | дообучение фирменного стиля |
-| 📐 Geometry fallback | **SDXL + ControlNet** | задачи с жёсткой фиксацией геометрии |
-| 🎨 Style adapter | `synopsis_26063_style_v1.safetensors` | проектный LoRA-стиль |
+| 🥇 Primary | **FLUX.2 Klein 4B** | зафиксирован как primary в конфигурации |
+| ⚡ Draft | **Z-Image Turbo** | подключён к `generate_candidates()` |
+| 🧬 LoRA base | **Z-Image Base 6B** | база для стилевого дообучения |
+| 📐 Geometry fallback | **SDXL + ControlNet** | резервный профиль в конфигурации |
+| 🎨 Style adapter | `synopsis_26063_style_v1.safetensors` | проектный LoRA-адаптер |
+| 🧍 Procedural | Character synthesizer | подключён для кадров персонажей с frame-контрактом |
 
 > [!TIP]
 > Модель — только генератор кандидата. Канонический стиль задаётся совокупностью **asset spec + профиль + палитра + refiner + QA + review gate**.
@@ -274,7 +275,7 @@ systemctl --user restart synopsis-assets-mcp.service
 
 ```text
 list_art_profiles        asset_spec
-compile_prompts          generate_candidates
+generate_candidates      generate_asset
 rank_candidates          select_candidate
 refine_candidate         preview_asset
 pixel_art_review         art_review
@@ -376,7 +377,7 @@ Runtime-каталоги (`models/`, `output/`, `assets/work/`, `logs/`, virtual
 flowchart LR
     G["synopsis_game\nЛОР · asset specs · production manifests"]
     AI["synopsis_ai\nгенерация · refiner · QA · review"]
-    GPU["GPU / ComfyUI\nFLUX · Z-Image · ControlNet"]
+    GPU["GPU / ComfyUI\nZ-Image · configured model stack"]
     DS["LoRA datasets\nstyle references"]
 
     G --> AI
@@ -419,7 +420,8 @@ Synopsis MCP :9200
 - [x] MCP Streamable HTTP server
 - [x] REST health / profiles / asset spec
 - [x] 14 художественных профилей
-- [x] генерация нескольких кандидатов
+- [x] генерация нескольких кандидатов через Z-Image Turbo
+- [x] процедурная генерация кадров персонажей
 - [x] автоматическое ранжирование
 - [x] pixel refinement и preview scales
 - [x] независимый pixel-review gate
@@ -428,6 +430,7 @@ Synopsis MCP :9200
 - [x] sprite-sheet pipeline
 - [x] LoRA datasets в репозитории
 - [x] systemd-управление
+- [ ] прямое подключение FLUX.2 к `generate_candidates()`
 - [ ] безопасное production promotion через editable source + manifest
 - [ ] повторное включение day/night pair после фиксации provenance обоих выходов
 - [ ] полноценный CI для серверного и художественного конвейера
