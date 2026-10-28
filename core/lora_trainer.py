@@ -8,9 +8,12 @@ import shutil
 from pathlib import Path
 from typing import Any
 
+# Backward-compatible default. New training runs should use a scoped trigger
+# such as synopsis_world_style, synopsis_architecture or synopsis_character_style.
 TRIGGER_WORD = "synopsis_pixel_art"
 REQUIRED_REVIEW_ROLES = {"pixel-art-quality-reviewer", "art-director"}
 SUPPORTED_LICENSES = {"project-internal-production", "CC0-1.0", "CC-BY-4.0", "Apache-2.0", "public-domain"}
+_TRIGGER_RE = re.compile(r"[A-Za-z][A-Za-z0-9_-]{2,63}")
 
 
 def _project_file(repo_root: Path, relative: str) -> Path:
@@ -19,6 +22,16 @@ def _project_file(repo_root: Path, relative: str) -> Path:
     if not path.is_relative_to(root) or not path.is_file():
         raise ValueError(f"Missing or out-of-project file: {relative}")
     return path
+
+
+def _validated_trigger_word(value: str) -> str:
+    value = value.strip()
+    if not _TRIGGER_RE.fullmatch(value):
+        raise ValueError(
+            "trigger word must start with a letter and contain only letters, digits, '_' or '-' "
+            "(3-64 characters)"
+        )
+    return value
 
 
 def collect_approved_project_assets(repo_root: Path, manifest_path: Path) -> list[dict[str, Any]]:
@@ -80,8 +93,19 @@ def collect_approved_project_assets(repo_root: Path, manifest_path: Path) -> lis
     return images
 
 
-def build_lora_dataset(repo_root: Path, manifest_path: Path, dataset_dir: Path) -> dict[str, Any]:
-    """Build an imagefolder dataset with per-image captions for Diffusers."""
+def build_lora_dataset(
+    repo_root: Path,
+    manifest_path: Path,
+    dataset_dir: Path,
+    trigger_word: str = TRIGGER_WORD,
+) -> dict[str, Any]:
+    """Build an imagefolder dataset with per-image captions for Diffusers.
+
+    A scoped trigger lets independent adapters learn world rendering, campus
+    architecture and character rendering without forcing one token to encode
+    every asset family in the project.
+    """
+    trigger_word = _validated_trigger_word(trigger_word)
     images = collect_approved_project_assets(repo_root, manifest_path)
     if dataset_dir.exists() and any(dataset_dir.iterdir()):
         raise ValueError(f"Dataset directory must be empty: {dataset_dir}")
@@ -90,9 +114,13 @@ def build_lora_dataset(repo_root: Path, manifest_path: Path, dataset_dir: Path) 
     for entry in images:
         filename = f"{entry['id']}{entry['source'].suffix.lower()}"
         shutil.copy2(entry["source"], dataset_dir / filename)
-        metadata.append({"file_name": filename, "text": f"{TRIGGER_WORD}, {entry['caption']}"})
+        metadata.append({"file_name": filename, "text": f"{trigger_word}, {entry['caption']}"})
     (dataset_dir / "metadata.jsonl").write_text(
         "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in metadata), encoding="utf-8"
     )
-    return {"dataset_path": str(dataset_dir), "total_images": len(images), "trigger_word": TRIGGER_WORD,
-            "manifest_sha256": hashlib.sha256(manifest_path.read_bytes()).hexdigest()}
+    return {
+        "dataset_path": str(dataset_dir),
+        "total_images": len(images),
+        "trigger_word": trigger_word,
+        "manifest_sha256": hashlib.sha256(manifest_path.read_bytes()).hexdigest(),
+    }
