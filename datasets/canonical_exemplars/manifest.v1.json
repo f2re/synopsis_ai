@@ -1,0 +1,235 @@
+{
+  "version": 1,
+  "status": "canonical-training-gate",
+  "title": "26063 canonical exemplar pack v1",
+  "source_of_truth": {
+    "repository": "f2re/synopsis_game",
+    "art_direction": "docs/design/PIXEL_ART_BASELINE_COZY_SCIENCE.md",
+    "style_guide": "docs/design/PIXEL_ART_STYLE_GUIDE.md",
+    "lore_registry": "docs/lore/lore-registry.yaml",
+    "brand_lore": "docs/BRAND_AND_LORE_26063.md",
+    "palette_tokens": "design/tokens/pixel-art-theme.yaml"
+  },
+  "global_contract": {
+    "trigger": "<26063_pixel_style>",
+    "world_logical_grid": [480, 270],
+    "world_character_grid": [32, 48],
+    "composition_ratio": "60/30/10",
+    "local_surface_shades": "3-5",
+    "min_human_traces_per_scene": 3,
+    "pixel_rules": [
+      "large readable logical pixels",
+      "crisp deliberate clusters; no random one-pixel texture noise",
+      "nearest-neighbour presentation scaling",
+      "simple readable silhouettes before micro-detail",
+      "original 26063 visual language; do not imitate a named commercial game"
+    ],
+    "world_rules": [
+      "low north-western horizon and Gulf of Finland coastal character",
+      "pine, birch, rowan, rosehip, lilac and mossy lawn are preferred vegetation",
+      "warm human light against cool Baltic weather",
+      "professional meteorological equipment appears as functional objects, not decoration",
+      "backgrounds should normally contain no baked-in game title or logo"
+    ],
+    "forbidden": [
+      "alpine mountains",
+      "palm trees",
+      "palace-scale architecture or giant ceremonial domes",
+      "military-bunker or post-apocalyptic styling",
+      "generic corporate dashboard aesthetics",
+      "decorative recolouring of meteorological semantic layers",
+      "invented pseudo-historical documents presented as real"
+    ],
+    "meteo_semantics": {
+      "cold_front": "#2878D8",
+      "warm_front": "#E44747",
+      "occlusion": "#8A54C5",
+      "rule": "Front colours are semantic and must never be repurposed as arbitrary decoration; pressure/isobar geometry remains professionally readable and is not converted into a fake pixel filter."
+    }
+  },
+  "examples": [
+    {
+      "id": "EX-WORLD-001",
+      "image": "datasets/master_style_lora/meteo_playground_full.png",
+      "source_caption": "datasets/master_style_lora/meteo_playground_full.txt",
+      "family": "large_scene",
+      "training_use": "canonical",
+      "weight": 1.4,
+      "anchors": ["meteorological observation field", "scientific campus", "readable instruments", "green summer environment"],
+      "caption_override": "<26063_pixel_style>, cozy scientific meteorological campus 26063, standard observation field as a functional working area, white louvered thermometer shelter, precipitation gauge, wind mast and fenced instrument zone, low Baltic horizon, birch and pine vegetation, modest low-rise campus buildings, clear paths, large readable pixel clusters, original modern pixel art, three or more subtle traces of ongoing human work",
+      "flip_allowed": false,
+      "notes": "Primary world/lore anchor. Spatial layout and instruments are directional; do not mirror."
+    },
+    {
+      "id": "EX-METEO-001",
+      "image": "datasets/master_style_lora/meteo_instruments_field.png",
+      "source_caption": "datasets/master_style_lora/meteo_instruments_field.txt",
+      "family": "interactive_object_context",
+      "training_use": "canonical",
+      "weight": 1.4,
+      "anchors": ["observation instruments", "functional authenticity", "clear silhouette"],
+      "caption_override": "<26063_pixel_style>, functional Russian meteorological observation field, white louvered thermometer shelter, precipitation gauge and wind instrument mast placed as working scientific equipment, grassy northern campus, restrained Baltic palette, crisp large pixel clusters, simple readable silhouettes, no fantasy instruments, no decorative misuse of meteorological symbols",
+      "flip_allowed": false
+    },
+    {
+      "id": "EX-ARCH-001",
+      "image": "datasets/master_style_lora/campus_radar_tower.png",
+      "source_caption": "datasets/master_style_lora/campus_radar_tower.txt",
+      "family": "architecture_landmark",
+      "training_use": "canonical",
+      "weight": 1.25,
+      "anchors": ["weather radar", "white radome", "technical structure", "warm windows"],
+      "caption_override": "<26063_pixel_style>, meteorological radar facility of campus 26063, clear technical tower silhouette with white spherical radome, modest ochre concrete and brick service base, maintenance details, warm amber windows, granite and birch context, original cozy-science pixel art, no palace, no church dome, no sci-fi antenna",
+      "flip_allowed": false
+    },
+    {
+      "id": "EX-ARCH-002",
+      "image": "datasets/master_style_lora/meteo_radar_and_hangar.png",
+      "source_caption": "datasets/master_style_lora/meteo_radar_and_hangar.txt",
+      "family": "architecture_landmark",
+      "training_use": "canonical",
+      "weight": 1.15,
+      "anchors": ["radar", "aerology", "working science campus"],
+      "caption_override": "<26063_pixel_style>, working meteorological campus with radar radome and aerological service building, compact low-rise scientific architecture, birch and pine, granite ground, clear blue northern sky, functional equipment readable before decorative detail, original pixel art, no monumental architecture",
+      "flip_allowed": false
+    },
+    {
+      "id": "EX-WORLD-002",
+      "image": "datasets/master_style_lora/campus_exterior_full.png",
+      "source_caption": "datasets/master_style_lora/campus_exterior_full.txt",
+      "family": "large_scene",
+      "training_use": "canonical",
+      "weight": 1.0,
+      "anchors": ["coastal campus", "granite shore", "warm/cool contrast", "low horizon"],
+      "caption_override": "<26063_pixel_style>, fictional educational meteorological campus 26063 on the Gulf of Finland, low north-western water horizon, granite shore, compact ochre scientific buildings, radar radome, birch and pine, clear pedestrian routes, warm windows against cool Baltic air, original modern cozy pixel art, no literal reconstruction of a real institution",
+      "flip_allowed": false
+    },
+    {
+      "id": "EX-WORLD-003",
+      "image": "datasets/master_style_lora/campus_coastal_path.png",
+      "source_caption": "datasets/master_style_lora/campus_coastal_path.txt",
+      "family": "environment",
+      "training_use": "canonical",
+      "weight": 1.0,
+      "anchors": ["Gulf of Finland", "granite", "pine", "human-scale path"],
+      "caption_override": "<26063_pixel_style>, human-scale coastal path of campus 26063, Gulf of Finland water, granite boulders with moss, northern pine and birch vegetation, restrained warm lantern, low horizon, calm scientific-campus atmosphere, large readable pixel clusters, no alpine relief and no tropical vegetation",
+      "flip_allowed": true
+    },
+    {
+      "id": "EX-INT-001",
+      "image": "datasets/master_style_lora/office_interior_full.png",
+      "source_caption": "datasets/master_style_lora/office_interior_full.txt",
+      "family": "interior",
+      "training_use": "canonical",
+      "weight": 1.15,
+      "anchors": ["operational room", "old and modern equipment", "warm work light", "human traces"],
+      "caption_override": "<26063_pixel_style>, operational synoptic room in campus 26063, practical wooden workstations, paper charts and modern monitors coexisting with analogue meteorological instruments, warm desk lighting against cool Baltic daylight, lived-in professional workspace with at least three subtle human traces, original cozy scientific pixel art",
+      "flip_allowed": false
+    },
+    {
+      "id": "EX-INT-002",
+      "image": "datasets/master_style_lora/office_desk_monitors.png",
+      "source_caption": "datasets/master_style_lora/office_desk_monitors.txt",
+      "family": "interior_detail",
+      "training_use": "canonical",
+      "weight": 1.2,
+      "anchors": ["synoptic workstation", "paper plus digital", "semantic map colours"],
+      "caption_override": "<26063_pixel_style>, working synoptic desk with paper observation journal, dual monitors and professional weather charts, pressure lines remain neutral and readable while cold, warm and occluded fronts preserve their correct semantic blue, red and violet colours, green desk lamp, mug and pencils as human traces, no decorative recolouring of meteorological data",
+      "flip_allowed": false,
+      "notes": "Corrects the legacy caption that incorrectly described blue/red isobars."
+    },
+    {
+      "id": "EX-INT-003",
+      "image": "datasets/master_style_lora/office_synoptic_map_wall.png",
+      "source_caption": "datasets/master_style_lora/office_synoptic_map_wall.txt",
+      "family": "interior_detail",
+      "training_use": "canonical",
+      "weight": 1.1,
+      "anchors": ["synoptic charts", "books", "warm lamp", "professional context"],
+      "caption_override": "<26063_pixel_style>, wall area of an operational synoptic room with professionally readable weather charts, restrained paper and book storage, warm work lamp, calm scientific atmosphere, maps are functional analytical material rather than decorative wallpaper, no fake pseudo-meteorological symbols",
+      "flip_allowed": false
+    },
+    {
+      "id": "EX-STORY-001",
+      "image": "datasets/master_style_lora/meteo_bench_atlas.png",
+      "source_caption": "datasets/master_style_lora/meteo_bench_atlas.txt",
+      "family": "environmental_storytelling",
+      "training_use": "canonical",
+      "weight": 1.05,
+      "anchors": ["human trace", "bench", "map", "Baltic vegetation", "bird"],
+      "caption_override": "<26063_pixel_style>, quiet environmental storytelling detail in campus 26063, wooden bench beside granite and northern shrubs, an opened weather atlas or working notes left by a staff member, small local bird, subtle signs that people were working here moments ago, cozy scientific pixel art without staged museum presentation",
+      "flip_allowed": true
+    },
+    {
+      "id": "EX-CHAR-001",
+      "image": "datasets/master_style_lora/char_senior_female_synoptician.png",
+      "source_caption": "datasets/master_style_lora/char_senior_female_synoptician.txt",
+      "family": "dialogue_portrait",
+      "training_use": "style_only",
+      "identity": "senior_synoptician_archetype_not_vera_identity",
+      "weight": 0.75,
+      "anchors": ["adult proportions", "professional age", "knit cardigan", "synoptic pencil"],
+      "caption_override": "<26063_character>, <26063_pixel_style>, adult senior female synoptic meteorologist, readable age and professional confidence, restrained knitted cardigan and light blouse, thin eyeglass frame, two-colour synoptic pencil, calm intelligent expression, realistic adult proportions, no chibi, no anime, no mascot styling",
+      "flip_allowed": false,
+      "notes": "Style/proportion anchor only. Do not train this crop as the exact identity of Vera Pavlovna unless it passes the character sheet contract."
+    },
+    {
+      "id": "EX-CHAR-002",
+      "image": "datasets/master_style_lora/char_senior_male_observer.png",
+      "source_caption": "datasets/master_style_lora/char_senior_male_observer.txt",
+      "family": "dialogue_portrait",
+      "training_use": "style_only",
+      "identity": "senior_observer_archetype_not_semyon_identity",
+      "weight": 0.7,
+      "anchors": ["adult proportions", "weathered face", "work clothing"],
+      "caption_override": "<26063_character>, <26063_pixel_style>, adult experienced meteorological observer archetype, weathered northern face, practical cold-weather work clothing, calm friendly professional expression, realistic adult proportions, no chibi, no military hero styling, no anime",
+      "flip_allowed": false,
+      "notes": "Archetype-only reference; current canonical Semyon Petrovich is 51 and must use his dedicated character contract."
+    },
+    {
+      "id": "EX-ATM-001",
+      "image": "datasets/master_style_lora/station_storm_autumn_full.png",
+      "source_caption": "datasets/master_style_lora/station_storm_autumn_full.txt",
+      "family": "large_scene",
+      "training_use": "style_only",
+      "weight": 0.55,
+      "anchors": ["Baltic storm", "autumn", "warm/cool contrast", "wet surfaces"],
+      "caption_override": "<26063_pixel_style>, Baltic autumn storm atmosphere, low layered dark clouds, rain squall over cold water, wet granite and fallen leaves, warm occupied windows against cold exterior, readable large pixel clusters, restrained cinematic contrast, use for weather and lighting style only, not for campus layout or building canon",
+      "flip_allowed": true,
+      "notes": "Atmosphere-only; architecture in this legacy source is not a canonical location contract."
+    },
+    {
+      "id": "EX-ATM-002",
+      "image": "datasets/master_style_lora/station_autumn_cottage_pavement.png",
+      "source_caption": "datasets/master_style_lora/station_autumn_cottage_pavement.txt",
+      "family": "environmental_storytelling",
+      "training_use": "style_only",
+      "weight": 0.45,
+      "anchors": ["wet autumn surface", "warm window", "small human traces"],
+      "caption_override": "<26063_pixel_style>, close environmental study of wet autumn paving, warm occupied window light, boots and umbrella as human traces, fallen northern leaves, cozy weather contrast, pixel-cluster and material reference only; generic cottage architecture is not campus canon",
+      "flip_allowed": true
+    },
+    {
+      "id": "EX-EXCLUDE-001",
+      "image": "datasets/master_style_lora/station_sea_lighthouse_storm.png",
+      "source_caption": "datasets/master_style_lora/station_sea_lighthouse_storm.txt",
+      "family": "large_scene",
+      "training_use": "excluded",
+      "weight": 0.0,
+      "anchors": ["storm sea"],
+      "caption_override": "Legacy reference excluded from canonical training by default: lighthouse composition is not a declared campus identity anchor.",
+      "flip_allowed": false
+    },
+    {
+      "id": "EX-EXCLUDE-002",
+      "image": "datasets/master_style_lora/station_observation_rotunda.png",
+      "source_caption": "datasets/master_style_lora/station_observation_rotunda.txt",
+      "family": "architecture_landmark",
+      "training_use": "excluded",
+      "weight": 0.0,
+      "anchors": ["legacy architecture"],
+      "caption_override": "Legacy reference excluded from canonical architecture training until the rotunda is explicitly accepted into the location registry.",
+      "flip_allowed": false
+    }
+  ]
+}

@@ -2,89 +2,113 @@ from __future__ import annotations
 
 from typing import Any
 
+# This module intentionally keeps only compact generation-ready summaries.
+# The canonical source of truth is f2re/synopsis_game/docs/lore/lore-registry.yaml
+# together with docs/lore/03_CHARACTERS.md and docs/lore/04_LOCATIONS.md.
 WORLD_LORE_CONTEXT = (
-    "Setting: 26063: Позывной «Синоптик». A fictional cozy scientific meteorological campus on the shore "
-    "of the Gulf of Finland near St. Petersburg, North-West Russia (59.9° N). Late 20th century academic "
-    "atmosphere: flat horizon, Baltic water, birch and pine, granite embankments, weathered ochre and terracotta "
-    "brick facades, warm amber windows, authentic Russian synoptic meteorological instruments. "
-    "Strictly no alpine mountains, no palm trees, no futuristic sci-fi or fantasy elements."
+    "Setting: 26063: Позывной «Синоптик». A fictional educational and research meteorological campus on the shore "
+    "of the Gulf of Finland, North-West Russia. Core theme: continuity of observation across generations. "
+    "Low north-western horizon, Baltic water, granite terraces, pine, birch, rowan, rosehip, lilac and mossy lawn. "
+    "Compact low-rise scientific buildings from different decades, functional meteorological instruments, paper charts, "
+    "analogue equipment and modern screens coexist naturally. Warm amber human light contrasts with cool Baltic weather. "
+    "Scenes should feel lived-in and normally contain at least three subtle traces of recent human work. "
+    "Strictly no alpine mountains, palm trees, palace-scale architecture, giant ceremonial domes, military-bunker mood, "
+    "post-apocalypse, futuristic sci-fi or fantasy. The campus is fictional and must not be presented as a literal copy "
+    "of a real institution. Background scenes should not bake the full game logo into buildings."
 )
 
 CHARACTER_LORE: dict[str, dict[str, Any]] = {
     "vera_ladozhskaya": {
         "full_name": "Вера Павловна Ладожская",
-        "role": "Ведущий синоптик станции 26063, наставник",
+        "role": "Ведущий синоптик кампуса 26063, руководитель учебной практики",
         "age": 58,
         "appearance": (
-            "58-year-old senior female synoptic meteorologist. Realistic adult proportions, intelligent focused "
-            "face, quiet professional confidence, subtle polite demanding squint. Silver-grey hair with darker blond "
-            "streaks styled in a restrained bun. Classic thin metal rectangular reading glasses on the nose bridge. "
-            "Wearing an authentic Soviet/Russian hydrometeorological service uniform or warm burgundy/navy knitted "
-            "wool cardigan with a subtle brass lapel pin badge. Holding or carrying in breast pocket a classic "
-            "two-tone red-and-blue synoptic pencil (сине-красный карандаш синоптика)."
+            "58-year-old senior female synoptic meteorologist. Realistic adult proportions, intelligent calm face, "
+            "quiet professional confidence and a subtle demanding squint. Neat greying hair gathered into a restrained bun, "
+            "thin metal-frame glasses. Dark navy or lingonberry knitted cardigan over a light blouse. Carries a classic "
+            "two-colour red-and-blue synoptic pencil or a folded working chart. No uniformed or militarised styling."
         ),
         "forbidden_traits": [
             "chibi", "kawaii", "baby face", "toddler", "oversized head", "anime girl", "cute mascot",
-            "sticker character", "emoji face", "childish", "deformed hands", "extra fingers"
+            "sticker character", "emoji face", "childish", "military uniform", "deformed hands", "extra fingers"
         ],
         "required_traits": [
-            "adult realistic proportions", "age readable ~55-65", "thin wireframe glasses",
-            "grey hair in bun", "red-blue synoptic pencil", "cozy academic sweater or uniform"
+            "adult realistic proportions", "age readable ~55-65", "thin metal-frame glasses",
+            "greying hair in bun", "red-blue synoptic pencil or folded chart", "navy or lingonberry cardigan"
         ]
     },
     "semyon_kruglov": {
-        "full_name": "Семён Круглов",
-        "role": "Техник-метеоролог метеоплощадки",
-        "age": 46,
+        "full_name": "Семён Петрович Круглов",
+        "role": "Старший техник-метеоролог и мастер по метеоприборам",
+        "age": 51,
         "appearance": (
-            "46-year-old meteorologist observer technician. Weather-beaten face, observant squint, short brown hair "
-            "with grey temples, wool watch cap beanie, mustard canvas work jacket with fleece collar, clipboard with "
-            "КМ-1 observation logbook."
+            "51-year-old senior meteorological technician. Realistic adult proportions and a practical weather-beaten "
+            "working appearance. Dark olive or mustard work windbreaker with many pockets, warm high-neck sweater, knitted "
+            "watch cap, canvas instrument bag over the shoulder. He belongs to a civilian scientific campus, not a military unit."
         ),
-        "forbidden_traits": ["chibi", "kawaii", "baby face", "cartoonish"],
-        "required_traits": ["adult male ~45", "weathered observer", "beanie and work jacket", "clipboard"]
+        "forbidden_traits": [
+            "chibi", "kawaii", "baby face", "cartoon mascot", "military hero", "combat gear", "anime"
+        ],
+        "required_traits": [
+            "adult male age ~50", "practical instrument technician", "olive or mustard work jacket",
+            "warm high-neck sweater", "knitted cap", "canvas instrument bag"
+        ]
+    },
+    "pascal_cat": {
+        "full_name": "Кот Гектопаскаль (Паскаль)",
+        "role": "Живой обитатель кампуса 26063",
+        "appearance": (
+            "A fluffy ginger-and-white station cat with thick fur and a green eye, usually resting on a warm archive windowsill, "
+            "near the operational-room radiator, or beside Semyon's workshop and old teletype. Calm, slightly lazy, lived-in campus companion."
+        ),
+        "forbidden_traits": ["fantasy familiar", "magical aura", "anime mascot", "human clothing", "logo costume"],
+        "required_traits": ["ginger and white fur", "thick coat", "green eye", "natural cat anatomy", "relaxed station-cat posture"]
     }
 }
 
 ARCHITECTURE_LORE: dict[str, dict[str, Any]] = {
     "radar": {
-        "name": "Радиолокационная вышка ДМРЛ (BLD-RADAR)",
+        "name": "Радиолокационный комплекс",
         "description": (
-            "Doppler Meteorological Radar (ДМРЛ) tower complex. A tall technical meteorological structure: a large "
-            "spherical white geodesic radome dome housing the radar scanner mounted atop a sturdy technical lattice/steel "
-            "observation tower with external maintenance ladders and railings, sitting on a weathered single-story ochre "
-            "brick/concrete equipment pavilion annex at the base. Single isolated structure, high contrast clear silhouette, "
-            "Baltic scientific campus context."
+            "Doppler meteorological radar facility: a clear technical structure with a white spherical radome, maintenance "
+            "elements and a compact equipment/service base. Baltic scientific-campus materials, practical proportions, "
+            "warm occupied windows where appropriate. It must read as working meteorological infrastructure, not a monument."
         ),
-        "required_features": ["white radar dome", "technical radar tower", "service equipment annex base", "clear silhouette"],
+        "required_features": ["white radar dome", "technical radar structure", "service equipment base", "clear silhouette"],
         "forbidden_features": ["generic residential cottage", "fantasy observatory", "church dome", "sci-fi antenna", "palace"]
     },
     "synoptic": {
-        "name": "Главный синоптический корпус (BLD-SYNOPTIC)",
+        "name": "Оперативный синоптический зал",
         "description": (
-            "Operational synoptic hall building. St. Petersburg classical academic architecture: two-story ochre "
-            "facade, rectangular proportioned windows with warm interior amber glow, granite base socle, white cornice, "
-            "roof weather observation deck with anemometer mast."
+            "Modest two-story operational building with a 1950s scientific-campus character and later practical upgrades: "
+            "ochre facade, granite base, large readable windows with warm amber light, simple roof/lightwell and weather instruments. "
+            "Inside: broad synoptic tables, paper charts, a green desk lamp, analogue instruments, UTC clock and modern monitors."
         ),
-        "required_features": ["ochre facade", "warm amber windows", "granite socle", "roof anemometer mast"],
-        "forbidden_features": ["residential house", "modern skyscraper", "log cabin"]
+        "required_features": ["modest low-rise scale", "ochre facade", "warm amber windows", "granite base", "weather instruments"],
+        "forbidden_features": ["palace", "monumental columnade", "modern skyscraper", "log cabin", "military headquarters"]
     },
     "archive": {
-        "name": "Архив гидрометеорологических наблюдений (BLD-ARCHIVE)",
+        "name": "Архив метеоданных и отчётов",
         "description": (
-            "Hydrometeorological archive building. Sturdy historical brick pavilion with high narrow windows, heavy oak "
-            "entrance door, granite steps, brass sign plate on wall."
+            "Warm one-and-a-half-story archive building with stone/granite base, ochre plaster, wooden window frames and a lived-in "
+            "working interior: tall wooden shelves, boxes marked by the 26063 series, paper folders, a warm desk lamp and an old barograph."
         ),
-        "required_features": ["brick walls", "granite foundation", "high archive windows"],
-        "forbidden_features": ["generic cottage", "futuristic building"]
+        "required_features": ["granite or stone base", "ochre plaster", "wooden frames", "archive shelving and paper traces"],
+        "forbidden_features": ["generic cottage", "futuristic building", "palace", "museum display hall"]
     }
 }
 
 
 def get_lore_for_asset(asset_id: str) -> dict[str, Any]:
     aid = asset_id.lower()
+
     for key, data in CHARACTER_LORE.items():
-        if key in aid or (key == "vera_ladozhskaya" and ("mentor" in aid or "ladozh" in aid or "portrait" in aid)):
+        aliases = {
+            "vera_ladozhskaya": ("mentor", "ladozh", "vera", "teacher"),
+            "semyon_kruglov": ("semyon", "semen", "kruglov", "technician"),
+            "pascal_cat": ("pascal", "hectopascal", "companion.cat", "cat_pascal", "pascal_cat"),
+        }.get(key, ())
+        if key in aid or any(alias in aid for alias in aliases):
             return {"type": "character", "key": key, "data": data}
 
     for key, data in ARCHITECTURE_LORE.items():

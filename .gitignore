@@ -16,6 +16,7 @@ models/
 output/
 logs/
 assets/work/
+datasets/canonical_exemplars/_build/
 __pycache__/
 *.py[cod]
 *$py.class
